@@ -7,7 +7,7 @@ test('overview has accessible navigation, contract and social metadata',async({p
   await expect(page.getByRole('heading',{level:1})).toContainText('Your media pipeline.');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://developerjillur.github.io/ffmpeg-v2/');
   await expect(page.getByText('PGO candidate not promoted',{exact:true})).toBeVisible();
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(page.viewportSize().width);
   const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   expect(result.violations).toEqual([]);expect(errors).toEqual([]);
   await page.screenshot({path:info.outputPath('overview.png'),fullPage:true});
@@ -24,7 +24,7 @@ test('benchmark filters keep failed sample gates explicit',async({page},info)=>{
   await page.getByRole('button',{name:'Show all',exact:true}).click();
   const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   expect(result.violations).toEqual([]);
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(page.viewportSize().width);
   await page.screenshot({path:info.outputPath('benchmarks.png'),fullPage:true});
 });
 test('report search preserves usable links',async({page})=>{
