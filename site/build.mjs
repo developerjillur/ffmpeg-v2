@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 import {marked} from 'marked';
 import {renderHome,renderResults} from './product.mjs';
 
@@ -10,6 +11,7 @@ const origin=(process.env.SITE_ORIGIN||'https://developerjillur.github.io').repl
 const base=`/${(process.env.SITE_BASE_PATH||'ffmpeg-v2').replace(/^\/+|\/+$/g,'')}/`;
 const repo='https://github.com/developerjillur/ffmpeg-v2';
 const date='2026-11-05';
+const socialImage='assets/social.png?v='+createHash('sha256').update(fs.readFileSync(path.join(root,'site/assets/social.png'))).digest('hex').slice(0,12);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const routes=new Map([
  ['README.md',''],['docs/WHY-FFMPEG-V2.md','why-ffmpeg-v2/'],['docs/WORKFLOW-RESULTS.md','benchmarks/released-workflow/'],['docs/GETTING-STARTED.md','getting-started/'],['docs/CLI.md','cli/'],
@@ -43,6 +45,8 @@ function titleFor(file){return titleOverrides[file]||sourceText(file).match(/^#\
 const descriptions={
  '':'Tuned FFmpeg workflows with recorded 22.61–28.48% less time vs prior Stock presets on M4 Max, plus MCP, durable queues and verified outputs.',
  'getting-started/':'Install FFmpeg-v2 from source on macOS. Configure local media paths, inspect a typed job plan and run a verified FFmpeg workflow.',
+ 'why-ffmpeg-v2/':'See how FFmpeg-v2 adds tuned M4 Max profiles, a durable queue, automatic output verification and eight local MCP tools to Stock FFmpeg.',
+ 'benchmarks/released-workflow/':'Recorded native M4 Max workflow gains: 22.61% less HD time and 28.48% less live-action time vs prior Stock presets, with quality and matched controls.',
  'mcp/':'Connect a local FFmpeg MCP server with eight typed tools. Plan, submit, explicitly start a worker, poll status and verify output.',
  'benchmarks/':'Compare FFmpeg-v2 workflow gains: 22.61% less HD time and 28.48% less live-action time vs prior Stock presets, with quality and same-tuning controls.',
  'reports/':'Inspect the technical methods, quality evidence, diagnostics and retained experiments behind the measured workflow improvements in FFmpeg-v2.'
@@ -61,7 +65,7 @@ function write(route,title,body,{layout='article',file,lang='en',description,noi
     description:desc,url:canonical(route),author:{'@type':'Person',name:'Jillur Rahman'},inLanguage:lang,
     ...(route===''?{codeRepository:repo,programmingLanguage:['Python','C'],runtimePlatform:'macOS',version:'0.6.1',license:repo+'/blob/main/LICENSE'}:{datePublished:date,isPartOf:{'@type':'WebSite',name:'FFmpeg-v2',url:canonical('')}})};
   const content=layout==='home'?body:`<div class="wrap article-shell">${sidebar(route)}<article class="article"><div class="meta"><span>FFMPEG-V2 / ${esc(route.split('/')[0])}</span>${file?`<a href="${repo}/blob/main/${esc(file)}">View source ↗</a>`:''}</div>${body}</article></div>`;
-  const html=`<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}${route?' | FFmpeg-v2':''}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${canonical(route)}"><meta name="robots" content="${noindex?'noindex,follow':'index,follow'}"><meta name="theme-color" content="#203d30"><meta property="og:type" content="${route?'article':'website'}"><meta property="og:site_name" content="FFmpeg-v2"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${canonical(route)}"><meta property="og:image" content="${canonical('assets/social.png')}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="FFmpeg-v2 local media workflows, verified then published, by Jillur Rahman"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${canonical('assets/social.png')}"><link rel="icon" href="${url('assets/mark.svg')}" type="image/svg+xml"><link rel="alternate" type="application/atom+xml" title="FFmpeg-v2 releases" href="${url('feed.xml')}"><link rel="stylesheet" href="${url('assets/site.css')}"><script type="application/ld+json">${JSON.stringify(metadata).replaceAll('<','\\u003c')}</script><script defer src="${url('assets/site.js')}"></script></head><body>${header(route)}<main id="main">${content}</main>${footer()}</body></html>`;
+  const html=`<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}${route?' | FFmpeg-v2':''}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${canonical(route)}"><meta name="robots" content="${noindex?'noindex,follow':'index,follow'}"><meta name="theme-color" content="#203d30"><meta property="og:type" content="${route?'article':'website'}"><meta property="og:site_name" content="FFmpeg-v2"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${canonical(route)}"><meta property="og:image" content="${canonical(socialImage)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="FFmpeg-v2: 22.61% HD and 28.48% live-action less elapsed time vs prior Stock preset on M4 Max, by Jillur Rahman"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${canonical(socialImage)}"><link rel="icon" href="${url('assets/mark.svg')}" type="image/svg+xml"><link rel="alternate" type="application/atom+xml" title="FFmpeg-v2 releases" href="${url('feed.xml')}"><link rel="stylesheet" href="${url('assets/site.css')}"><script type="application/ld+json">${JSON.stringify(metadata).replaceAll('<','\\u003c')}</script><script defer src="${url('assets/site.js')}"></script></head><body>${header(route)}<main id="main">${content}</main>${footer()}</body></html>`;
   const destination=route==='404.html'?path.join(out,route):path.join(out,route,'index.html');
   fs.mkdirSync(path.dirname(destination),{recursive:true});fs.writeFileSync(destination,html);
   if(!noindex)pages.push({route,title,description:desc,url:canonical(route),source:file||null});

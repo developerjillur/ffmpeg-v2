@@ -28,10 +28,11 @@ property in Search Console, submit the sitemap there and inspect actual coverage
 ## A truthful introduction to share
 
 > FFmpeg-v2 is an independent macOS toolkit for typed local FFmpeg workflows.
-> It combines a CLI, eight-tool MCP server, supervised queue and verified outputs.
-> Source, setup guides and Phase 2–11 reports are public. The latest experimental
-> PGO workflow result is scoped to one M4 Max workload; the candidate was not
-> promoted because direct sample gates were incomplete.
+> Recorded M4 Max native-profile tests used 22.61% less HD workflow time and
+> 28.48% less live-action workflow time than the prior Stock workflow preset,
+> with quality gates passed. A typed CLI, eight local MCP tools, a durable queue
+> and automatic output verification make the workflow reusable in your project.
+> Exact tuning, same-settings controls and the technical evidence are public.
 
 Link the repository for developers, the getting-started page for setup and the
 benchmark page when discussing results. The social-preview image is available in
