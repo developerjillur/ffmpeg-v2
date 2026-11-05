@@ -1,0 +1,12 @@
+{
+  "operation": "contact_sheet",
+  "input": "/absolute/path/input.mp4",
+  "output": "<LAB_ROOT>/ffv2-output/sheet.jpg",
+  "start": 0,
+  "duration": 60,
+  "count": 16,
+  "columns": 4,
+  "max_width": 320,
+  "max_height": 180,
+  "threads": 2
+}

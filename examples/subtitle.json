@@ -1,0 +1,10 @@
+{
+  "operation": "subtitle",
+  "input": "/absolute/path/video.mp4",
+  "subtitle_file": "/absolute/path/captions.srt",
+  "subtitle_font": "bengali",
+  "font_size": 30,
+  "subtitle_offset": 0,
+  "encoder": "software",
+  "output": "<LAB_ROOT>/ffmpeg-v2/captioned.mp4"
+}

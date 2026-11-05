@@ -1,0 +1,6 @@
+{
+  "operation": "remux",
+  "input": "/absolute/path/input.mp4",
+  "output": "/absolute/path/to/media-project/output.mkv",
+  "threads": 2
+}

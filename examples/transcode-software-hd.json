@@ -1,0 +1,13 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/input-1080p-30fps.mp4",
+  "output": "/absolute/path/new-output.mp4",
+  "encoder": "software",
+  "rate_control": "quality",
+  "start": 0,
+  "duration": 60,
+  "fps": 30,
+  "max_width": 1920,
+  "max_height": 1080,
+  "timeout_seconds": 1200
+}

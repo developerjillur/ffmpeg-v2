@@ -1,0 +1,12 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/8bit-sdr-input.mp4",
+  "output": "/absolute/path/hardware-scaled.mp4",
+  "encoder": "videotoolbox",
+  "decode": "videotoolbox",
+  "filter_backend": "videotoolbox",
+  "max_width": 1920,
+  "max_height": 1080,
+  "video_bitrate": 6000000,
+  "priority": 5
+}

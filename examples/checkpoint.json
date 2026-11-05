@@ -1,0 +1,9 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/zero-origin-cfr-video.mp4",
+  "encoder": "software",
+  "fps": 30,
+  "checkpoint_seconds": 60,
+  "timeout_seconds": 7200,
+  "output": "<LAB_ROOT>/ffmpeg-v2/checkpoint-export.mp4"
+}

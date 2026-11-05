@@ -1,0 +1,10 @@
+include LICENSE README.md README.bn.md CHANGELOG.md CITATION.cff THIRD-PARTY-NOTICES.md
+include upstream.lock.json
+recursive-include ffv2 *.py
+recursive-include bin *
+recursive-include patches *.patch *.json series
+recursive-include third_party *.md *.json *.patch COPYING
+recursive-include docs *.md *.json *.patch
+recursive-include examples *.json
+recursive-include tests *.py
+recursive-include scripts *.py *.c

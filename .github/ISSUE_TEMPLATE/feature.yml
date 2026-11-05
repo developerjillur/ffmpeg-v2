@@ -1,0 +1,17 @@
+name: Feature request
+description: Propose a bounded improvement with a real use case
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What local workflow needs improvement?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and acceptance evidence
+      description: Include compatibility, quality and resource constraints
+    validations:
+      required: true

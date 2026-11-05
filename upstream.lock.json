@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "project": "FFmpeg",
+  "official_website": "https://ffmpeg.org/",
+  "source_repository": "https://github.com/FFmpeg/FFmpeg.git",
+  "release_tag": "n9.0.2",
+  "tag_object": "ce8f11b9fac4cd7ccfb41ca7c01bc17f5cda8cc3",
+  "commit": "946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+  "verified_on": "2026-11-02",
+  "verification": "git ls-remote: release tag and peeled commit",
+  "workspace_manifest": "upstream/workspace.json",
+  "execution_status_source": "ffv2 upstream status",
+  "notes": "Installed Homebrew FFmpeg 9.0.2 is the initial execution baseline. No binary replacement or upstream publication."
+}

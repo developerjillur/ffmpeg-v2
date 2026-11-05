@@ -1,0 +1,19 @@
+{
+  "name": "ffmpeg-v2-docs",
+  "version": "0.6.1",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node site/build.mjs",
+    "check": "node site/check.mjs",
+    "preview": "node site/serve.mjs",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "marked": "18.1.3"
+  }
+}

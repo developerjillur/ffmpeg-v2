@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this toolkit or its benchmark method, cite this source release and the specific experiment."
+title: "FFmpeg-v2: verified local media workflows"
+type: software
+authors:
+  - family-names: Rahman
+    given-names: Jillur
+version: 0.6.1
+date-released: 2026-11-05
+license: GPL-3.0-or-later
+repository-code: "https://github.com/developerjillur/ffmpeg-v2"
+url: "https://developerjillur.github.io/ffmpeg-v2/"

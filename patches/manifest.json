@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "base_tag": "n9.0.2",
+  "base_commit": "946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+  "local_head": "b6e0de6e580ae325d5b12df79dddd364ccf11efb",
+  "patched_tree": "9aa217e95f59d602a50b4360c0835fdfcf9c1521",
+  "patches": [
+    {
+      "file": "0001-jsonl-progress.patch",
+      "sha256": "0640b9869044571d507376232d852bb889df2e88fa96dcff9cc4c3e489b787b9",
+      "author": "Jillur Rahman",
+      "purpose": "Optional versioned JSONL progress; existing key/value progress remains the default."
+    },
+    {
+      "file": "0002-metal-runtime.patch",
+      "sha256": "b1a59b0c5f5fa347206b34f43387a70bcfd797f8b12a4914b3e16e9083fd80a6",
+      "author": "Jillur Rahman",
+      "purpose": "Optional Metal runtime compilation when offline Metal tools are missing."
+    },
+    {
+      "file": "0003-metal-lifetime.patch",
+      "sha256": "55cf5b185b0b6396c6df31649ea13c11508194eae9a9fae4f5a32eed7d91a493",
+      "author": "Jillur Rahman",
+      "purpose": "Prevent Metal autoreleased command objects from being released twice and bound their per-dispatch lifetime."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "operation": "image",
+  "input": "/absolute/path/image.png",
+  "max_width": 1920,
+  "max_height": 1080,
+  "output": "<LAB_ROOT>/ffmpeg-v2/resized.png"
+}

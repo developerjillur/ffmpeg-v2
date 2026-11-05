@@ -1,0 +1,12 @@
+{
+  "operation": "contact_sheet",
+  "input": "/absolute/path/long-source.mp4",
+  "output": "<LAB_ROOT>/ffmpeg-v2/sparse-sheet.jpg",
+  "start": 0,
+  "duration": 600,
+  "count": 8,
+  "columns": 4,
+  "sampling": "auto",
+  "max_width": 320,
+  "max_height": 180
+}

@@ -1,0 +1,9 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/input.mp4",
+  "output": "/absolute/path/to/media-project/output.mp4",
+  "encoder": "auto",
+  "max_width": 1920,
+  "max_height": 1080,
+  "threads": 2
+}

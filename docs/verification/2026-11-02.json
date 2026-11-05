@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "release": "0.2.0",
+  "date": "2026-11-02",
+  "maintainer": "Jillur Rahman",
+  "machine": {
+    "model": "Mac16,9",
+    "cpu": "Apple M4 Max",
+    "architecture": "arm64",
+    "memory_gib": 36,
+    "cores": {
+      "performance": 10,
+      "efficiency": 4
+    }
+  },
+  "source": {
+    "branch": "ffmpeg-v2-main",
+    "dirty": false,
+    "head": "3f0d329f2c6977bceded5a4fb975145a148d23e8",
+    "locked_base": "946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+    "status": "",
+    "tracked_diff_sha256": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126"
+  },
+  "patch_manifest": {
+    "schema_version": 1,
+    "base_tag": "n9.0.2",
+    "base_commit": "946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+    "local_head": "3f0d329f2c6977bceded5a4fb975145a148d23e8",
+    "patched_tree": "f93cdc7ac75cec648d336b5fcf126ec09d43abd2",
+    "patches": [
+      {
+        "file": "0001-jsonl-progress.patch",
+        "sha256": "0640b9869044571d507376232d852bb889df2e88fa96dcff9cc4c3e489b787b9",
+        "author": "Jillur Rahman",
+        "purpose": "Optional versioned JSONL progress; existing key/value progress remains the default."
+      }
+    ]
+  },
+  "native_binaries": {
+    "ffmpeg": {
+      "sha256": "93344b281c42a64f619ee2bf3cfa9f06dc430b27c7211876e800c96b59ed201b",
+      "version": "n9.0.2-1-g3f0d329-ffmpeg-v2-m4"
+    },
+    "ffprobe": {
+      "sha256": "c2780b3b8c5a19339a2b01505ebcd031022ffc4fb7674f3e182773b438dfc89b",
+      "version": "n9.0.2-1-g3f0d329-ffmpeg-v2-m4"
+    }
+  },
+  "control_tests": {
+    "count": 70,
+    "result": "pass",
+    "python_versions": [
+      "3.9.6",
+      "3.14.7"
+    ],
+    "short_child_shutdown_repetitions": 20,
+    "group_signal_permission_fallback_regression": "pass"
+  },
+  "fate": {
+    "local_run_exit_code": 0,
+    "listed_targets": 2692,
+    "result_records": 2691,
+    "failures": 0,
+    "listed_without_default_record": [
+      "hwdevice"
+    ],
+    "external_samples_acquired": false,
+    "full_external_fate_verified": false
+  },
+  "native_media": {
+    "checks": {
+      "fixture": "pass",
+      "audio": "pass",
+      "software": "pass",
+      "videotoolbox": "pass",
+      "frame": "pass",
+      "contact_sheet": "pass",
+      "remux": "pass",
+      "audio_signal": "pass",
+      "remux_packets": "pass",
+      "native_progress_jsonl": "pass",
+      "native_progress_kv": "pass",
+      "native_progress_invalid": "pass",
+      "mcp_native": "pass"
+    },
+    "audio_signal": {
+      "status": "pass",
+      "rms": 2895.706254555506,
+      "frequency_hz": 439.75,
+      "frames": 64000
+    },
+    "remux_packet_hashes": {
+      "status": "pass",
+      "video_packets": 120,
+      "audio_packets": 189
+    }
+  },
+  "auto_small_clip": {
+    "status": "completed",
+    "encoder": "libx264",
+    "encoding_progress_format": "jsonl"
+  },
+  "benchmark": {
+    "reference_sha256": "031093afc3b1a23d58fbc44d087ab3d82918caed1fabe1f857dd2e63388acdff",
+    "trials": 3,
+    "random_seed": 20261102,
+    "encoder_medians_seconds": {
+      "installed-software": 0.512835,
+      "installed-videotoolbox": 0.717588,
+      "native-software": 0.484191,
+      "native-videotoolbox": 0.490727
+    },
+    "installed_over_native_encode_ratios": {
+      "software": 1.0591584725862315,
+      "videotoolbox": 1.4622957367334586
+    },
+    "frame_medians_seconds": {
+      "individual": 11.554122625000005,
+      "batch": 0.818768833
+    },
+    "individual_over_batch_ratio": 14.111580899660362,
+    "same_frame_timestamps": true,
+    "notes": [
+      "Synthetic short workload on a busy computer; no all-workload or long-form speed claim.",
+      "Same settings are used; compiler/config differences exist between installed and native builds.",
+      "No warmup exclusion; medians retain cold-start/metadata/validation overhead.",
+      "Frame baseline excludes final mosaic assembly, favouring the old per-frame approach."
+    ],
+    "software_outputs_bit_identical": true
+  },
+  "quality": {
+    "alignment": "decoded frame number, 30fps, exactly 180 frames",
+    "superseded_first_comparison": "Original timestamp-only quality comparison had 181 frame-sync samples",
+    "results": {
+      "installed-videotoolbox": {
+        "aligned_frames": 180,
+        "vmaf_mean": 96.056957,
+        "ssim_mean": 0.998627,
+        "psnr_y_mean": 44.105382
+      },
+      "installed-software": {
+        "aligned_frames": 180,
+        "vmaf_mean": 97.521175,
+        "ssim_mean": 0.99942,
+        "psnr_y_mean": 46.860962
+      },
+      "native-videotoolbox": {
+        "aligned_frames": 180,
+        "vmaf_mean": 96.056957,
+        "ssim_mean": 0.998627,
+        "psnr_y_mean": 44.105382
+      },
+      "native-software": {
+        "aligned_frames": 180,
+        "vmaf_mean": 97.521175,
+        "ssim_mean": 0.99942,
+        "psnr_y_mean": 46.860962
+      }
+    }
+  },
+  "large_media": {
+    "checks": {
+      "hevc_main10_4k_encode": "pass",
+      "hevc_main10_4k_hwdecode": "pass",
+      "hevc_to_h264_1080p": "pass",
+      "hevc_4k_frame": "pass",
+      "main10_remux": "pass",
+      "timeline_600s_encode": "pass",
+      "timeline_600s_full_decode": "pass",
+      "timeline_metadata": "pass"
+    },
+    "timeline": {
+      "status": "pass",
+      "duration_seconds": 600.0,
+      "video_frames": 18000,
+      "stream_end_seconds": [
+        600.0,
+        600.0
+      ],
+      "endpoint_difference_seconds": 0.0,
+      "sha256": "8166bdfe55a50b24242b325225439b74d120694ef0498b9926c723bcbe01eb23",
+      "bytes": 64110785
+    },
+    "limits": [
+      "Generated fixtures only; a 600-second media timeline is not a 600-second wall-clock soak.",
+      "SDR Main10 path; HDR tone mapping and perceptual colour correctness remain separate."
+    ]
+  },
+  "mcp": {
+    "status": "completed",
+    "checks": {
+      "handshake": {
+        "status": "pass",
+        "tools": 8,
+        "protocol_version": "2025-11-25"
+      },
+      "queue_worker_output": {
+        "status": "pass",
+        "idempotency_replay": true,
+        "pcm_bit_exact": true
+      },
+      "input_root": {
+        "code": "input_path_denied",
+        "message": "এই MCP session-এর অনুমোদিত input root-এর বাইরে।",
+        "retryable": false
+      },
+      "unknown_field": {
+        "code": "invalid_spec",
+        "message": "Job spec-এর field ঠিক করুন।",
+        "retryable": false
+      },
+      "queued_cancel": {
+        "status": "pass"
+      }
+    },
+    "configured_local_entry": true,
+    "other_client_settings_preserved": true,
+    "current_chat_hot_reload_verified": false
+  },
+  "cli": {
+    "active_native_launchers": [
+      "ffv2",
+      "ffmpeg-v2",
+      "ffprobe-v2"
+    ],
+    "nonzero_pcm_bit_exact": true,
+    "idempotency_replay": true,
+    "selected_library_identity_in_saved_plan": true,
+    "final_nonzero_pcm_bit_exact": true
+  },
+  "integrity": {
+    "active_selection_id": "77079d47fae13584712d7e289c10d87c0a7a9f6d0ab8a6f041eb161c3d5ebbbd",
+    "hashed_binaries_and_non_system_dependencies": 28,
+    "load_path_identity_checked": true
+  },
+  "execution_policy": {
+    "system_memory_checks_ignored_for_task": true,
+    "owner_requested_override": true,
+    "default_memory_policy_unchanged": true,
+    "per_job_sampled_footprint_limit_gib": 12,
+    "disk_mount_output_guards_retained": true
+  },
+  "scope_limits": [
+    "Generated fixtures, not a representative private corpus",
+    "Short busy-host timing does not establish universal or causal core acceleration",
+    "600-second media timeline is not a 600-second wall-clock soak",
+    "HDR tone mapping, broad corrupt/VFR/subtitle/filter matrix and production migration remain separate acceptance",
+    "No public push or hosted release"
+  ],
+  "publication": {
+    "record_type": "redacted_historical_summary",
+    "source_sha256": "a87d39fafdb2a1d40fd3f948b9dff2e82c88a1b587b2dc857a61e315eda394c6",
+    "paths_redacted": true,
+    "raw_receipts_and_media_included": false,
+    "acceptance_usage": "Historical report only; not a local engine or release activation manifest."
+  }
+}

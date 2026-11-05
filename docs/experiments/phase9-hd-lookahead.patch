@@ -1,0 +1,28 @@
+diff --git a/ffv2/planner.py b/ffv2/planner.py
+index 42d279b..8781315 100644
+--- a/ffv2/planner.py
++++ b/ffv2/planner.py
+@@ -229,6 +229,8 @@ def build_plan(value, settings, caps, *, restricted=False, allow_existing=False)
+             warnings.append("VideoToolbox session runtime-এ যাচাই হবে; hardware ব্যর্থ হলে নীরব software fallback হবে না।")
+         else:
+             argv += ["-preset", "veryfast"]
++            if tuning.get('x264_lookahead_threads') == 1:
++                argv += ['-x264-params', 'lookahead-threads=1']
+             argv += ["-b:v", str(bitrate)] if rate_control == "bitrate" else ["-crf", "20"]
+         if audio:
+             argv += ["-c:a", "aac", "-b:a", "160k", "-threads:a", "1"]
+diff --git a/ffv2/tuning.py b/ffv2/tuning.py
+index 92fa53b..77f4d61 100644
+--- a/ffv2/tuning.py
++++ b/ffv2/tuning.py
+@@ -50,6 +50,9 @@ def pools(request, video, duration, caps, *, width=None, height=None):
+     validation = request.get("validation_threads", validation)
+     if encoder + decoder + filters + 1 > 14:
+         raise FFV2Error("thread_budget_exceeded", "Codec/filter/audio thread budget সর্বোচ্চ 14।")
+-    return {"encoder_threads": encoder, "decoder_threads": decoder, "filter_threads": filters,
++    result = {"encoder_threads": encoder, "decoder_threads": decoder, "filter_threads": filters,
+             "validation_threads": validation, "profile": profile,
+             "policy_revision": "phase8-calibration-1", "encode_thread_budget": encoder + decoder + filters + 1}
++    if profile == 'm4_max_hd_software':
++        result['x264_lookahead_threads'] = 1
++    return result

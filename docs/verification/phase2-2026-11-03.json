@@ -1,0 +1,1417 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "maintainer": "Jillur Rahman",
+  "created_at": 1793642782.6698828,
+  "install_prefix": "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-24084e53291660033cb6/attempt-001/install",
+  "binary_version": "n9.0.2-3-gb6e0de6-ffmpeg-v2-m4",
+  "source": {
+    "branch": "ffmpeg-v2-main",
+    "dirty": false,
+    "head": "b6e0de6e580ae325d5b12df79dddd364ccf11efb",
+    "locked_base": "946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+    "path": "<LAB_ROOT>/ffmpeg-v2-core/ffmpeg",
+    "status": "",
+    "tracked_diff_sha256": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126"
+  },
+  "candidate": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-24084e53291660033cb6/candidate.json",
+    "sha256": "ec61d90aea17884b1871684070207ebfba99b8c40e35d25285aae3c484dc6b99"
+  },
+  "reports": [
+    {
+      "path": "<PROJECT>/.runtime/verification/phase2-media-20261102T175513-1423eed3/report.json",
+      "sha256": "06096ba619168a1f5a8558c1280a33187a8d0fd4dcc49c36410f90d841ec1596"
+    },
+    {
+      "path": "<PROJECT>/.runtime/verification/phase2-natural-20261102T175524-d01d544e/report.json",
+      "sha256": "ea8204c83dd2f1194d64d461a3d7b0c8588942b5bdb2f8bf354b0a2d9176396f"
+    },
+    {
+      "path": "<PROJECT>/.runtime/verification/phase2-sparse-20261102T175944-2224f196/report.json",
+      "sha256": "5bad36701bf0dcef80ab35fca78838f0110029ee3cf5f5fc4cc25b5baecdd99c"
+    },
+    {
+      "path": "<PROJECT>/.runtime/verification/phase2-large-20261102T175813-f03bc55c/report.json",
+      "sha256": "dd27fef556429a1acb70dc28fb84b8df4ab7febd893a1b4d3c8981349812b289"
+    },
+    {
+      "path": "<PROJECT>/.runtime/verification/phase2-faults-20261102T175918-6cd42310/report.json",
+      "sha256": "341fc6c34d1054871dada96cf5d5fccead177e38f9ef3ee77231e446ad2fed86"
+    },
+    {
+      "path": "<PROJECT>/.runtime/verification/phase2-soak-20261102T180054-d93da95d/report.json",
+      "sha256": "a428d63f765b1ed8aa7bf0c5880d4f7b6a1033f5a2c88cba5254819dbd9e8f6e"
+    },
+    {
+      "path": "<PROJECT>/.runtime/verification/mcp-pipeline-20261102T180039-1cb2a39e/report.json",
+      "sha256": "7eb0b853bf6158e8e20ca5983be87e4ef5000094b15ae0fb166477985cfff589"
+    }
+  ],
+  "tests": {
+    "deinterlace": {
+      "status": "pass",
+      "source_field_order": "tb",
+      "frames": 60
+    },
+    "deinterlace_sheet": {
+      "status": "pass"
+    },
+    "metal_nv12": {
+      "status": "pass",
+      "frames": 60,
+      "frame_hashes_equal": true,
+      "native_exit_code": 0,
+      "installed_exit_code": -11,
+      "comparison_scope": "Stock per-packet-flushed 60 frame hashes retained even if its cleanup crashes; native must exit 0",
+      "native_wall_seconds": 0.161828,
+      "installed_wall_seconds": 0.422257
+    },
+    "metal_p010le": {
+      "status": "pass",
+      "frames": 60,
+      "frame_hashes_equal": true,
+      "native_exit_code": 0,
+      "installed_exit_code": -11,
+      "comparison_scope": "Stock per-packet-flushed 60 frame hashes retained even if its cleanup crashes; native must exit 0",
+      "native_wall_seconds": 0.272784,
+      "installed_wall_seconds": 0.404614
+    },
+    "tone_map_smpte2084": {
+      "status": "pass",
+      "frames": 30,
+      "output_tags": {
+        "color_primaries": "bt709",
+        "color_transfer": "bt709",
+        "color_space": "bt709",
+        "color_range": "tv"
+      },
+      "scope": "Synthetic transfer-tagged 10-bit signal; no natural HDR perceptual acceptance"
+    },
+    "tone_map_arib-std-b67": {
+      "status": "pass",
+      "frames": 30,
+      "output_tags": {
+        "color_primaries": "bt709",
+        "color_transfer": "bt709",
+        "color_space": "bt709",
+        "color_range": "tv"
+      },
+      "scope": "Synthetic transfer-tagged 10-bit signal; no natural HDR perceptual acceptance"
+    },
+    "pq_analytic_ramp": {
+      "status": "pass",
+      "max_luma_error_8bit": 0.3811535600468403,
+      "tolerance": 5,
+      "samples": [
+        {
+          "x": 0,
+          "input_nits": 0.0,
+          "expected_y": 16.0,
+          "observed_y": 16.0,
+          "error": 0.0
+        },
+        {
+          "x": 16,
+          "input_nits": 62.745098039215684,
+          "expected_y": 131.32309368676468,
+          "observed_y": 131.0,
+          "error": 0.323093686764679
+        },
+        {
+          "x": 32,
+          "input_nits": 125.49019607843137,
+          "expected_y": 160.72741671479238,
+          "observed_y": 161.0,
+          "error": 0.27258328520761665
+        },
+        {
+          "x": 64,
+          "input_nits": 250.98039215686273,
+          "expected_y": 190.38115356004684,
+          "observed_y": 190.0,
+          "error": 0.3811535600468403
+        },
+        {
+          "x": 96,
+          "input_nits": 376.47058823529414,
+          "expected_y": 206.14913030917737,
+          "observed_y": 206.0,
+          "error": 0.14913030917736592
+        },
+        {
+          "x": 128,
+          "input_nits": 501.96078431372547,
+          "expected_y": 216.11140686887197,
+          "observed_y": 216.0,
+          "error": 0.11140686887196694
+        },
+        {
+          "x": 160,
+          "input_nits": 627.4509803921569,
+          "expected_y": 223.01621182339466,
+          "observed_y": 223.0,
+          "error": 0.016211823394655767
+        },
+        {
+          "x": 192,
+          "input_nits": 752.9411764705883,
+          "expected_y": 228.0967252679962,
+          "observed_y": 228.0,
+          "error": 0.09672526799619163
+        },
+        {
+          "x": 224,
+          "input_nits": 878.4313725490196,
+          "expected_y": 231.99661584647455,
+          "observed_y": 232.0,
+          "error": 0.0033841535254452992
+        },
+        {
+          "x": 255,
+          "input_nits": 1000.0,
+          "expected_y": 235.0,
+          "observed_y": 235.0,
+          "error": 0.0
+        }
+      ],
+      "scope": "Known neutral PQ ramp, independent ST2084/Hable/BT1886 display-gamma formulas; excludes perceptual colour-volume/HDR display acceptance"
+    },
+    "vfr": {
+      "status": "pass",
+      "frames": 60,
+      "max_timestamp_delta_seconds": 0.0003330000000003608
+    },
+    "no_software_decode_fallback": {
+      "status": "pass",
+      "failure_code": "hardware_unavailable",
+      "published": false
+    },
+    "rotation": {
+      "status": "pass",
+      "output_width": 96,
+      "output_height": 128
+    },
+    "truncated": {
+      "status": "pass",
+      "failure_code": "output_validation_failed",
+      "published": false
+    },
+    "network_playlist": {
+      "status": "pass",
+      "failure_code": "invalid_media"
+    },
+    "natural_talking": {
+      "status": "pass",
+      "source_url": "https://media.xiph.org/video/derf/y4m/akiyo_qcif.y4m",
+      "source_sha256": "df88d83cbf6d99f3ec41f2c1fd2e67665d2a71ff8caa08f8b6bc46bf4567ea2e",
+      "bytes": 11406644,
+      "frames": 300,
+      "output_bytes": 56542,
+      "copyright_context": "https://media.xiph.org/video/derf/ ; believed freely redistributable, additional restrictions may apply; private QA only"
+    },
+    "natural_motion": {
+      "status": "pass",
+      "source_url": "https://media.xiph.org/video/derf/y4m/bus_qcif_15fps.y4m",
+      "source_sha256": "868fc3446d37d0c6959a48b68906486bd64788b2e795f0e29613cbb1fa73480e",
+      "bytes": 2851688,
+      "frames": 75,
+      "output_bytes": 185754,
+      "copyright_context": "https://media.xiph.org/video/derf/ ; believed freely redistributable, additional restrictions may apply; private QA only"
+    },
+    "sparse_sampling": {
+      "status": "pass",
+      "source": "<PROJECT>/.runtime/verification/large-media-20261102T145846-87377acc/ten-minute.mp4",
+      "source_sha256": "8166bdfe55a50b24242b325225439b74d120694ef0498b9926c723bcbe01eb23",
+      "samples": [
+        0.0,
+        75.0,
+        150.0,
+        225.0,
+        300.0,
+        375.0,
+        450.0,
+        525.0
+      ],
+      "decoded_pixels_equal": true,
+      "timing_seconds": {
+        "single_pass": {
+          "decode_supervised": 0.104521,
+          "encode_supervised": 5.620214,
+          "integrity_publish": 0.038504,
+          "metadata_validation": 0.085596,
+          "preparation": 0.009138,
+          "total": 5.982818
+        },
+        "seek": {
+          "decode_supervised": 0.054768,
+          "encode_supervised": 0.172359,
+          "integrity_publish": 0.030567,
+          "metadata_validation": 0.049513,
+          "preparation": 0.006919,
+          "total": 0.361135
+        }
+      },
+      "trials": [
+        {
+          "single_pass": {
+            "decode_supervised": 0.067035,
+            "encode_supervised": 5.450852,
+            "integrity_publish": 0.02953,
+            "metadata_validation": 0.072256,
+            "preparation": 0.009138,
+            "total": 5.628816
+          },
+          "seek": {
+            "decode_supervised": 0.054768,
+            "encode_supervised": 0.162469,
+            "integrity_publish": 0.028334,
+            "metadata_validation": 0.19362,
+            "preparation": 0.006919,
+            "total": 0.446113
+          }
+        },
+        {
+          "seek": {
+            "decode_supervised": 0.049716,
+            "encode_supervised": 0.172359,
+            "integrity_publish": 0.030567,
+            "metadata_validation": 0.041345,
+            "preparation": 0.006606,
+            "total": 0.300594
+          },
+          "single_pass": {
+            "decode_supervised": 0.225548,
+            "encode_supervised": 5.620214,
+            "integrity_publish": 0.043825,
+            "metadata_validation": 0.085596,
+            "preparation": 0.007631,
+            "total": 5.982818
+          }
+        },
+        {
+          "single_pass": {
+            "decode_supervised": 0.104521,
+            "encode_supervised": 6.713801,
+            "integrity_publish": 0.038504,
+            "metadata_validation": 0.088629,
+            "preparation": 0.01574,
+            "total": 6.961202
+          },
+          "seek": {
+            "decode_supervised": 0.065889,
+            "encode_supervised": 0.1924,
+            "integrity_publish": 0.039859,
+            "metadata_validation": 0.049513,
+            "preparation": 0.013471,
+            "total": 0.361135
+          }
+        }
+      ],
+      "scope": "Three matched 600s synthetic timeline trials, alternating order, no warmup exclusion; not a general seek speed claim"
+    },
+    "main10_4k": {
+      "status": "pass",
+      "source": "<PROJECT>/.runtime/verification/large-media-20261102T145846-87377acc/main10-4k.mp4",
+      "source_sha256": "e205d2dc70c68866e84991b687bf9c7c33e44bf3f3d143c4aef7f235241ef61f",
+      "hardware_download_p010": true,
+      "hardware_transcode": true,
+      "remux_metadata_preserved": true,
+      "source_unchanged": true
+    },
+    "parent-loss": {
+      "status": "pass",
+      "stop_reason": "worker_parent_lost",
+      "process_gone": true,
+      "host_lock_released": true,
+      "supervisor_receipt": "<PROJECT>/.runtime/verification/phase2-faults-20261102T175918-6cd42310/parent-loss/state/jobs/1ce2eb70aa0847ae8076146aed1c66a6/attempt-001/fault.request.receipt.json"
+    },
+    "cancel": {
+      "status": "pass",
+      "stop_reason": "cancelled",
+      "process_gone": true,
+      "host_lock_released": true,
+      "supervisor_receipt": "<PROJECT>/.runtime/verification/phase2-faults-20261102T175918-6cd42310/cancel/state/jobs/e3ddd492fce04669b00036116e0d45b5/attempt-001/fault.request.receipt.json"
+    },
+    "timeout": {
+      "status": "pass",
+      "stop_reason": "timeout",
+      "process_gone": true,
+      "host_lock_released": true,
+      "supervisor_receipt": "<PROJECT>/.runtime/verification/phase2-faults-20261102T175918-6cd42310/timeout/state/jobs/2b3ea0b13c344579812f38144b062aa3/attempt-001/fault.request.receipt.json"
+    },
+    "wall_clock_soak": {
+      "status": "pass",
+      "wall_seconds": 89.549475,
+      "duration_seconds": 90.0,
+      "resource_samples": 88,
+      "peak_sampled_job_footprint_bytes": 203982360,
+      "full_decode": true,
+      "memory_samples": [
+        {
+          "elapsed_seconds": 0.008,
+          "physical_footprint_bytes": 36209888
+        },
+        {
+          "elapsed_seconds": 5.103,
+          "physical_footprint_bytes": 203490840
+        },
+        {
+          "elapsed_seconds": 10.29,
+          "physical_footprint_bytes": 203687448
+        },
+        {
+          "elapsed_seconds": 15.333,
+          "physical_footprint_bytes": 203769368
+        },
+        {
+          "elapsed_seconds": 20.675,
+          "physical_footprint_bytes": 203802136
+        },
+        {
+          "elapsed_seconds": 25.781,
+          "physical_footprint_bytes": 203834904
+        },
+        {
+          "elapsed_seconds": 30.964,
+          "physical_footprint_bytes": 203851288
+        },
+        {
+          "elapsed_seconds": 35.99,
+          "physical_footprint_bytes": 203720216
+        },
+        {
+          "elapsed_seconds": 41.032,
+          "physical_footprint_bytes": 203752984
+        },
+        {
+          "elapsed_seconds": 46.066,
+          "physical_footprint_bytes": 203867672
+        },
+        {
+          "elapsed_seconds": 51.117,
+          "physical_footprint_bytes": 203884056
+        },
+        {
+          "elapsed_seconds": 56.159,
+          "physical_footprint_bytes": 203900440
+        },
+        {
+          "elapsed_seconds": 61.49,
+          "physical_footprint_bytes": 203916824
+        },
+        {
+          "elapsed_seconds": 66.578,
+          "physical_footprint_bytes": 203916824
+        },
+        {
+          "elapsed_seconds": 71.613,
+          "physical_footprint_bytes": 203933208
+        },
+        {
+          "elapsed_seconds": 76.652,
+          "physical_footprint_bytes": 203949592
+        },
+        {
+          "elapsed_seconds": 81.69,
+          "physical_footprint_bytes": 203949592
+        },
+        {
+          "elapsed_seconds": 86.72,
+          "physical_footprint_bytes": 203965976
+        }
+      ],
+      "scope": "90s small synthetic real-time Metal deinterlace plus H.264 encode; not an overnight or high-resolution production soak"
+    },
+    "mcp_pipeline": {
+      "status": "pass",
+      "queue_worker_pcm": true,
+      "phase2_schema": true,
+      "typed_refusals": true,
+      "queued_cancel": true
+    }
+  },
+  "workflow_benchmark": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase2/benchmark-workflow-20261102T180243-df15c019/report.json",
+    "sha256": "b3868584fff6a3b967cd3e72a06cfe591b12df1cd930d0c6a1f14956730add09",
+    "summary": {
+      "v0.2.0-transcode": {
+        "n": 7,
+        "output_bytes": [
+          3082562
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.217764,
+          "min": 0.162536042,
+          "max": 0.256482417
+        },
+        "planning_seconds": {
+          "median": 0.03357729199999998,
+          "min": 0.029699417000000006,
+          "max": 0.050301625000000016
+        },
+        "work_seconds": {
+          "median": 1.608523416,
+          "min": 1.173922625,
+          "max": 1.822437083
+        },
+        "total_seconds": {
+          "median": 1.926707291,
+          "min": 1.3928610000000001,
+          "max": 2.108968833
+        },
+        "encode_seconds": {
+          "median": 0.719681,
+          "min": 0.516086,
+          "max": 0.790511
+        },
+        "decode_seconds": {
+          "median": 0.227092,
+          "min": 0.202519,
+          "max": 0.33711
+        },
+        "cli_process_seconds": {
+          "median": 2.0199276669999975,
+          "min": 1.4618956250000004,
+          "max": 2.1815911250000006
+        }
+      },
+      "v0.2.0-contact_sheet": {
+        "n": 7,
+        "output_bytes": [
+          115581
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.21047033299999998,
+          "min": 0.14968562500000002,
+          "max": 0.360896792
+        },
+        "planning_seconds": {
+          "median": 0.034199624999999956,
+          "min": 0.030723583,
+          "max": 0.12920895800000004
+        },
+        "work_seconds": {
+          "median": 0.82024575,
+          "min": 0.7219921659999999,
+          "max": 1.0396915420000001
+        },
+        "total_seconds": {
+          "median": 1.091255916,
+          "min": 0.915760708,
+          "max": 1.488107542
+        },
+        "encode_seconds": {
+          "median": 0.218259,
+          "min": 0.193075,
+          "max": 0.257644
+        },
+        "decode_seconds": {
+          "median": 0.064233,
+          "min": 0.04985,
+          "max": 0.084287
+        },
+        "cli_process_seconds": {
+          "median": 1.193842,
+          "min": 0.9847987079999996,
+          "max": 1.6098631249999968
+        }
+      },
+      "phase2-transcode": {
+        "n": 7,
+        "output_bytes": [
+          3082562
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.001396207999999996,
+          "min": 0.0013417920000000014,
+          "max": 0.002716291999999995
+        },
+        "planning_seconds": {
+          "median": 0.03552891700000001,
+          "min": 0.030320166999999995,
+          "max": 0.0595885
+        },
+        "work_seconds": {
+          "median": 1.188989959,
+          "min": 0.9949360830000001,
+          "max": 1.601509166
+        },
+        "total_seconds": {
+          "median": 1.2355828340000001,
+          "min": 1.0403177080000001,
+          "max": 1.658587125
+        },
+        "encode_seconds": {
+          "median": 0.610525,
+          "min": 0.567275,
+          "max": 0.903284
+        },
+        "decode_seconds": {
+          "median": 0.249701,
+          "min": 0.199932,
+          "max": 0.38912
+        },
+        "cli_process_seconds": {
+          "median": 1.310162915999996,
+          "min": 1.105803625,
+          "max": 1.7611360000000005
+        }
+      },
+      "phase2-contact_sheet": {
+        "n": 7,
+        "output_bytes": [
+          115581
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.0014905000000000057,
+          "min": 0.001348791000000002,
+          "max": 0.003869458000000006
+        },
+        "planning_seconds": {
+          "median": 0.05034562499999999,
+          "min": 0.032909833,
+          "max": 0.09238341600000001
+        },
+        "work_seconds": {
+          "median": 0.48232612499999994,
+          "min": 0.43850904100000004,
+          "max": 0.70459275
+        },
+        "total_seconds": {
+          "median": 0.585183375,
+          "min": 0.502181459,
+          "max": 0.7568402909999999
+        },
+        "encode_seconds": {
+          "median": 0.213189,
+          "min": 0.202795,
+          "max": 0.23953
+        },
+        "decode_seconds": {
+          "median": 0.058057,
+          "min": 0.046494,
+          "max": 0.249479
+        },
+        "cli_process_seconds": {
+          "median": 0.6706579169999998,
+          "min": 0.5838293330000042,
+          "max": 0.8592295000000014
+        }
+      }
+    }
+  },
+  "core_benchmark": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase2/benchmark-core-20261102T180441-2a20e025/report.json",
+    "sha256": "da276c2eecdc0d9103fdca794212ea98e26e99bc8b9c6c575fedeaadf19ef766",
+    "summary": {
+      "installed-software": {
+        "n": 5,
+        "output_bytes": [
+          3082562
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.160582416,
+          "min": 0.142021667,
+          "max": 0.23168795799999997
+        },
+        "planning_seconds": {
+          "median": 0.03839220900000001,
+          "min": 0.028959125000000002,
+          "max": 0.04937058299999997
+        },
+        "work_seconds": {
+          "median": 1.2510857080000002,
+          "min": 1.086036834,
+          "max": 1.592845625
+        },
+        "total_seconds": {
+          "median": 1.464336125,
+          "min": 1.342896666,
+          "max": 1.853265625
+        },
+        "encode_seconds": {
+          "median": 0.72908,
+          "min": 0.596319,
+          "max": 0.85854
+        },
+        "decode_seconds": {
+          "median": 0.31269,
+          "min": 0.202326,
+          "max": 0.494082
+        },
+        "cli_process_seconds": {
+          "median": 1.5471505000000008,
+          "min": 1.4172938330000022,
+          "max": 1.935816249999995
+        }
+      },
+      "installed-videotoolbox": {
+        "n": 5,
+        "output_bytes": [
+          3116893
+        ],
+        "unique_file_hashes": 5,
+        "capability_seconds": {
+          "median": 0.16823125,
+          "min": 0.162580458,
+          "max": 0.20804450000000002
+        },
+        "planning_seconds": {
+          "median": 0.03301445899999997,
+          "min": 0.027277833,
+          "max": 0.05799779199999999
+        },
+        "work_seconds": {
+          "median": 1.197511584,
+          "min": 1.002006541,
+          "max": 1.289884458
+        },
+        "total_seconds": {
+          "median": 1.4296951249999998,
+          "min": 1.251373416,
+          "max": 1.585636333
+        },
+        "encode_seconds": {
+          "median": 0.600913,
+          "min": 0.500305,
+          "max": 0.694479
+        },
+        "decode_seconds": {
+          "median": 0.339092,
+          "min": 0.267187,
+          "max": 0.38244
+        },
+        "cli_process_seconds": {
+          "median": 1.5159527080000004,
+          "min": 1.3259563330000006,
+          "max": 1.6806426669999972
+        }
+      },
+      "installed-contact_sheet": {
+        "n": 5,
+        "output_bytes": [
+          115581
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.166124917,
+          "min": 0.13957012500000002,
+          "max": 0.23509487500000004
+        },
+        "planning_seconds": {
+          "median": 0.033752915999999966,
+          "min": 0.030086874999999985,
+          "max": 0.03690325
+        },
+        "work_seconds": {
+          "median": 0.714036708,
+          "min": 0.618982167,
+          "max": 0.8161484999999999
+        },
+        "total_seconds": {
+          "median": 1.035110458,
+          "min": 0.838558459,
+          "max": 1.043344959
+        },
+        "encode_seconds": {
+          "median": 0.350354,
+          "min": 0.337978,
+          "max": 0.497752
+        },
+        "decode_seconds": {
+          "median": 0.084125,
+          "min": 0.05451,
+          "max": 0.146366
+        },
+        "cli_process_seconds": {
+          "median": 1.1189137920000007,
+          "min": 0.9100470420000004,
+          "max": 1.145266791000001
+        }
+      },
+      "native-software": {
+        "n": 5,
+        "output_bytes": [
+          3082562
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.279126958,
+          "min": 0.189552959,
+          "max": 0.31520091699999997
+        },
+        "planning_seconds": {
+          "median": 0.053251833000000026,
+          "min": 0.032518291000000005,
+          "max": 0.05961575000000002
+        },
+        "work_seconds": {
+          "median": 1.237176208,
+          "min": 1.0822667080000001,
+          "max": 1.393717375
+        },
+        "total_seconds": {
+          "median": 1.599936,
+          "min": 1.3218515000000002,
+          "max": 1.776956875
+        },
+        "encode_seconds": {
+          "median": 0.682904,
+          "min": 0.603179,
+          "max": 0.857888
+        },
+        "decode_seconds": {
+          "median": 0.274105,
+          "min": 0.252217,
+          "max": 0.419507
+        },
+        "cli_process_seconds": {
+          "median": 1.6799841670000006,
+          "min": 1.3941610840000003,
+          "max": 1.8825693749999992
+        }
+      },
+      "native-videotoolbox": {
+        "n": 5,
+        "output_bytes": [
+          3116893
+        ],
+        "unique_file_hashes": 5,
+        "capability_seconds": {
+          "median": 0.265015958,
+          "min": 0.19205587500000001,
+          "max": 0.424758584
+        },
+        "planning_seconds": {
+          "median": 0.04186062500000004,
+          "min": 0.032569166999999954,
+          "max": 0.055016500000000024
+        },
+        "work_seconds": {
+          "median": 1.144690834,
+          "min": 0.9958062079999999,
+          "max": 1.220773375
+        },
+        "total_seconds": {
+          "median": 1.421567291,
+          "min": 1.276424209,
+          "max": 1.626401709
+        },
+        "encode_seconds": {
+          "median": 0.512835,
+          "min": 0.455959,
+          "max": 0.628279
+        },
+        "decode_seconds": {
+          "median": 0.327635,
+          "min": 0.300913,
+          "max": 0.375688
+        },
+        "cli_process_seconds": {
+          "median": 1.508432875000004,
+          "min": 1.360419958999998,
+          "max": 1.7608355840000023
+        }
+      },
+      "native-contact_sheet": {
+        "n": 5,
+        "output_bytes": [
+          115581
+        ],
+        "unique_file_hashes": 1,
+        "capability_seconds": {
+          "median": 0.217490042,
+          "min": 0.189231375,
+          "max": 0.28531575
+        },
+        "planning_seconds": {
+          "median": 0.044170125000000005,
+          "min": 0.03392837500000001,
+          "max": 0.06193004199999999
+        },
+        "work_seconds": {
+          "median": 0.586951333,
+          "min": 0.5090566670000001,
+          "max": 0.7280819580000001
+        },
+        "total_seconds": {
+          "median": 0.91737175,
+          "min": 0.778685167,
+          "max": 1.0690247080000002
+        },
+        "encode_seconds": {
+          "median": 0.280845,
+          "min": 0.24731,
+          "max": 0.371995
+        },
+        "decode_seconds": {
+          "median": 0.08667,
+          "min": 0.062113,
+          "max": 0.117971
+        },
+        "cli_process_seconds": {
+          "median": 0.9990408749999986,
+          "min": 0.8486911669999984,
+          "max": 1.1446408750000003
+        }
+      }
+    },
+    "quality": {
+      "installed-software": {
+        "frames": 180,
+        "pooled_metrics": {
+          "psnr_y": {
+            "min": 44.37414,
+            "max": 49.728239,
+            "mean": 46.860962,
+            "harmonic_mean": 46.836555
+          },
+          "psnr_cb": {
+            "min": 43.470467,
+            "max": 48.247723,
+            "mean": 45.111524,
+            "harmonic_mean": 45.091679
+          },
+          "psnr_cr": {
+            "min": 43.448978,
+            "max": 48.304912,
+            "mean": 45.263862,
+            "harmonic_mean": 45.244317
+          },
+          "integer_adm2": {
+            "min": 0.984152,
+            "max": 0.996041,
+            "mean": 0.990888,
+            "harmonic_mean": 0.990885
+          },
+          "integer_aim": {
+            "min": 0.002829,
+            "max": 0.010728,
+            "mean": 0.005816,
+            "harmonic_mean": 0.005814
+          },
+          "integer_adm3": {
+            "min": 0.988153,
+            "max": 0.996025,
+            "mean": 0.992536,
+            "harmonic_mean": 0.992534
+          },
+          "integer_adm_scale0": {
+            "min": 0.971449,
+            "max": 0.986275,
+            "mean": 0.979339,
+            "harmonic_mean": 0.979332
+          },
+          "integer_adm_scale1": {
+            "min": 0.976375,
+            "max": 0.991608,
+            "mean": 0.985004,
+            "harmonic_mean": 0.984998
+          },
+          "integer_adm_scale2": {
+            "min": 0.983928,
+            "max": 0.998504,
+            "mean": 0.992485,
+            "harmonic_mean": 0.992481
+          },
+          "integer_adm_scale3": {
+            "min": 0.990229,
+            "max": 1.002416,
+            "mean": 0.996696,
+            "harmonic_mean": 0.996694
+          },
+          "VMAF_integer_feature_motion_sad_score": {
+            "min": 0.0,
+            "max": 3.081624,
+            "mean": 2.096385,
+            "harmonic_mean": 2.038693
+          },
+          "integer_vif_scale0": {
+            "min": 0.861321,
+            "max": 0.912069,
+            "mean": 0.883942,
+            "harmonic_mean": 0.883883
+          },
+          "integer_vif_scale1": {
+            "min": 0.981829,
+            "max": 0.9927,
+            "mean": 0.98701,
+            "harmonic_mean": 0.987007
+          },
+          "integer_vif_scale2": {
+            "min": 0.991424,
+            "max": 0.996654,
+            "mean": 0.99362,
+            "harmonic_mean": 0.993619
+          },
+          "integer_vif_scale3": {
+            "min": 0.994277,
+            "max": 0.998637,
+            "mean": 0.996229,
+            "harmonic_mean": 0.996229
+          },
+          "float_ssim": {
+            "min": 0.999056,
+            "max": 0.999709,
+            "mean": 0.99942,
+            "harmonic_mean": 0.99942
+          },
+          "integer_motion2": {
+            "min": 0.0,
+            "max": 3.059284,
+            "mean": 2.052617,
+            "harmonic_mean": 1.997297
+          },
+          "integer_motion3": {
+            "min": 1.567791,
+            "max": 3.059284,
+            "mean": 2.063622,
+            "harmonic_mean": 2.030836
+          },
+          "vmaf": {
+            "min": 95.577256,
+            "max": 99.147915,
+            "mean": 97.521175,
+            "harmonic_mean": 97.514047
+          }
+        }
+      },
+      "installed-videotoolbox": {
+        "frames": 180,
+        "pooled_metrics": {
+          "psnr_y": {
+            "min": 38.428417,
+            "max": 53.196063,
+            "mean": 44.105382,
+            "harmonic_mean": 43.494784
+          },
+          "psnr_cb": {
+            "min": 40.549297,
+            "max": 52.638567,
+            "mean": 44.89029,
+            "harmonic_mean": 44.526015
+          },
+          "psnr_cr": {
+            "min": 40.010934,
+            "max": 52.695027,
+            "mean": 44.687892,
+            "harmonic_mean": 44.282943
+          },
+          "integer_adm2": {
+            "min": 0.970091,
+            "max": 0.997057,
+            "mean": 0.986382,
+            "harmonic_mean": 0.98635
+          },
+          "integer_aim": {
+            "min": 0.000481,
+            "max": 0.032671,
+            "mean": 0.015051,
+            "harmonic_mean": 0.014893
+          },
+          "integer_adm3": {
+            "min": 0.969639,
+            "max": 0.99825,
+            "mean": 0.985665,
+            "harmonic_mean": 0.985613
+          },
+          "integer_adm_scale0": {
+            "min": 0.939915,
+            "max": 0.990962,
+            "mean": 0.968217,
+            "harmonic_mean": 0.968086
+          },
+          "integer_adm_scale1": {
+            "min": 0.947963,
+            "max": 0.994659,
+            "mean": 0.977501,
+            "harmonic_mean": 0.977424
+          },
+          "integer_adm_scale2": {
+            "min": 0.974891,
+            "max": 1.000171,
+            "mean": 0.989965,
+            "harmonic_mean": 0.989946
+          },
+          "integer_adm_scale3": {
+            "min": 0.985454,
+            "max": 0.999921,
+            "mean": 0.994702,
+            "harmonic_mean": 0.994693
+          },
+          "VMAF_integer_feature_motion_sad_score": {
+            "min": 0.0,
+            "max": 3.081624,
+            "mean": 2.096385,
+            "harmonic_mean": 2.038693
+          },
+          "integer_vif_scale0": {
+            "min": 0.820314,
+            "max": 0.951745,
+            "mean": 0.876207,
+            "harmonic_mean": 0.875054
+          },
+          "integer_vif_scale1": {
+            "min": 0.95775,
+            "max": 0.997649,
+            "mean": 0.978647,
+            "harmonic_mean": 0.978517
+          },
+          "integer_vif_scale2": {
+            "min": 0.975721,
+            "max": 0.999028,
+            "mean": 0.988629,
+            "harmonic_mean": 0.988585
+          },
+          "integer_vif_scale3": {
+            "min": 0.984118,
+            "max": 0.999477,
+            "mean": 0.993359,
+            "harmonic_mean": 0.993342
+          },
+          "float_ssim": {
+            "min": 0.997063,
+            "max": 0.999916,
+            "mean": 0.998627,
+            "harmonic_mean": 0.998627
+          },
+          "integer_motion2": {
+            "min": 0.0,
+            "max": 3.059284,
+            "mean": 2.052617,
+            "harmonic_mean": 1.997297
+          },
+          "integer_motion3": {
+            "min": 1.567791,
+            "max": 3.059284,
+            "mean": 2.063622,
+            "harmonic_mean": 2.030836
+          },
+          "vmaf": {
+            "min": 90.982156,
+            "max": 100.0,
+            "mean": 96.056957,
+            "harmonic_mean": 95.981479
+          }
+        }
+      },
+      "native-software": {
+        "frames": 180,
+        "pooled_metrics": {
+          "psnr_y": {
+            "min": 44.37414,
+            "max": 49.728239,
+            "mean": 46.860962,
+            "harmonic_mean": 46.836555
+          },
+          "psnr_cb": {
+            "min": 43.470467,
+            "max": 48.247723,
+            "mean": 45.111524,
+            "harmonic_mean": 45.091679
+          },
+          "psnr_cr": {
+            "min": 43.448978,
+            "max": 48.304912,
+            "mean": 45.263862,
+            "harmonic_mean": 45.244317
+          },
+          "integer_adm2": {
+            "min": 0.984152,
+            "max": 0.996041,
+            "mean": 0.990888,
+            "harmonic_mean": 0.990885
+          },
+          "integer_aim": {
+            "min": 0.002829,
+            "max": 0.010728,
+            "mean": 0.005816,
+            "harmonic_mean": 0.005814
+          },
+          "integer_adm3": {
+            "min": 0.988153,
+            "max": 0.996025,
+            "mean": 0.992536,
+            "harmonic_mean": 0.992534
+          },
+          "integer_adm_scale0": {
+            "min": 0.971449,
+            "max": 0.986275,
+            "mean": 0.979339,
+            "harmonic_mean": 0.979332
+          },
+          "integer_adm_scale1": {
+            "min": 0.976375,
+            "max": 0.991608,
+            "mean": 0.985004,
+            "harmonic_mean": 0.984998
+          },
+          "integer_adm_scale2": {
+            "min": 0.983928,
+            "max": 0.998504,
+            "mean": 0.992485,
+            "harmonic_mean": 0.992481
+          },
+          "integer_adm_scale3": {
+            "min": 0.990229,
+            "max": 1.002416,
+            "mean": 0.996696,
+            "harmonic_mean": 0.996694
+          },
+          "VMAF_integer_feature_motion_sad_score": {
+            "min": 0.0,
+            "max": 3.081624,
+            "mean": 2.096385,
+            "harmonic_mean": 2.038693
+          },
+          "integer_vif_scale0": {
+            "min": 0.861321,
+            "max": 0.912069,
+            "mean": 0.883942,
+            "harmonic_mean": 0.883883
+          },
+          "integer_vif_scale1": {
+            "min": 0.981829,
+            "max": 0.9927,
+            "mean": 0.98701,
+            "harmonic_mean": 0.987007
+          },
+          "integer_vif_scale2": {
+            "min": 0.991424,
+            "max": 0.996654,
+            "mean": 0.99362,
+            "harmonic_mean": 0.993619
+          },
+          "integer_vif_scale3": {
+            "min": 0.994277,
+            "max": 0.998637,
+            "mean": 0.996229,
+            "harmonic_mean": 0.996229
+          },
+          "float_ssim": {
+            "min": 0.999056,
+            "max": 0.999709,
+            "mean": 0.99942,
+            "harmonic_mean": 0.99942
+          },
+          "integer_motion2": {
+            "min": 0.0,
+            "max": 3.059284,
+            "mean": 2.052617,
+            "harmonic_mean": 1.997297
+          },
+          "integer_motion3": {
+            "min": 1.567791,
+            "max": 3.059284,
+            "mean": 2.063622,
+            "harmonic_mean": 2.030836
+          },
+          "vmaf": {
+            "min": 95.577256,
+            "max": 99.147915,
+            "mean": 97.521175,
+            "harmonic_mean": 97.514047
+          }
+        }
+      },
+      "native-videotoolbox": {
+        "frames": 180,
+        "pooled_metrics": {
+          "psnr_y": {
+            "min": 38.428417,
+            "max": 53.196063,
+            "mean": 44.105382,
+            "harmonic_mean": 43.494784
+          },
+          "psnr_cb": {
+            "min": 40.549297,
+            "max": 52.638567,
+            "mean": 44.89029,
+            "harmonic_mean": 44.526015
+          },
+          "psnr_cr": {
+            "min": 40.010934,
+            "max": 52.695027,
+            "mean": 44.687892,
+            "harmonic_mean": 44.282943
+          },
+          "integer_adm2": {
+            "min": 0.970091,
+            "max": 0.997057,
+            "mean": 0.986382,
+            "harmonic_mean": 0.98635
+          },
+          "integer_aim": {
+            "min": 0.000481,
+            "max": 0.032671,
+            "mean": 0.015051,
+            "harmonic_mean": 0.014893
+          },
+          "integer_adm3": {
+            "min": 0.969639,
+            "max": 0.99825,
+            "mean": 0.985665,
+            "harmonic_mean": 0.985613
+          },
+          "integer_adm_scale0": {
+            "min": 0.939915,
+            "max": 0.990962,
+            "mean": 0.968217,
+            "harmonic_mean": 0.968086
+          },
+          "integer_adm_scale1": {
+            "min": 0.947963,
+            "max": 0.994659,
+            "mean": 0.977501,
+            "harmonic_mean": 0.977424
+          },
+          "integer_adm_scale2": {
+            "min": 0.974891,
+            "max": 1.000171,
+            "mean": 0.989965,
+            "harmonic_mean": 0.989946
+          },
+          "integer_adm_scale3": {
+            "min": 0.985454,
+            "max": 0.999921,
+            "mean": 0.994702,
+            "harmonic_mean": 0.994693
+          },
+          "VMAF_integer_feature_motion_sad_score": {
+            "min": 0.0,
+            "max": 3.081624,
+            "mean": 2.096385,
+            "harmonic_mean": 2.038693
+          },
+          "integer_vif_scale0": {
+            "min": 0.820314,
+            "max": 0.951745,
+            "mean": 0.876207,
+            "harmonic_mean": 0.875054
+          },
+          "integer_vif_scale1": {
+            "min": 0.95775,
+            "max": 0.997649,
+            "mean": 0.978647,
+            "harmonic_mean": 0.978517
+          },
+          "integer_vif_scale2": {
+            "min": 0.975721,
+            "max": 0.999028,
+            "mean": 0.988629,
+            "harmonic_mean": 0.988585
+          },
+          "integer_vif_scale3": {
+            "min": 0.984118,
+            "max": 0.999477,
+            "mean": 0.993359,
+            "harmonic_mean": 0.993342
+          },
+          "float_ssim": {
+            "min": 0.997063,
+            "max": 0.999916,
+            "mean": 0.998627,
+            "harmonic_mean": 0.998627
+          },
+          "integer_motion2": {
+            "min": 0.0,
+            "max": 3.059284,
+            "mean": 2.052617,
+            "harmonic_mean": 1.997297
+          },
+          "integer_motion3": {
+            "min": 1.567791,
+            "max": 3.059284,
+            "mean": 2.063622,
+            "harmonic_mean": 2.030836
+          },
+          "vmaf": {
+            "min": 90.982156,
+            "max": 100.0,
+            "mean": 96.056957,
+            "harmonic_mean": 95.981479
+          }
+        }
+      }
+    }
+  },
+  "native_report": {
+    "path": "<PROJECT>/.runtime/verification/native-media-20261102T175014-a13e42c5/report.json",
+    "sha256": "2c11bb10f59f29d0f38af4d320dc1729231d479cc1f807575bae190e20955a5d"
+  },
+  "verified_runtime_files": 30,
+  "fate": {
+    "records": 2893,
+    "failures": [],
+    "listed": 2894,
+    "scope": "available local tests only; external samples not acquired; full FATE unverified"
+  },
+  "host": {
+    "cpu": "Apple M4 Max",
+    "unified_memory_gib": 36,
+    "macos": "27.2"
+  },
+  "regression_tests": {
+    "passed": 80,
+    "python_versions": [
+      "3.9.6",
+      "3.14.7"
+    ]
+  },
+  "source_patch_replay": {
+    "status": "pass",
+    "base": "946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+    "tree": "9aa217e95f59d602a50b4360c0835fdfcf9c1521",
+    "patches": [
+      {
+        "file": "0001-jsonl-progress.patch",
+        "sha256": "0640b9869044571d507376232d852bb889df2e88fa96dcff9cc4c3e489b787b9",
+        "author": "Jillur Rahman",
+        "purpose": "Optional versioned JSONL progress; existing key/value progress remains the default."
+      },
+      {
+        "file": "0002-metal-runtime.patch",
+        "sha256": "b1a59b0c5f5fa347206b34f43387a70bcfd797f8b12a4914b3e16e9083fd80a6",
+        "author": "Jillur Rahman",
+        "purpose": "Optional Metal runtime compilation when offline Metal tools are missing."
+      },
+      {
+        "file": "0003-metal-lifetime.patch",
+        "sha256": "55cf5b185b0b6396c6df31649ea13c11508194eae9a9fae4f5a32eed7d91a493",
+        "author": "Jillur Rahman",
+        "purpose": "Prevent Metal autoreleased command objects from being released twice and bound their per-dispatch lifetime."
+      }
+    ],
+    "original_worktree_unchanged": true
+  },
+  "post_activation": {
+    "status": "pass",
+    "selection_id": "1279e01cb9c76757dbc48dbb35a473671056b382ea15c0ed404d1dc87615ef55",
+    "runtime_files": 30,
+    "mcp_report": {
+      "path": "<PROJECT>/.runtime/verification/mcp-pipeline-20261102T180932-f711f110/report.json",
+      "sha256": "0615ed2ba1079f66d9177b7203664062ce48dd7227410a90a6bc6b38627a2844"
+    },
+    "mcp_selected_engine_bound": true,
+    "supervisor_reused": true,
+    "launchers": {
+      "ffv2": "0.3.0",
+      "ffmpeg-v2": "ffmpeg version n9.0.2-3-gb6e0de6-ffmpeg-v2-m4 Copyright (c) 2000-2026 the FFmpeg developers",
+      "ffprobe-v2": "ffprobe version n9.0.2-3-gb6e0de6-ffmpeg-v2-m4 Copyright (c) 2007-2026 the FFmpeg developers",
+      "ffplay-v2": "ffplay version n9.0.2-3-gb6e0de6-ffmpeg-v2-m4 Copyright (c) 2003-2026 the FFmpeg developers"
+    }
+  },
+  "publication": {
+    "record_type": "redacted_historical_summary",
+    "source_sha256": "228f83fb4c341b45e367f9f21f053af82a81e5d2a5357150efc419a7e2fc65f2",
+    "paths_redacted": true,
+    "raw_receipts_and_media_included": false,
+    "acceptance_usage": "Historical report only; not a local engine or release activation manifest."
+  }
+}

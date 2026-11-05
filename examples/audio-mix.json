@@ -1,0 +1,11 @@
+{
+  "operation": "audio_mix",
+  "input": "/absolute/path/voice.wav",
+  "tracks": [{"input": "/absolute/path/music.wav", "gain_db": -18, "offset": 0, "loop": true}],
+  "primary_gain_db": 0,
+  "mix_normalize": false,
+  "mix_limit": 0.95,
+  "audio_rate": 48000,
+  "audio_channels": 2,
+  "output": "<LAB_ROOT>/ffmpeg-v2/mixed.wav"
+}

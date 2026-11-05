@@ -1,0 +1,4 @@
+# Preserve mandatory context prefixes and the mail signature separator in patches.
+patches/*.patch -whitespace
+docs/experiments/*.patch -whitespace
+third_party/x264/*.patch -whitespace

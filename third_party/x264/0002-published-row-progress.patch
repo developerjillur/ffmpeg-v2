@@ -1,0 +1,95 @@
+From f70c7f8329264c9670d9fdcc1869376c7e001421 Mon Sep 17 00:00:00 2001
+From: Jillur Rahman <22579419+developerjillur@users.noreply.github.com>
+Date: Wed, 4 Nov 2026 12:29:43 +0600
+Subject: [PATCH] =?UTF-8?q?Published=20row=20progress-=E0=A6=8F=E0=A6=B0?=
+ =?UTF-8?q?=20lower=20bound=20=E0=A6=A6=E0=A6=BF=E0=A7=9F=E0=A7=87=20?=
+ =?UTF-8?q?=E0=A6=AA=E0=A7=81=E0=A6=A8=E0=A6=B0=E0=A6=BE=E0=A6=AC=E0=A7=83?=
+ =?UTF-8?q?=E0=A6=A4=E0=A7=8D=E0=A6=A4=20query=20=E0=A6=95=E0=A6=AE?=
+ =?UTF-8?q?=E0=A6=BE=E0=A6=A8?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ common/common.h   |  4 ++++
+ encoder/analyse.c | 20 +++++++++++++++++++-
+ encoder/encoder.c |  3 +++
+ 3 files changed, 26 insertions(+), 1 deletion(-)
+
+diff --git a/common/common.h b/common/common.h
+index a22e224..4b02e29 100644
+--- a/common/common.h
++++ b/common/common.h
+@@ -481,6 +481,10 @@ struct x264_t
+          * same mv_min/max but includes levels' i_mv_range. */
+         int     mv_min_spel[2];
+         int     mv_max_spel[2];
++#if X264_ATOMIC_FRAME_PROGRESS
++        /* Lower bound acquired from every reference at the row wait. */
++        int     i_thread_progress_min;
++#endif
+         int     mv_miny_spel_row[3];
+         int     mv_maxy_spel_row[3];
+         /* Fullpel MV range for motion search */
+diff --git a/encoder/analyse.c b/encoder/analyse.c
+index adb63e1..71ac7ac 100644
+--- a/encoder/analyse.c
++++ b/encoder/analyse.c
+@@ -356,12 +356,22 @@ static void mb_analyse_init( x264_t *h, x264_mb_analysis_t *a, int qp )
+             {
+                 int pix_y = (h->mb.i_mb_y | PARAM_INTERLACED) * 16;
+                 int thresh = pix_y + h->param.analyse.i_mv_range_thread;
++#if X264_ATOMIC_FRAME_PROGRESS
++                int published_min = INT_MAX;
++#endif
+                 for( int i = (h->sh.i_type == SLICE_TYPE_B); i >= 0; i-- )
+                     for( int j = 0; j < h->i_ref[i]; j++ )
+                     {
+                         int completed = x264_frame_cond_wait( h->fref[i][j]->orig, thresh );
+                         thread_mvy_range = X264_MIN( thread_mvy_range, completed - pix_y );
++#if X264_ATOMIC_FRAME_PROGRESS
++                        published_min = X264_MIN( published_min, completed );
++#endif
+                     }
++#if X264_ATOMIC_FRAME_PROGRESS
++                if( !PARAM_INTERLACED && h->param.b_deterministic )
++                    h->mb.i_thread_progress_min = published_min;
++#endif
+ 
+                 if( h->param.b_deterministic )
+                     thread_mvy_range = h->param.analyse.i_mv_range_thread;
+@@ -3869,8 +3879,16 @@ static void analyse_update_cache( x264_t *h, x264_mb_analysis_t *a  )
+             int ref = h->mb.cache.ref[l][x264_scan8[0]];
+             if( ref < 0 )
+                 continue;
++            int required = (h->mb.cache.mv[l][x264_scan8[15]][1] >> (2 - MB_INTERLACED)) + h->mb.i_mb_y*16;
++#if X264_ATOMIC_FRAME_PROGRESS
++            /* Progress cannot retreat during a reference's active lifetime.
++             * A published lower bound proves this MV safe; otherwise retain
++             * the original live-progress check and its recovery path. */
++            if( (ref >> MB_INTERLACED) < h->i_ref[l] && required <= h->mb.i_thread_progress_min )
++                continue;
++#endif
+             completed = x264_frame_cond_wait( h->fref[l][ ref >> MB_INTERLACED ]->orig, -1 );
+-            if( (h->mb.cache.mv[l][x264_scan8[15]][1] >> (2 - MB_INTERLACED)) + h->mb.i_mb_y*16 > completed )
++            if( required > completed )
+             {
+                 x264_log( h, X264_LOG_WARNING, "internal error (MV out of thread range)\n");
+                 x264_log( h, X264_LOG_DEBUG, "mb type: %d \n", h->mb.i_type);
+diff --git a/encoder/encoder.c b/encoder/encoder.c
+index 8bc30c6..306de80 100644
+--- a/encoder/encoder.c
++++ b/encoder/encoder.c
+@@ -3481,6 +3481,9 @@ int     x264_encoder_encode( x264_t *h,
+     if( reference_update( h ) )
+         return -1;
+     x264_frame_progress_store( h->fdec, -1 );
++#if X264_ATOMIC_FRAME_PROGRESS
++    h->mb.i_thread_progress_min = -1;
++#endif
+ 
+     if( !IS_X264_TYPE_I( h->fenc->i_type ) )
+     {
+-- 
+2.54.0 (Apple Git-157)
+

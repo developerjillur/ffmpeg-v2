@@ -1,0 +1,8 @@
+{
+  "operation": "audio",
+  "input": "/absolute/path/input.mp4",
+  "output": "/absolute/path/to/media-project/transcript.wav",
+  "audio_rate": 16000,
+  "audio_channels": 1,
+  "threads": 2
+}

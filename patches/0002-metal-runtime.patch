@@ -1,0 +1,103 @@
+From f788ac8e6afbb688af1d40509481653bae82210d Mon Sep 17 00:00:00 2001
+From: Jillur Rahman <22579419+developerjillur@users.noreply.github.com>
+Date: Mon, 2 Nov 2026 23:03:34 +0600
+Subject: [PATCH] Allow Metal shaders to compile at runtime without offline
+ compiler tools
+
+---
+ configure                           |  8 +++++++-
+ ffbuild/common.mak                  |  5 +++++
+ libavfilter/vf_yadif_videotoolbox.m | 12 +++++++++++-
+ 3 files changed, 23 insertions(+), 2 deletions(-)
+
+diff --git a/configure b/configure
+index 374bd5c..f70bd2d 100755
+--- a/configure
++++ b/configure
+@@ -327,6 +327,7 @@ External library support:
+   --enable-mediacodec      enable Android MediaCodec support [no]
+   --enable-mediafoundation enable encoding via MediaFoundation [auto]
+   --disable-metal          disable Apple Metal framework [autodetect]
++  --enable-metal-runtime   compile Metal shaders at runtime, without offline tools [no]
+   --enable-libmysofa       enable libmysofa, needed for sofalizer filter [no]
+   --enable-ohcodec         enable OpenHarmony Codec support [no]
+   --enable-openal          enable OpenAL 1.1 capture support [no]
+@@ -2260,6 +2261,7 @@ SUBSYSTEM_LIST="
+ 
+ # COMPONENT_LIST needs to come last to ensure correct dependency checking
+ CONFIG_LIST="
++    metal_runtime
+     $DOCUMENT_LIST
+     $EXAMPLE_LIST
+     $EXTERNAL_LIBRARY_LIST
+@@ -7153,7 +7155,11 @@ enabled videotoolbox && {
+     check_func_headers VideoToolbox/VTCompressionProperties.h kVTQPModulationLevel_Default "-framework CoreVideo"
+ }
+ 
+-enabled metal && test_cmd $metalcc -v || disable metal
++if enabled metal_runtime; then
++    enabled metal || die "ERROR: runtime Metal compilation requires the Metal framework"
++else
++    enabled metal && test_cmd $metalcc -v || disable metal
++fi
+ 
+ check_struct "sys/time.h sys/resource.h" "struct rusage" ru_maxrss
+ 
+diff --git a/ffbuild/common.mak b/ffbuild/common.mak
+index 059de5a..7a8fa88 100644
+--- a/ffbuild/common.mak
++++ b/ffbuild/common.mak
+@@ -139,8 +139,13 @@ endif
+ %.metallib: %.metal.air
+ 	$(METALLIB) --split-module-without-linking $< -o $@
+ 
++ifdef CONFIG_METAL_RUNTIME
++%.metallib.c: %.metal $(BIN2CEXE)
++	$(RUN_BIN2C)
++else
+ %.metallib.c: %.metallib $(BIN2CEXE)
+ 	$(RUN_BIN2C)
++endif
+ 
+ %.ptx: %.cu $(SRC_PATH)/compat/cuda/cuda_runtime.h
+ 	$(COMPILE_NVCC)
+diff --git a/libavfilter/vf_yadif_videotoolbox.m b/libavfilter/vf_yadif_videotoolbox.m
+index f8eb0c6..d036285 100644
+--- a/libavfilter/vf_yadif_videotoolbox.m
++++ b/libavfilter/vf_yadif_videotoolbox.m
+@@ -19,6 +19,7 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+  */
+ 
++#include "config.h"
+ #include "filters.h"
+ #include "metal/utils.h"
+ #include "yadif.h"
+@@ -215,6 +216,14 @@ static av_cold int do_init(AVFilterContext *ctx) API_AVAILABLE(macos(10.11), ios
+ 
+     av_log(ctx, AV_LOG_INFO, "Using Metal device: %s\n", s->mtlDevice.name.UTF8String);
+ 
++#if CONFIG_METAL_RUNTIME
++    NSString *source = [[NSString alloc] initWithBytes:ff_vf_yadif_videotoolbox_metallib_data
++                                              length:ff_vf_yadif_videotoolbox_metallib_len
++                                            encoding:NSUTF8StringEncoding];
++    av_log(ctx, AV_LOG_INFO, "Compiling Metal shader at runtime\n");
++    s->mtlLibrary = [s->mtlDevice newLibraryWithSource:source options:nil error:&err];
++    [source release];
++#else
+     dispatch_data_t libData = dispatch_data_create(
+         ff_vf_yadif_videotoolbox_metallib_data,
+         ff_vf_yadif_videotoolbox_metallib_len,
+@@ -223,7 +232,8 @@ static av_cold int do_init(AVFilterContext *ctx) API_AVAILABLE(macos(10.11), ios
+     s->mtlLibrary = [s->mtlDevice newLibraryWithData:libData error:&err];
+     dispatch_release(libData);
+     libData = nil;
+-    if (err) {
++#endif
++    if (!s->mtlLibrary || err) {
+         av_log(ctx, AV_LOG_ERROR, "Failed to load Metal library: %s\n", err.description.UTF8String);
+         goto fail;
+     }
+-- 
+2.54.0 (Apple Git-157)
+

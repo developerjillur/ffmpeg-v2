@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ffmpeg-v2": {
+      "command": "/absolute/path/to/ffmpeg-v2/.venv/bin/ffv2",
+      "args": ["--input-root", "/absolute/path/to/media-project", "mcp"],
+      "env": {"FFV2_PROJECT_ROOT": "/absolute/path/to/media-project"}
+    }
+  }
+}

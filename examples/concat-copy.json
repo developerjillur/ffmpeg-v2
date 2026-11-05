@@ -1,0 +1,7 @@
+{
+  "operation": "concat",
+  "input": "/absolute/path/first.mkv",
+  "additional_inputs": ["/absolute/path/second.mkv"],
+  "concat_mode": "copy",
+  "output": "<LAB_ROOT>/ffmpeg-v2/joined.mkv"
+}

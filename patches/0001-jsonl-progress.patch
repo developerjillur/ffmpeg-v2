@@ -1,0 +1,161 @@
+From 3f0d329f2c6977bceded5a4fb975145a148d23e8 Mon Sep 17 00:00:00 2001
+From: Jillur Rahman <22579419+developerjillur@users.noreply.github.com>
+Date: Mon, 2 Nov 2026 20:10:38 +0600
+Subject: [PATCH] Add optional JSONL progress output for programmatic clients
+
+---
+ doc/ffmpeg.texi      | 12 ++++++++++++
+ fftools/ffmpeg.c     | 46 ++++++++++++++++++++++++++++++++++++++++++--
+ fftools/ffmpeg.h     |  5 +++++
+ fftools/ffmpeg_opt.c | 18 +++++++++++++++++
+ 4 files changed, 79 insertions(+), 2 deletions(-)
+
+diff --git a/doc/ffmpeg.texi b/doc/ffmpeg.texi
+index 8825031..2ed288c 100644
+--- a/doc/ffmpeg.texi
++++ b/doc/ffmpeg.texi
+@@ -1429,6 +1429,18 @@ For example, log progress information to stdout:
+ ffmpeg -progress pipe:1 -i in.mkv out.mkv
+ @end example
+ 
++@item -progress_format @var{format} (@emph{global})
++Select @code{kv} (the default) or @code{jsonl} for @option{-progress}.
++The default preserves the existing key/value output. With @code{jsonl},
++each update is one newline-delimited JSON object with integer
++@code{schema_version} 1. Progress field values remain strings, including
++@code{N/A}, so existing units and unavailable values are preserved.
++The final object contains @code{"progress":"end"}. Logs remain on stderr.
++
++@example
++ffmpeg -progress_format jsonl -progress pipe:1 -i in.mkv out.mkv
++@end example
++
+ @anchor{stdin option}
+ @item -stdin
+ Enable interaction on standard input. On by default unless standard input is
+diff --git a/fftools/ffmpeg.c b/fftools/ffmpeg.c
+index b394243..95c372c 100644
+--- a/fftools/ffmpeg.c
++++ b/fftools/ffmpeg.c
+@@ -569,6 +569,44 @@ void update_benchmark(const char *fmt, ...)
+     }
+ }
+ 
++static void progress_json_string(AVIOContext *pb, const char *text, size_t length)
++{
++    avio_w8(pb, '"');
++    for (size_t i = 0; i < length; i++) {
++        unsigned char c = text[i];
++        if (c == '"' || c == '\\') {
++            avio_w8(pb, '\\');
++            avio_w8(pb, c);
++        } else if (c < 0x20) {
++            avio_printf(pb, "\\u%04x", c);
++        } else {
++            avio_w8(pb, c);
++        }
++    }
++    avio_w8(pb, '"');
++}
++
++static void progress_jsonl(AVIOContext *pb, const char *text, size_t length)
++{
++    const char *end = text + length;
++
++    avio_printf(pb, "{\"schema_version\":1");
++    while (text < end) {
++        const char *next = memchr(text, '\n', end - text);
++        const char *line_end = next ? next : end;
++        const char *equal = memchr(text, '=', line_end - text);
++        if (equal) {
++            avio_w8(pb, ',');
++            progress_json_string(pb, text, equal - text);
++            avio_w8(pb, ':');
++            progress_json_string(pb, equal + 1, line_end - equal - 1);
++        }
++        text = next ? next + 1 : end;
++    }
++    avio_w8(pb, '}');
++    avio_w8(pb, '\n');
++}
++
+ static void print_report(int is_last_report, int64_t timer_start, int64_t cur_time, int64_t pts)
+ {
+     AVBPrint buf, buf_script;
+@@ -717,8 +755,12 @@ static void print_report(int is_last_report, int64_t timer_start, int64_t cur_ti
+     if (progress_avio) {
+         av_bprintf(&buf_script, "progress=%s\n",
+                    is_last_report ? "end" : "continue");
+-        avio_write(progress_avio, buf_script.str,
+-                   FFMIN(buf_script.len, buf_script.size - 1));
++        if (progress_format == PROGRESS_FORMAT_JSONL)
++            progress_jsonl(progress_avio, buf_script.str,
++                          FFMIN(buf_script.len, buf_script.size - 1));
++        else
++            avio_write(progress_avio, buf_script.str,
++                       FFMIN(buf_script.len, buf_script.size - 1));
+         avio_flush(progress_avio);
+         av_bprint_finalize(&buf_script, NULL);
+         if (is_last_report) {
+diff --git a/fftools/ffmpeg.h b/fftools/ffmpeg.h
+index c44aaf6..36bad81 100644
+--- a/fftools/ffmpeg.h
++++ b/fftools/ffmpeg.h
+@@ -747,6 +747,11 @@ extern int print_stats;
+ extern int64_t stats_period;
+ extern int stdin_interaction;
+ extern AVIOContext *progress_avio;
++enum ProgressFormat {
++    PROGRESS_FORMAT_KV,
++    PROGRESS_FORMAT_JSONL,
++};
++extern enum ProgressFormat progress_format;
+ extern float max_error_rate;
+ 
+ extern char *filter_nbthreads;
+diff --git a/fftools/ffmpeg_opt.c b/fftools/ffmpeg_opt.c
+index 2c362c6..871a8de 100644
+--- a/fftools/ffmpeg_opt.c
++++ b/fftools/ffmpeg_opt.c
+@@ -79,6 +79,7 @@ char *print_graphs_file = NULL;
+ char *print_graphs_format = NULL;
+ int auto_conversion_filters = 1;
+ int64_t stats_period = 500000;
++enum ProgressFormat progress_format = PROGRESS_FORMAT_KV;
+ 
+ 
+ static int file_overwrite     = 0;
+@@ -1503,6 +1504,20 @@ fail:
+     return ret;
+ }
+ 
++static int opt_progress_format(void *optctx, const char *opt, const char *arg)
++{
++    if (!strcmp(arg, "kv"))
++        progress_format = PROGRESS_FORMAT_KV;
++    else if (!strcmp(arg, "jsonl"))
++        progress_format = PROGRESS_FORMAT_JSONL;
++    else {
++        av_log(NULL, AV_LOG_ERROR,
++               "Invalid progress format '%s'; expected kv or jsonl.\n", arg);
++        return AVERROR(EINVAL);
++    }
++    return 0;
++}
++
+ static int opt_progress(void *optctx, const char *opt, const char *arg)
+ {
+     AVIOContext *avio = NULL;
+@@ -1650,6 +1665,9 @@ const OptionDef options[] = {
+     { "progress",               OPT_TYPE_FUNC, OPT_FUNC_ARG | OPT_EXPERT,
+         { .func_arg = opt_progress },
+       "write program-readable progress information", "url" },
++    { "progress_format",        OPT_TYPE_FUNC, OPT_FUNC_ARG | OPT_EXPERT,
++        { .func_arg = opt_progress_format },
++      "set progress format (kv or jsonl)", "format" },
+     { "stdin",                  OPT_TYPE_BOOL, OPT_EXPERT,
+         { &stdin_interaction },
+       "enable or disable interaction on standard input" },
+-- 
+2.54.0 (Apple Git-157)
+

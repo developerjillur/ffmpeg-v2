@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "maintainer": "Jillur Rahman",
+  "source_repository": "https://code.videolan.org/videolan/x264.git",
+  "base_commit": "b35605ace3ddf7c1a5d67a2eb553f034aef41d55",
+  "patched_commit": "f70c7f8329264c9670d9fdcc1869376c7e001421",
+  "license": "GPL-2.0-or-later",
+  "scope": "Apple arm64 threaded progress query and cached published lower bound; encoding settings and safety recovery retained",
+  "patches": [
+    {
+      "file": "0001-atomic-frame-progress.patch",
+      "sha256": "593d673083b059fd7485593bd6425d72e38d9e77679cc377f380b60400cbfce9"
+    },
+    {
+      "file": "0002-published-row-progress.patch",
+      "sha256": "b7c72feaa4f60dff8992688e4a3822e6c1717867361ee707803e93e61632a6c4"
+    }
+  ],
+  "build_control": "Same pinned unpatched source; generic -O3 baseline. Candidate -mcpu=apple-m4, -fvectorize -fslp-vectorize, no LTO. NDEBUG undefined. Exact recipes and hashes in Phase 10 external build receipts.",
+  "version_metadata": "Shallow/worktree builds use upstream empty X264_VERSION; no upstream revision is impersonated. Source, patch and binary hashes identify the private candidate.",
+  "status": "experimental_not_activated",
+  "patched_tree": "09f3cac3e1d192f70f8b2ca6d13aee552a1aa5b3"
+}

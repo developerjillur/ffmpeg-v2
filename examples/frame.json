@@ -1,0 +1,9 @@
+{
+  "operation": "frame",
+  "input": "/absolute/path/input.mp4",
+  "output": "/absolute/path/to/media-project/frame.jpg",
+  "start": 10,
+  "max_width": 1280,
+  "max_height": 720,
+  "threads": 2
+}

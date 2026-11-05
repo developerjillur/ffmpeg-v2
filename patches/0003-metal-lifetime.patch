@@ -1,0 +1,73 @@
+From b6e0de6e580ae325d5b12df79dddd364ccf11efb Mon Sep 17 00:00:00 2001
+From: Jillur Rahman <22579419+developerjillur@users.noreply.github.com>
+Date: Mon, 2 Nov 2026 23:40:42 +0600
+Subject: [PATCH] Fix Metal command lifetime in VideoToolbox deinterlacing
+
+---
+ libavfilter/vf_yadif_videotoolbox.m | 50 ++++++++++++++---------------
+ 1 file changed, 25 insertions(+), 25 deletions(-)
+
+diff --git a/libavfilter/vf_yadif_videotoolbox.m b/libavfilter/vf_yadif_videotoolbox.m
+index d036285..335283a 100644
+--- a/libavfilter/vf_yadif_videotoolbox.m
++++ b/libavfilter/vf_yadif_videotoolbox.m
+@@ -74,31 +74,31 @@ static void call_kernel(AVFilterContext *ctx,
+                         int tff) API_AVAILABLE(macos(10.11), ios(8.0))
+ {
+     YADIFVTContext *s = ctx->priv;
+-    id<MTLCommandBuffer> buffer = s->mtlQueue.commandBuffer;
+-    id<MTLComputeCommandEncoder> encoder = buffer.computeCommandEncoder;
+-    struct mtlYadifParams *params = (struct mtlYadifParams *)s->mtlParamsBuffer.contents;
+-    *params = (struct mtlYadifParams){
+-        .channels = channels,
+-        .parity = parity,
+-        .tff = tff,
+-        .is_second_field = !(parity ^ tff),
+-        .skip_spatial_check = s->yadif.mode&2,
+-        .field_mode = s->yadif.current_field
+-    };
+-
+-    [encoder setTexture:dst  atIndex:0];
+-    [encoder setTexture:prev atIndex:1];
+-    [encoder setTexture:cur  atIndex:2];
+-    [encoder setTexture:next atIndex:3];
+-    [encoder setBuffer:s->mtlParamsBuffer offset:0 atIndex:4];
+-    ff_metal_compute_encoder_dispatch(s->mtlDevice, s->mtlPipeline, encoder, dst.width, dst.height);
+-    [encoder endEncoding];
+-
+-    [buffer commit];
+-    [buffer waitUntilCompleted];
+-
+-    ff_objc_release(&encoder);
+-    ff_objc_release(&buffer);
++    @autoreleasepool {
++        id<MTLCommandBuffer> buffer = s->mtlQueue.commandBuffer;
++        id<MTLComputeCommandEncoder> encoder = buffer.computeCommandEncoder;
++        struct mtlYadifParams *params = (struct mtlYadifParams *)s->mtlParamsBuffer.contents;
++        *params = (struct mtlYadifParams){
++            .channels = channels,
++            .parity = parity,
++            .tff = tff,
++            .is_second_field = !(parity ^ tff),
++            .skip_spatial_check = s->yadif.mode&2,
++            .field_mode = s->yadif.current_field
++        };
++
++        [encoder setTexture:dst  atIndex:0];
++        [encoder setTexture:prev atIndex:1];
++        [encoder setTexture:cur  atIndex:2];
++        [encoder setTexture:next atIndex:3];
++        [encoder setBuffer:s->mtlParamsBuffer offset:0 atIndex:4];
++        ff_metal_compute_encoder_dispatch(s->mtlDevice, s->mtlPipeline, encoder, dst.width, dst.height);
++        [encoder endEncoding];
++
++        [buffer commit];
++        [buffer waitUntilCompleted];
++
++    }
+ }
+ 
+ static void filter(AVFilterContext *ctx, AVFrame *dst,
+-- 
+2.54.0 (Apple Git-157)
+

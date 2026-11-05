@@ -1,0 +1,1632 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "maintainer": "Jillur Rahman",
+  "created_at": 1793731156.250696,
+  "version": "0.6.0",
+  "release_id": "0.6.0-fc5c8de8ba2a58f7",
+  "git_ref": "v0.6.0",
+  "package_files": {
+    "ffv2/__init__.py": "7e415a8e599fe47dc9c807335dd005314d12e2587a2d888f8d3676a0716f65bb",
+    "ffv2/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ffv2/advanced.py": "2977251c7816eb43cbed634843dbe83ba95fecdbacac863368719e8f4c60e4c3",
+    "ffv2/benchmark.py": "a0df843f85b86e8c0d2fdf03e4406019bc3ecceb5556466a141786985d7d6b4c",
+    "ffv2/bindings.py": "0e276b961afc0b8d879e6b42e684140a76836dd5fa355e16e14f4c8b6a56406b",
+    "ffv2/capabilities.py": "f4ffdc091f8a7fb5a48656290dd666d0e12387151fdded09567da6392fcbdd3c",
+    "ffv2/checkpoints.py": "84fb570d7a9a0787b69400d3f9a82ef3a035f7155845970eacb6759afd2ad4e6",
+    "ffv2/cli.py": "7dcdbae38d2a2c5f3260b75a65dd53d1e7a7535117b4ade433e97c1afdddf1cc",
+    "ffv2/concat.py": "2dc848c047200dd27de46da2d07898570250f22d1610c0286c75e0cbbf343a63",
+    "ffv2/config.py": "fac446cc7bc6e6e61d3d519fe79c983a684f377c9335d4cc62d19c1206cb3159",
+    "ffv2/controller.py": "b7d0ddee5cc5c9bd2caaee78fd7f30b1aa2a8e534158b9eadeb7c717b48a85aa",
+    "ffv2/darwin.py": "1faee952430ca70a79855ca107338ca3713522c80bcc97524bb821e80115dc1f",
+    "ffv2/engine.py": "3848035dcd05e69117f6d7e1a49bbf380ebce2f0ba8c6bcd0480d0b5bb37844c",
+    "ffv2/errors.py": "9770e9ed6c466afae98adaae1fc2473454f15ab25c7a206035c4047b14dd3c7c",
+    "ffv2/guardian.py": "b881e75bf3e83c7a02be06d3fbf9daec0a3352d2e478aa2c8fa8cc0772c93e9d",
+    "ffv2/images.py": "e738b57a9087aef32e6126237a5d09f12b0aad162fdd23782df3c38ae6fe50b7",
+    "ffv2/io.py": "e88478db674e84c92cbdb079d41aeb3e520bcb3bf353e29d632d2debac1a9713",
+    "ffv2/mcp.py": "98532dcd8734d7cfd1b3a6ff67e039dde253b808f74e66348ac57da3b3d21eea",
+    "ffv2/media.py": "292f33ca5f9cecc1c91023c762bc0ac2162172b5b0a826af3519104fe5ac8a36",
+    "ffv2/mix.py": "37d4b06d01021496cce3029aa8ddb358ebf8d5ad2df57b899b31c2450533ed2f",
+    "ffv2/planner.py": "44092e144e20bbe3187f868223ec552de9b03410894e1aa73066a45f57385cca",
+    "ffv2/process.py": "d1004bde71a3b00e617e653fb3b78ac5fc9cd81081cd2adb292010ecae4c3241",
+    "ffv2/recovery.py": "2e7450632f310ac83748904ed77573083cf3e7d6bdb89671b2dd08738c855284",
+    "ffv2/releases.py": "91c6368ccea682c9dc3b0baf0a48eaa9b9a9a7b2cc2558d57e59b249f3e9d299",
+    "ffv2/resources.py": "83f211b8f65a9aa74145832beb10a5e69b5fa97640f69ddd338cfead2290f65b",
+    "ffv2/runtime.py": "ee064c2ec107acc192807c828059775e5e9088d4751f228c54749de516911c80",
+    "ffv2/schema.py": "9d171d676f2aa111d384c8fce7e7af11de1d60d602980cadc6ef8cca52c5e829",
+    "ffv2/service.py": "11b135e54dffdde0d82c2930c426875544948533c06d6f5a6091caa877ce159e",
+    "ffv2/store.py": "08e6484172243bec88acc2fd7252a23f446d6787eebd4ddf1505f11474445d6a",
+    "ffv2/subtitles.py": "94ec243c942162c99797f09cae00f17439536fde4341feb712afeddc46316f5a",
+    "ffv2/supervisor.py": "ab49d92c6e400167c99b4f11c32abf9dfa787192950c955b8e3276bf385b0a84",
+    "ffv2/tuning.py": "b8a88e40b6079ae4a435e7340835a7ec150e8df31c0f31961dd428fe624f0e69",
+    "ffv2/upstream.py": "a5b851e3b3925de0b1ce51c8618168fb1f8cd086ed7461d1fd959fc86135a556",
+    "ffv2/video_policy.py": "3343e9663bfbc0114e3668368b40a3262ab17810040dfe7e68f1519d5e89db69",
+    "ffv2/worker.py": "ee81862d972d08ca7a5667b5f87fe6efe10e6c7f8c6f18e14417775fa737f13b",
+    "bin/ffv2": "69fd2e6c911065a640b9fc761770242d33fd9caf336481b1975a594552a808e6",
+    "bin/ffmpeg-v2": "44b8724f64bfa13827081ab6689a0486e0ca220a5b3682f15bbde73eee2940c4",
+    "bin/ffprobe-v2": "49be3f0afe06ca484c5a3d91f37b418fddd259c51a71678cf9d760e844c271cc",
+    "bin/ffplay-v2": "98d0e3dccabf11b748943d29d17f3a09cf2cbbf66291eed39a1e89bccb5bee96",
+    "bin/ffv2-release": "cac600e48c5dc5f869016bf670b16e64698a95a91e886d88412f964368d8516e",
+    "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "pyproject.toml": "0b0bcf65f87b47fbbc5134a643e8b2b04ead0fc64ae789929c0b758c83457a5f",
+    "upstream.lock.json": "dac00722b6c986e93036bae4751a4ef49205dcfda35b4d9aed9a6d0222af3eb6",
+    "third_party/libass/COPYING": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c",
+    "third_party/zimg/COPYING": "7637386b5f81e8a719ca336233149005e5fa28b5e6054ea7b67de49355b0ad40"
+  },
+  "engine_selection_id": "e276ea1d4188573145210e3583e70d13e2e67a8bc1396aee1ede737b9d84898e",
+  "native_files": 38,
+  "evidence": {
+    "unit_tests": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/unit-20261103T183350-f73f2849/report.json",
+      "sha256": "d9ab5f741806f1b2429fddd2901b27ff64b50755a4d39a71e232b6cf51051a59"
+    },
+    "native_media": {
+      "path": "<PROJECT>/.runtime/verification/native-media-20261103T164329-59ba0beb/report.json",
+      "sha256": "1047cc2294674680189d8eb2f293493abf4f0028add05528814012fbec10b8c7"
+    },
+    "extended_media": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/candidate-20261103T164329-1231999f/extended-acceptance.json",
+      "sha256": "b5c136b472907e5e988a2b5fa8fc79e111af24c7873ce9d35e4f05d728a7e5c8"
+    },
+    "performance": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/analysis.json",
+      "sha256": "ea28eba9395b0c37d67bd0f2e669559fdc8cd62abd562f802261cf450aa7d82e"
+    },
+    "phase5": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/advanced-acceptance/report.json",
+      "sha256": "ffb07984fe76255a2683b52161288bdb317a7bc2e49e90bfeb46adece24a57d7"
+    },
+    "checkpoint": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/checkpoint-acceptance/report.json",
+      "sha256": "bde1875058221912658d3077dcca896cd65ce1c543b08f6cf5e2e4b8040c4693"
+    },
+    "soak": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase6/soak-20261103T095245-df291d41/report.json",
+      "sha256": "e0c3c0f0beae471a6e1519152283a2e65f0e8c91794982b10873603defc9a457"
+    },
+    "formats": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/formats-20261103T103514-4f5190b6/report.json",
+      "sha256": "0623c03450c40bd60d7864e1626db3ab76614dd134fa67fc3a8a8e7a121cff8a"
+    },
+    "external_fate": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-external-fate/run-20261103T103724-3e23f378/report.json",
+      "sha256": "6ebfa644de4ea623516475e1fb81c8b67875a7baf766268a2061d4fd2f9c6dd7"
+    },
+    "consumer": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/studio-20261103T183031-36af2283/report.json",
+      "sha256": "5068d858460d93fdad6ec34bee5120e7b9d54a89570c7ecfab91362a84a8551d"
+    },
+    "lifecycle": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/lifecycle-20261103T183328-b2df1050/report.json",
+      "sha256": "916cc0d15bf8cffe128a58e52261e8eb724f4996b4fbca2c531c1b61a3700140"
+    },
+    "mcp": {
+      "path": "<PROJECT>/.runtime/verification/mcp-pipeline-20261103T183449-197d6909/report.json",
+      "sha256": "d02405f99577f3264d350b058addb341ea062d1ff72078e2cc95e9632675944a"
+    },
+    "source_default": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/default-cli-20261103T183112-8f24e192/report.json",
+      "sha256": "533b00a52f14bcc4648ab2bee769fcdb5864639b36950ac81e2506f3d0eb6bc6"
+    },
+    "installed_default": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/default-cli-20261103T183534-2989f0a5/report.json",
+      "sha256": "00599010e29b1e6f9038a9139c5bffe4cd0e465405c9bee9bf1b551ec37b6977"
+    },
+    "installed_consumer": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/studio-20261103T183753-ffb16e92/report.json",
+      "sha256": "78367d0fda7f090ee741d374677d1deadaa0f03668d133259f77922fe56322c0"
+    },
+    "acceptance": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/lifecycle-20261103T183328-b2df1050/final-version-acceptance.json",
+      "sha256": "0ed2cfbd677afd110d455335384d44d213668af3c242f2e25d8085125d9a58b2"
+    },
+    "diagnostics": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/diagnostics.json",
+      "sha256": "ca54716a12ead0ace92c2719baa93233b807204cf9361e18fbd96f4e09ec4bdf"
+    },
+    "isolation": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/isolation-20261103T182305-6a8a3972/isolation.json",
+      "sha256": "208ffd71913e2138ea983c47d0f4ff5091cb3bb547c69fc38034f3dae6fd161f"
+    },
+    "configuration": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/config-20261103T183444-4443dd9c.json",
+      "sha256": "9bc3e1d44b6e27f12e78a058dd74935d21fdd1ada2d812b23b97a557b7331e1c"
+    },
+    "calibration": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/analysis.json",
+      "sha256": "c724822ac64a7bd748df2d4016b830de57169b5bcea09ce5753a8223f548cad3"
+    },
+    "preinstall_supplement_4": {
+      "path": "<PROJECT>/.runtime/verification/mcp-pipeline-20261103T182941-9f21e13e/report.json",
+      "sha256": "660c290d63ed5bb5611a8fc24c00b33eedf721734676b77f9d396ba4058e88e7"
+    },
+    "timing": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/report.json",
+      "sha256": "b81679e312ee2676644c94dd1474e409c4780abbcd1c1b41bb01da54fe34534e"
+    },
+    "quality": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/quality.json",
+      "sha256": "6051cc6476c506881cf4b7d8dec1d2d8db1947a632414165ec6b226545cb5699"
+    }
+  },
+  "requirements": [
+    {
+      "requirement": "1",
+      "status": "pass",
+      "description": "Stage diagnosis and uncertainty; same x264/native compiler/owned CPU sample and adjacent stage-pair proof",
+      "evidence": [
+        "diagnostics",
+        "isolation"
+      ]
+    },
+    {
+      "requirement": "2",
+      "status": "pass",
+      "description": "Sequential seven-configuration calibration and full-frame quality/size gates",
+      "evidence": [
+        "calibration"
+      ]
+    },
+    {
+      "requirement": "3",
+      "status": "pass",
+      "description": "Independent nine-pair improvement against prior native and Stock presets; matched Stock control disclosed",
+      "evidence": [
+        "performance",
+        "quality",
+        "timing"
+      ]
+    },
+    {
+      "requirement": "4",
+      "status": "pass",
+      "description": "Scoped defaults, explicit/other-pipeline regression, actual UHD and resize output identity",
+      "evidence": [
+        "unit_tests",
+        "source_default",
+        "installed_default"
+      ]
+    },
+    {
+      "requirement": "5",
+      "status": "pass",
+      "description": "Actual advanced/recovery/Studio and configured MCP including bounded eight-thread transcode",
+      "evidence": [
+        "phase5",
+        "checkpoint",
+        "consumer",
+        "installed_consumer",
+        "mcp"
+      ]
+    },
+    {
+      "requirement": "6",
+      "status": "pass",
+      "description": "Immutable 0.6.0 update/fences/rollback/recovery and retained 0.5.0 stable pair",
+      "evidence": [
+        "lifecycle",
+        "acceptance"
+      ]
+    }
+  ],
+  "unit_runs": [
+    {
+      "version": "Python 3.9.6",
+      "tests": 131,
+      "exit_code": 0,
+      "log": "<LAB_ROOT>/ffmpeg-v2-phase8/unit-20261103T183350-f73f2849/python-0.log",
+      "sha256": "5380df3434d2688bb6403c4ca0567d8856572ef57828f855d3f70477c7f547bd"
+    },
+    {
+      "version": "Python 3.14.7",
+      "tests": 131,
+      "exit_code": 0,
+      "log": "<LAB_ROOT>/ffmpeg-v2-phase8/unit-20261103T183350-f73f2849/python-1.log",
+      "sha256": "1085449b6c19150502a745c68cafa8aa2a6f7c2b349858a27f81be147235f13b"
+    }
+  ],
+  "comparisons": {
+    "bbb-1080/candidate-native": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-native",
+      "n_pairs": 9,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.02034299999999689,
+        "psnr_y": 0.004889999999996064,
+        "ssim": 9.999999999177334e-07
+      },
+      "size_ratio": 1.001615739930879,
+      "baseline_median_seconds": 9.696914458999998,
+      "candidate_median_seconds": 7.533914667,
+      "time_ratio": 0.7769393758039752,
+      "time_reduction_percent": 22.30606241960248,
+      "paired_bootstrap_ratio_95_percent": [
+        0.6285767299735202,
+        0.9578559930759167
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-1080/vs_previous_stock": {
+      "baseline": "baseline-stock",
+      "candidate": "candidate-native",
+      "n_pairs": 9,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.02034299999999689,
+        "psnr_y": 0.004889999999996064,
+        "ssim": 9.999999999177334e-07
+      },
+      "size_ratio": 1.001615739930879,
+      "baseline_median_seconds": 9.734418625,
+      "candidate_median_seconds": 7.533914667,
+      "time_ratio": 0.7739460318309457,
+      "time_reduction_percent": 22.605396816905433,
+      "paired_bootstrap_ratio_95_percent": [
+        0.5770624075323105,
+        0.879355946658932
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-1080/vs_matched_stock": {
+      "baseline": "candidate-stock",
+      "candidate": "candidate-native",
+      "n_pairs": 9,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.0,
+        "psnr_y": 0.0,
+        "ssim": 0.0
+      },
+      "size_ratio": 1.0,
+      "baseline_median_seconds": 6.878099041,
+      "candidate_median_seconds": 7.533914667,
+      "time_ratio": 1.0953483836290692,
+      "time_reduction_percent": -9.534838362906918,
+      "paired_bootstrap_ratio_95_percent": [
+        0.9792178678152587,
+        1.3154379901196411
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": false,
+        "paired_bootstrap_faster": false
+      },
+      "promotion_allowed": false
+    },
+    "tos-liveaction/candidate-native": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-native",
+      "n_pairs": 9,
+      "quality_frames": 1440,
+      "quality_deltas": {
+        "vmaf": 0.004047999999997387,
+        "psnr_y": 0.00031599999999798456,
+        "ssim": 1.999999999946489e-06
+      },
+      "size_ratio": 1.0002430585041118,
+      "baseline_median_seconds": 7.7770585,
+      "candidate_median_seconds": 5.384027667,
+      "time_ratio": 0.6922961511733517,
+      "time_reduction_percent": 30.770384882664825,
+      "paired_bootstrap_ratio_95_percent": [
+        0.6268089656433092,
+        0.7470014426360277
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "tos-liveaction/vs_previous_stock": {
+      "baseline": "baseline-stock",
+      "candidate": "candidate-native",
+      "n_pairs": 9,
+      "quality_frames": 1440,
+      "quality_deltas": {
+        "vmaf": 0.004047999999997387,
+        "psnr_y": 0.00031599999999798456,
+        "ssim": 1.999999999946489e-06
+      },
+      "size_ratio": 1.0002430585041118,
+      "baseline_median_seconds": 7.527828625,
+      "candidate_median_seconds": 5.384027667,
+      "time_ratio": 0.7152165564874293,
+      "time_reduction_percent": 28.478344351257068,
+      "paired_bootstrap_ratio_95_percent": [
+        0.6708152162631345,
+        0.765479664165695
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "tos-liveaction/vs_matched_stock": {
+      "baseline": "candidate-stock",
+      "candidate": "candidate-native",
+      "n_pairs": 9,
+      "quality_frames": 1440,
+      "quality_deltas": {
+        "vmaf": 0.0,
+        "psnr_y": 0.0,
+        "ssim": 0.0
+      },
+      "size_ratio": 1.0,
+      "baseline_median_seconds": 5.429734583,
+      "candidate_median_seconds": 5.384027667,
+      "time_ratio": 0.991582108609304,
+      "time_reduction_percent": 0.8417891390696042,
+      "paired_bootstrap_ratio_95_percent": [
+        0.6259067809491381,
+        1.070254718228889
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": false
+      },
+      "promotion_allowed": false
+    }
+  },
+  "summary": {
+    "bbb-1080/baseline-native": {
+      "n": 9,
+      "total_seconds": 9.696914458999998,
+      "encode_seconds": 7.72929,
+      "decode_seconds": 1.520726,
+      "planning_seconds": 0.043234542,
+      "capability_seconds": 0.002371375000000002,
+      "bytes": 20305248,
+      "output_hashes": [
+        "c68ae98d40ed8596b2ae15837a4626963679e4e78f111fce15fa501db34d0e70"
+      ]
+    },
+    "bbb-1080/baseline-stock": {
+      "n": 9,
+      "total_seconds": 9.734418625,
+      "encode_seconds": 7.744989,
+      "decode_seconds": 1.685873,
+      "planning_seconds": 0.036385999999999995,
+      "capability_seconds": 0.002456625000000004,
+      "bytes": 20305248,
+      "output_hashes": [
+        "c68ae98d40ed8596b2ae15837a4626963679e4e78f111fce15fa501db34d0e70"
+      ]
+    },
+    "bbb-1080/candidate-native": {
+      "n": 9,
+      "total_seconds": 7.533914667,
+      "encode_seconds": 6.2411,
+      "decode_seconds": 1.010006,
+      "planning_seconds": 0.046879541,
+      "capability_seconds": 0.0025115839999999973,
+      "bytes": 20338056,
+      "output_hashes": [
+        "dc049913c83705dd256876849871a1e909a5dfd40d60e8d9f85608843368aa2a"
+      ]
+    },
+    "bbb-1080/candidate-stock": {
+      "n": 9,
+      "total_seconds": 6.878099041,
+      "encode_seconds": 5.603758,
+      "decode_seconds": 1.053519,
+      "planning_seconds": 0.03558158300000001,
+      "capability_seconds": 0.002247041000000005,
+      "bytes": 20338056,
+      "output_hashes": [
+        "dc049913c83705dd256876849871a1e909a5dfd40d60e8d9f85608843368aa2a"
+      ]
+    },
+    "tos-liveaction/baseline-native": {
+      "n": 9,
+      "total_seconds": 7.7770585,
+      "encode_seconds": 6.16523,
+      "decode_seconds": 1.401187,
+      "planning_seconds": 0.039993875,
+      "capability_seconds": 0.002413833000000004,
+      "bytes": 21373455,
+      "output_hashes": [
+        "60f9a848a539fad1490057a79450b60c1d29e626010c3c55291ed76b6623bcaa"
+      ]
+    },
+    "tos-liveaction/baseline-stock": {
+      "n": 9,
+      "total_seconds": 7.527828625,
+      "encode_seconds": 5.910357,
+      "decode_seconds": 1.387223,
+      "planning_seconds": 0.031802625,
+      "capability_seconds": 0.0018600829999999985,
+      "bytes": 21373455,
+      "output_hashes": [
+        "60f9a848a539fad1490057a79450b60c1d29e626010c3c55291ed76b6623bcaa"
+      ]
+    },
+    "tos-liveaction/candidate-native": {
+      "n": 9,
+      "total_seconds": 5.384027667,
+      "encode_seconds": 4.281684,
+      "decode_seconds": 0.840073,
+      "planning_seconds": 0.041591040999999995,
+      "capability_seconds": 0.002644333999999998,
+      "bytes": 21378650,
+      "output_hashes": [
+        "ad45afde5b9d703e6d8c6e39d9a12493a9e4d6a552828a0dd44e2f04267881b2"
+      ]
+    },
+    "tos-liveaction/candidate-stock": {
+      "n": 9,
+      "total_seconds": 5.429734583,
+      "encode_seconds": 4.335246,
+      "decode_seconds": 0.886415,
+      "planning_seconds": 0.034300625,
+      "capability_seconds": 0.0019625419999999977,
+      "bytes": 21378650,
+      "output_hashes": [
+        "ad45afde5b9d703e6d8c6e39d9a12493a9e4d6a552828a0dd44e2f04267881b2"
+      ]
+    }
+  },
+  "quality": {
+    "bbb-1080/baseline-native": {
+      "frames": 1800,
+      "metrics": {
+        "psnr_y": {
+          "min": 38.822708,
+          "max": 52.93013,
+          "mean": 47.006852,
+          "harmonic_mean": 46.904837
+        },
+        "psnr_cb": {
+          "min": 42.285328,
+          "max": 55.102946,
+          "mean": 49.154298,
+          "harmonic_mean": 49.05921
+        },
+        "psnr_cr": {
+          "min": 45.745725,
+          "max": 56.694007,
+          "mean": 50.678583,
+          "harmonic_mean": 50.613854
+        },
+        "integer_adm2": {
+          "min": 0.957308,
+          "max": 0.994611,
+          "mean": 0.984185,
+          "harmonic_mean": 0.984161
+        },
+        "integer_aim": {
+          "min": 0.003264,
+          "max": 0.022091,
+          "mean": 0.011428,
+          "harmonic_mean": 0.011414
+        },
+        "integer_adm3": {
+          "min": 0.968279,
+          "max": 0.995037,
+          "mean": 0.986378,
+          "harmonic_mean": 0.986367
+        },
+        "integer_adm_scale0": {
+          "min": 0.951233,
+          "max": 0.99262,
+          "mean": 0.982573,
+          "harmonic_mean": 0.982558
+        },
+        "integer_adm_scale1": {
+          "min": 0.934176,
+          "max": 0.990156,
+          "mean": 0.97304,
+          "harmonic_mean": 0.972981
+        },
+        "integer_adm_scale2": {
+          "min": 0.942076,
+          "max": 0.995489,
+          "mean": 0.981002,
+          "harmonic_mean": 0.980951
+        },
+        "integer_adm_scale3": {
+          "min": 0.967208,
+          "max": 0.998348,
+          "mean": 0.990979,
+          "harmonic_mean": 0.990964
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 79.169117,
+          "mean": 2.3318,
+          "harmonic_mean": 0.936309
+        },
+        "integer_vif_scale0": {
+          "min": 0.604999,
+          "max": 0.925084,
+          "mean": 0.834026,
+          "harmonic_mean": 0.833129
+        },
+        "integer_vif_scale1": {
+          "min": 0.909452,
+          "max": 0.995028,
+          "mean": 0.974165,
+          "harmonic_mean": 0.974075
+        },
+        "integer_vif_scale2": {
+          "min": 0.945126,
+          "max": 0.997791,
+          "mean": 0.986086,
+          "harmonic_mean": 0.986055
+        },
+        "integer_vif_scale3": {
+          "min": 0.963119,
+          "max": 0.998639,
+          "mean": 0.99137,
+          "harmonic_mean": 0.991358
+        },
+        "float_ssim": {
+          "min": 0.994397,
+          "max": 0.999855,
+          "mean": 0.998631,
+          "harmonic_mean": 0.998631
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 13.532107,
+          "mean": 1.763985,
+          "harmonic_mean": 0.862341
+        },
+        "integer_motion3": {
+          "min": 0.000748,
+          "max": 13.532107,
+          "mean": 1.765747,
+          "harmonic_mean": 0.863807
+        },
+        "vmaf": {
+          "min": 86.800055,
+          "max": 100.0,
+          "mean": 94.761184,
+          "harmonic_mean": 94.72427
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase4/calibrate-20261103T082208-0d3797b9/quality/bbb-1080-t4.json",
+      "reused_same_file_sha256": "c68ae98d40ed8596b2ae15837a4626963679e4e78f111fce15fa501db34d0e70",
+      "source_index": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json",
+      "source_sha256": "ae51005850b0ff757fe60c3dd7a12d754d3cd2397d87d939b55235e457f97658",
+      "output_sha256": "c68ae98d40ed8596b2ae15837a4626963679e4e78f111fce15fa501db34d0e70",
+      "metric_sha256": "a75cb2846a7a8c5d0b8e92da466485e4bd203bab36192ca9f4e2023ad1e534a9",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json"
+    },
+    "bbb-1080/baseline-stock": {
+      "frames": 1800,
+      "metrics": {
+        "psnr_y": {
+          "min": 38.822708,
+          "max": 52.93013,
+          "mean": 47.006852,
+          "harmonic_mean": 46.904837
+        },
+        "psnr_cb": {
+          "min": 42.285328,
+          "max": 55.102946,
+          "mean": 49.154298,
+          "harmonic_mean": 49.05921
+        },
+        "psnr_cr": {
+          "min": 45.745725,
+          "max": 56.694007,
+          "mean": 50.678583,
+          "harmonic_mean": 50.613854
+        },
+        "integer_adm2": {
+          "min": 0.957308,
+          "max": 0.994611,
+          "mean": 0.984185,
+          "harmonic_mean": 0.984161
+        },
+        "integer_aim": {
+          "min": 0.003264,
+          "max": 0.022091,
+          "mean": 0.011428,
+          "harmonic_mean": 0.011414
+        },
+        "integer_adm3": {
+          "min": 0.968279,
+          "max": 0.995037,
+          "mean": 0.986378,
+          "harmonic_mean": 0.986367
+        },
+        "integer_adm_scale0": {
+          "min": 0.951233,
+          "max": 0.99262,
+          "mean": 0.982573,
+          "harmonic_mean": 0.982558
+        },
+        "integer_adm_scale1": {
+          "min": 0.934176,
+          "max": 0.990156,
+          "mean": 0.97304,
+          "harmonic_mean": 0.972981
+        },
+        "integer_adm_scale2": {
+          "min": 0.942076,
+          "max": 0.995489,
+          "mean": 0.981002,
+          "harmonic_mean": 0.980951
+        },
+        "integer_adm_scale3": {
+          "min": 0.967208,
+          "max": 0.998348,
+          "mean": 0.990979,
+          "harmonic_mean": 0.990964
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 79.169117,
+          "mean": 2.3318,
+          "harmonic_mean": 0.936309
+        },
+        "integer_vif_scale0": {
+          "min": 0.604999,
+          "max": 0.925084,
+          "mean": 0.834026,
+          "harmonic_mean": 0.833129
+        },
+        "integer_vif_scale1": {
+          "min": 0.909452,
+          "max": 0.995028,
+          "mean": 0.974165,
+          "harmonic_mean": 0.974075
+        },
+        "integer_vif_scale2": {
+          "min": 0.945126,
+          "max": 0.997791,
+          "mean": 0.986086,
+          "harmonic_mean": 0.986055
+        },
+        "integer_vif_scale3": {
+          "min": 0.963119,
+          "max": 0.998639,
+          "mean": 0.99137,
+          "harmonic_mean": 0.991358
+        },
+        "float_ssim": {
+          "min": 0.994397,
+          "max": 0.999855,
+          "mean": 0.998631,
+          "harmonic_mean": 0.998631
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 13.532107,
+          "mean": 1.763985,
+          "harmonic_mean": 0.862341
+        },
+        "integer_motion3": {
+          "min": 0.000748,
+          "max": 13.532107,
+          "mean": 1.765747,
+          "harmonic_mean": 0.863807
+        },
+        "vmaf": {
+          "min": 86.800055,
+          "max": 100.0,
+          "mean": 94.761184,
+          "harmonic_mean": 94.72427
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase4/calibrate-20261103T082208-0d3797b9/quality/bbb-1080-t4.json",
+      "reused_same_file_sha256": "c68ae98d40ed8596b2ae15837a4626963679e4e78f111fce15fa501db34d0e70",
+      "source_index": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json",
+      "source_sha256": "ae51005850b0ff757fe60c3dd7a12d754d3cd2397d87d939b55235e457f97658",
+      "output_sha256": "c68ae98d40ed8596b2ae15837a4626963679e4e78f111fce15fa501db34d0e70",
+      "metric_sha256": "a75cb2846a7a8c5d0b8e92da466485e4bd203bab36192ca9f4e2023ad1e534a9",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/quality.json"
+    },
+    "bbb-1080/candidate-native": {
+      "frames": 1800,
+      "metrics": {
+        "psnr_y": {
+          "min": 38.821249,
+          "max": 52.93013,
+          "mean": 47.011742,
+          "harmonic_mean": 46.909364
+        },
+        "psnr_cb": {
+          "min": 42.280906,
+          "max": 55.1742,
+          "mean": 49.158748,
+          "harmonic_mean": 49.063087
+        },
+        "psnr_cr": {
+          "min": 45.756104,
+          "max": 56.533621,
+          "mean": 50.677201,
+          "harmonic_mean": 50.612855
+        },
+        "integer_adm2": {
+          "min": 0.956613,
+          "max": 0.994611,
+          "mean": 0.984262,
+          "harmonic_mean": 0.984238
+        },
+        "integer_aim": {
+          "min": 0.003276,
+          "max": 0.023088,
+          "mean": 0.011431,
+          "harmonic_mean": 0.011417
+        },
+        "integer_adm3": {
+          "min": 0.968343,
+          "max": 0.995037,
+          "mean": 0.986415,
+          "harmonic_mean": 0.986404
+        },
+        "integer_adm_scale0": {
+          "min": 0.951353,
+          "max": 0.99262,
+          "mean": 0.982593,
+          "harmonic_mean": 0.982578
+        },
+        "integer_adm_scale1": {
+          "min": 0.933896,
+          "max": 0.990156,
+          "mean": 0.973105,
+          "harmonic_mean": 0.973046
+        },
+        "integer_adm_scale2": {
+          "min": 0.94233,
+          "max": 0.995693,
+          "mean": 0.981124,
+          "harmonic_mean": 0.981074
+        },
+        "integer_adm_scale3": {
+          "min": 0.965659,
+          "max": 0.998412,
+          "mean": 0.99105,
+          "harmonic_mean": 0.991035
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 79.169117,
+          "mean": 2.3318,
+          "harmonic_mean": 0.936309
+        },
+        "integer_vif_scale0": {
+          "min": 0.604707,
+          "max": 0.925084,
+          "mean": 0.834104,
+          "harmonic_mean": 0.833202
+        },
+        "integer_vif_scale1": {
+          "min": 0.909015,
+          "max": 0.995028,
+          "mean": 0.974231,
+          "harmonic_mean": 0.974141
+        },
+        "integer_vif_scale2": {
+          "min": 0.944827,
+          "max": 0.997791,
+          "mean": 0.986134,
+          "harmonic_mean": 0.986103
+        },
+        "integer_vif_scale3": {
+          "min": 0.963319,
+          "max": 0.998639,
+          "mean": 0.991395,
+          "harmonic_mean": 0.991382
+        },
+        "float_ssim": {
+          "min": 0.994371,
+          "max": 0.999855,
+          "mean": 0.998632,
+          "harmonic_mean": 0.998631
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 13.532107,
+          "mean": 1.763985,
+          "harmonic_mean": 0.862341
+        },
+        "integer_motion3": {
+          "min": 0.000748,
+          "max": 13.532107,
+          "mean": 1.765747,
+          "harmonic_mean": 0.863807
+        },
+        "vmaf": {
+          "min": 86.808208,
+          "max": 100.0,
+          "mean": 94.781527,
+          "harmonic_mean": 94.744875
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/quality/bbb-1080-native8.json",
+      "source_sha256": "ae51005850b0ff757fe60c3dd7a12d754d3cd2397d87d939b55235e457f97658",
+      "output_sha256": "dc049913c83705dd256876849871a1e909a5dfd40d60e8d9f85608843368aa2a",
+      "metric_sha256": "030b23837be0c83a60033f8fd2b85686004f67b976ab4285d25b16df578218c3",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/quality.json"
+    },
+    "bbb-1080/candidate-stock": {
+      "frames": 1800,
+      "metrics": {
+        "psnr_y": {
+          "min": 38.821249,
+          "max": 52.93013,
+          "mean": 47.011742,
+          "harmonic_mean": 46.909364
+        },
+        "psnr_cb": {
+          "min": 42.280906,
+          "max": 55.1742,
+          "mean": 49.158748,
+          "harmonic_mean": 49.063087
+        },
+        "psnr_cr": {
+          "min": 45.756104,
+          "max": 56.533621,
+          "mean": 50.677201,
+          "harmonic_mean": 50.612855
+        },
+        "integer_adm2": {
+          "min": 0.956613,
+          "max": 0.994611,
+          "mean": 0.984262,
+          "harmonic_mean": 0.984238
+        },
+        "integer_aim": {
+          "min": 0.003276,
+          "max": 0.023088,
+          "mean": 0.011431,
+          "harmonic_mean": 0.011417
+        },
+        "integer_adm3": {
+          "min": 0.968343,
+          "max": 0.995037,
+          "mean": 0.986415,
+          "harmonic_mean": 0.986404
+        },
+        "integer_adm_scale0": {
+          "min": 0.951353,
+          "max": 0.99262,
+          "mean": 0.982593,
+          "harmonic_mean": 0.982578
+        },
+        "integer_adm_scale1": {
+          "min": 0.933896,
+          "max": 0.990156,
+          "mean": 0.973105,
+          "harmonic_mean": 0.973046
+        },
+        "integer_adm_scale2": {
+          "min": 0.94233,
+          "max": 0.995693,
+          "mean": 0.981124,
+          "harmonic_mean": 0.981074
+        },
+        "integer_adm_scale3": {
+          "min": 0.965659,
+          "max": 0.998412,
+          "mean": 0.99105,
+          "harmonic_mean": 0.991035
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 79.169117,
+          "mean": 2.3318,
+          "harmonic_mean": 0.936309
+        },
+        "integer_vif_scale0": {
+          "min": 0.604707,
+          "max": 0.925084,
+          "mean": 0.834104,
+          "harmonic_mean": 0.833202
+        },
+        "integer_vif_scale1": {
+          "min": 0.909015,
+          "max": 0.995028,
+          "mean": 0.974231,
+          "harmonic_mean": 0.974141
+        },
+        "integer_vif_scale2": {
+          "min": 0.944827,
+          "max": 0.997791,
+          "mean": 0.986134,
+          "harmonic_mean": 0.986103
+        },
+        "integer_vif_scale3": {
+          "min": 0.963319,
+          "max": 0.998639,
+          "mean": 0.991395,
+          "harmonic_mean": 0.991382
+        },
+        "float_ssim": {
+          "min": 0.994371,
+          "max": 0.999855,
+          "mean": 0.998632,
+          "harmonic_mean": 0.998631
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 13.532107,
+          "mean": 1.763985,
+          "harmonic_mean": 0.862341
+        },
+        "integer_motion3": {
+          "min": 0.000748,
+          "max": 13.532107,
+          "mean": 1.765747,
+          "harmonic_mean": 0.863807
+        },
+        "vmaf": {
+          "min": 86.808208,
+          "max": 100.0,
+          "mean": 94.781527,
+          "harmonic_mean": 94.744875
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/quality/bbb-1080-native8.json",
+      "source_sha256": "ae51005850b0ff757fe60c3dd7a12d754d3cd2397d87d939b55235e457f97658",
+      "output_sha256": "dc049913c83705dd256876849871a1e909a5dfd40d60e8d9f85608843368aa2a",
+      "metric_sha256": "030b23837be0c83a60033f8fd2b85686004f67b976ab4285d25b16df578218c3",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/quality.json"
+    },
+    "tos-liveaction/baseline-native": {
+      "frames": 1440,
+      "metrics": {
+        "psnr_y": {
+          "min": 40.875646,
+          "max": 60.0,
+          "mean": 46.380378,
+          "harmonic_mean": 46.166808
+        },
+        "psnr_cb": {
+          "min": 43.907642,
+          "max": 60.0,
+          "mean": 49.653359,
+          "harmonic_mean": 49.444265
+        },
+        "psnr_cr": {
+          "min": 44.731773,
+          "max": 60.0,
+          "mean": 49.469342,
+          "harmonic_mean": 49.294541
+        },
+        "integer_adm2": {
+          "min": 0.961757,
+          "max": 1.0,
+          "mean": 0.978598,
+          "harmonic_mean": 0.978577
+        },
+        "integer_aim": {
+          "min": 0.0,
+          "max": 0.021434,
+          "mean": 0.011365,
+          "harmonic_mean": 0.011352
+        },
+        "integer_adm3": {
+          "min": 0.971222,
+          "max": 1.0,
+          "mean": 0.983616,
+          "harmonic_mean": 0.983606
+        },
+        "integer_adm_scale0": {
+          "min": 0.944224,
+          "max": 1.0,
+          "mean": 0.973665,
+          "harmonic_mean": 0.973631
+        },
+        "integer_adm_scale1": {
+          "min": 0.942476,
+          "max": 1.0,
+          "mean": 0.964239,
+          "harmonic_mean": 0.964188
+        },
+        "integer_adm_scale2": {
+          "min": 0.949176,
+          "max": 1.000075,
+          "mean": 0.975285,
+          "harmonic_mean": 0.975249
+        },
+        "integer_adm_scale3": {
+          "min": 0.968542,
+          "max": 1.002477,
+          "mean": 0.987835,
+          "harmonic_mean": 0.987821
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 67.14312,
+          "mean": 2.456791,
+          "harmonic_mean": 1.384001
+        },
+        "integer_vif_scale0": {
+          "min": 0.662058,
+          "max": 1.0,
+          "mean": 0.797084,
+          "harmonic_mean": 0.794934
+        },
+        "integer_vif_scale1": {
+          "min": 0.938098,
+          "max": 1.000101,
+          "mean": 0.963798,
+          "harmonic_mean": 0.963711
+        },
+        "integer_vif_scale2": {
+          "min": 0.966953,
+          "max": 1.000182,
+          "mean": 0.981122,
+          "harmonic_mean": 0.981095
+        },
+        "integer_vif_scale3": {
+          "min": 0.978496,
+          "max": 1.000479,
+          "mean": 0.988684,
+          "harmonic_mean": 0.988674
+        },
+        "float_ssim": {
+          "min": 0.99441,
+          "max": 1.0,
+          "mean": 0.997252,
+          "harmonic_mean": 0.997251
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.93037,
+          "harmonic_mean": 1.280985
+        },
+        "integer_motion3": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.933351,
+          "harmonic_mean": 1.283919
+        },
+        "vmaf": {
+          "min": 88.961283,
+          "max": 100.0,
+          "mean": 93.375096,
+          "harmonic_mean": 93.31934
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase4/balanced-20261103T084556-25ed478b/quality/tos-liveaction-balanced.json",
+      "reused_same_file_sha256": "60f9a848a539fad1490057a79450b60c1d29e626010c3c55291ed76b6623bcaa",
+      "source_index": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json",
+      "source_sha256": "328253280a05e6b14a92f1f43d818d9b7d38ab5d3f6d5d98606198fd3daef2ff",
+      "output_sha256": "60f9a848a539fad1490057a79450b60c1d29e626010c3c55291ed76b6623bcaa",
+      "metric_sha256": "8075c9f06762a58bf6315dbf3c8d906e9078725855067fcde962e3481d8b8919",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json"
+    },
+    "tos-liveaction/baseline-stock": {
+      "frames": 1440,
+      "metrics": {
+        "psnr_y": {
+          "min": 40.875646,
+          "max": 60.0,
+          "mean": 46.380378,
+          "harmonic_mean": 46.166808
+        },
+        "psnr_cb": {
+          "min": 43.907642,
+          "max": 60.0,
+          "mean": 49.653359,
+          "harmonic_mean": 49.444265
+        },
+        "psnr_cr": {
+          "min": 44.731773,
+          "max": 60.0,
+          "mean": 49.469342,
+          "harmonic_mean": 49.294541
+        },
+        "integer_adm2": {
+          "min": 0.961757,
+          "max": 1.0,
+          "mean": 0.978598,
+          "harmonic_mean": 0.978577
+        },
+        "integer_aim": {
+          "min": 0.0,
+          "max": 0.021434,
+          "mean": 0.011365,
+          "harmonic_mean": 0.011352
+        },
+        "integer_adm3": {
+          "min": 0.971222,
+          "max": 1.0,
+          "mean": 0.983616,
+          "harmonic_mean": 0.983606
+        },
+        "integer_adm_scale0": {
+          "min": 0.944224,
+          "max": 1.0,
+          "mean": 0.973665,
+          "harmonic_mean": 0.973631
+        },
+        "integer_adm_scale1": {
+          "min": 0.942476,
+          "max": 1.0,
+          "mean": 0.964239,
+          "harmonic_mean": 0.964188
+        },
+        "integer_adm_scale2": {
+          "min": 0.949176,
+          "max": 1.000075,
+          "mean": 0.975285,
+          "harmonic_mean": 0.975249
+        },
+        "integer_adm_scale3": {
+          "min": 0.968542,
+          "max": 1.002477,
+          "mean": 0.987835,
+          "harmonic_mean": 0.987821
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 67.14312,
+          "mean": 2.456791,
+          "harmonic_mean": 1.384001
+        },
+        "integer_vif_scale0": {
+          "min": 0.662058,
+          "max": 1.0,
+          "mean": 0.797084,
+          "harmonic_mean": 0.794934
+        },
+        "integer_vif_scale1": {
+          "min": 0.938098,
+          "max": 1.000101,
+          "mean": 0.963798,
+          "harmonic_mean": 0.963711
+        },
+        "integer_vif_scale2": {
+          "min": 0.966953,
+          "max": 1.000182,
+          "mean": 0.981122,
+          "harmonic_mean": 0.981095
+        },
+        "integer_vif_scale3": {
+          "min": 0.978496,
+          "max": 1.000479,
+          "mean": 0.988684,
+          "harmonic_mean": 0.988674
+        },
+        "float_ssim": {
+          "min": 0.99441,
+          "max": 1.0,
+          "mean": 0.997252,
+          "harmonic_mean": 0.997251
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.93037,
+          "harmonic_mean": 1.280985
+        },
+        "integer_motion3": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.933351,
+          "harmonic_mean": 1.283919
+        },
+        "vmaf": {
+          "min": 88.961283,
+          "max": 100.0,
+          "mean": 93.375096,
+          "harmonic_mean": 93.31934
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase4/balanced-20261103T084556-25ed478b/quality/tos-liveaction-balanced.json",
+      "reused_same_file_sha256": "60f9a848a539fad1490057a79450b60c1d29e626010c3c55291ed76b6623bcaa",
+      "source_index": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json",
+      "source_sha256": "328253280a05e6b14a92f1f43d818d9b7d38ab5d3f6d5d98606198fd3daef2ff",
+      "output_sha256": "60f9a848a539fad1490057a79450b60c1d29e626010c3c55291ed76b6623bcaa",
+      "metric_sha256": "8075c9f06762a58bf6315dbf3c8d906e9078725855067fcde962e3481d8b8919",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/quality.json"
+    },
+    "tos-liveaction/candidate-native": {
+      "frames": 1440,
+      "metrics": {
+        "psnr_y": {
+          "min": 40.909369,
+          "max": 60.0,
+          "mean": 46.380694,
+          "harmonic_mean": 46.167582
+        },
+        "psnr_cb": {
+          "min": 44.20187,
+          "max": 60.0,
+          "mean": 49.654654,
+          "harmonic_mean": 49.446253
+        },
+        "psnr_cr": {
+          "min": 44.817485,
+          "max": 60.0,
+          "mean": 49.46916,
+          "harmonic_mean": 49.294807
+        },
+        "integer_adm2": {
+          "min": 0.964419,
+          "max": 1.0,
+          "mean": 0.978608,
+          "harmonic_mean": 0.978588
+        },
+        "integer_aim": {
+          "min": 0.0,
+          "max": 0.02098,
+          "mean": 0.01137,
+          "harmonic_mean": 0.011358
+        },
+        "integer_adm3": {
+          "min": 0.973713,
+          "max": 1.0,
+          "mean": 0.983619,
+          "harmonic_mean": 0.983608
+        },
+        "integer_adm_scale0": {
+          "min": 0.942909,
+          "max": 1.0,
+          "mean": 0.973665,
+          "harmonic_mean": 0.973631
+        },
+        "integer_adm_scale1": {
+          "min": 0.941551,
+          "max": 1.0,
+          "mean": 0.964233,
+          "harmonic_mean": 0.964184
+        },
+        "integer_adm_scale2": {
+          "min": 0.949262,
+          "max": 1.0,
+          "mean": 0.975292,
+          "harmonic_mean": 0.975257
+        },
+        "integer_adm_scale3": {
+          "min": 0.968493,
+          "max": 1.005691,
+          "mean": 0.987875,
+          "harmonic_mean": 0.987862
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 67.14312,
+          "mean": 2.456791,
+          "harmonic_mean": 1.384001
+        },
+        "integer_vif_scale0": {
+          "min": 0.662802,
+          "max": 1.0,
+          "mean": 0.797133,
+          "harmonic_mean": 0.794985
+        },
+        "integer_vif_scale1": {
+          "min": 0.938008,
+          "max": 1.000114,
+          "mean": 0.963846,
+          "harmonic_mean": 0.96376
+        },
+        "integer_vif_scale2": {
+          "min": 0.966695,
+          "max": 1.000202,
+          "mean": 0.981155,
+          "harmonic_mean": 0.981129
+        },
+        "integer_vif_scale3": {
+          "min": 0.978214,
+          "max": 1.000486,
+          "mean": 0.988701,
+          "harmonic_mean": 0.988691
+        },
+        "float_ssim": {
+          "min": 0.994439,
+          "max": 1.0,
+          "mean": 0.997254,
+          "harmonic_mean": 0.997253
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.93037,
+          "harmonic_mean": 1.280985
+        },
+        "integer_motion3": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.933351,
+          "harmonic_mean": 1.283919
+        },
+        "vmaf": {
+          "min": 88.929738,
+          "max": 100.0,
+          "mean": 93.379144,
+          "harmonic_mean": 93.32313
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/quality/tos-liveaction-native8.json",
+      "source_sha256": "328253280a05e6b14a92f1f43d818d9b7d38ab5d3f6d5d98606198fd3daef2ff",
+      "output_sha256": "ad45afde5b9d703e6d8c6e39d9a12493a9e4d6a552828a0dd44e2f04267881b2",
+      "metric_sha256": "776632c5baace3db678774ad72f8bfbe0e928d45f3eb1b267167be76a4fd9e72",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/quality.json"
+    },
+    "tos-liveaction/candidate-stock": {
+      "frames": 1440,
+      "metrics": {
+        "psnr_y": {
+          "min": 40.909369,
+          "max": 60.0,
+          "mean": 46.380694,
+          "harmonic_mean": 46.167582
+        },
+        "psnr_cb": {
+          "min": 44.20187,
+          "max": 60.0,
+          "mean": 49.654654,
+          "harmonic_mean": 49.446253
+        },
+        "psnr_cr": {
+          "min": 44.817485,
+          "max": 60.0,
+          "mean": 49.46916,
+          "harmonic_mean": 49.294807
+        },
+        "integer_adm2": {
+          "min": 0.964419,
+          "max": 1.0,
+          "mean": 0.978608,
+          "harmonic_mean": 0.978588
+        },
+        "integer_aim": {
+          "min": 0.0,
+          "max": 0.02098,
+          "mean": 0.01137,
+          "harmonic_mean": 0.011358
+        },
+        "integer_adm3": {
+          "min": 0.973713,
+          "max": 1.0,
+          "mean": 0.983619,
+          "harmonic_mean": 0.983608
+        },
+        "integer_adm_scale0": {
+          "min": 0.942909,
+          "max": 1.0,
+          "mean": 0.973665,
+          "harmonic_mean": 0.973631
+        },
+        "integer_adm_scale1": {
+          "min": 0.941551,
+          "max": 1.0,
+          "mean": 0.964233,
+          "harmonic_mean": 0.964184
+        },
+        "integer_adm_scale2": {
+          "min": 0.949262,
+          "max": 1.0,
+          "mean": 0.975292,
+          "harmonic_mean": 0.975257
+        },
+        "integer_adm_scale3": {
+          "min": 0.968493,
+          "max": 1.005691,
+          "mean": 0.987875,
+          "harmonic_mean": 0.987862
+        },
+        "VMAF_integer_feature_motion_sad_score": {
+          "min": 0.0,
+          "max": 67.14312,
+          "mean": 2.456791,
+          "harmonic_mean": 1.384001
+        },
+        "integer_vif_scale0": {
+          "min": 0.662802,
+          "max": 1.0,
+          "mean": 0.797133,
+          "harmonic_mean": 0.794985
+        },
+        "integer_vif_scale1": {
+          "min": 0.938008,
+          "max": 1.000114,
+          "mean": 0.963846,
+          "harmonic_mean": 0.96376
+        },
+        "integer_vif_scale2": {
+          "min": 0.966695,
+          "max": 1.000202,
+          "mean": 0.981155,
+          "harmonic_mean": 0.981129
+        },
+        "integer_vif_scale3": {
+          "min": 0.978214,
+          "max": 1.000486,
+          "mean": 0.988701,
+          "harmonic_mean": 0.988691
+        },
+        "float_ssim": {
+          "min": 0.994439,
+          "max": 1.0,
+          "mean": 0.997254,
+          "harmonic_mean": 0.997253
+        },
+        "integer_motion2": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.93037,
+          "harmonic_mean": 1.280985
+        },
+        "integer_motion3": {
+          "min": 0.0,
+          "max": 9.575026,
+          "mean": 1.933351,
+          "harmonic_mean": 1.283919
+        },
+        "vmaf": {
+          "min": 88.929738,
+          "max": 100.0,
+          "mean": 93.379144,
+          "harmonic_mean": 93.32313
+        }
+      },
+      "report": "<LAB_ROOT>/ffmpeg-v2-phase8/calibrate-20261103T180018-a55648e2/quality/tos-liveaction-native8.json",
+      "source_sha256": "328253280a05e6b14a92f1f43d818d9b7d38ab5d3f6d5d98606198fd3daef2ff",
+      "output_sha256": "ad45afde5b9d703e6d8c6e39d9a12493a9e4d6a552828a0dd44e2f04267881b2",
+      "metric_sha256": "776632c5baace3db678774ad72f8bfbe0e928d45f3eb1b267167be76a4fd9e72",
+      "origin": "<LAB_ROOT>/ffmpeg-v2-phase8/confirm-20261103T181013-bc270fb1/quality.json"
+    }
+  },
+  "sampled_job_peak": {
+    "bbb-1080/baseline-native": {
+      "median_bytes": 345049104,
+      "maximum_bytes": 346114088
+    },
+    "bbb-1080/baseline-stock": {
+      "median_bytes": 344410128,
+      "maximum_bytes": 346163216
+    },
+    "bbb-1080/candidate-native": {
+      "median_bytes": 415844488,
+      "maximum_bytes": 417105984
+    },
+    "bbb-1080/candidate-stock": {
+      "median_bytes": 415270976,
+      "maximum_bytes": 416516136
+    },
+    "tos-liveaction/baseline-native": {
+      "median_bytes": 258410512,
+      "maximum_bytes": 259278840
+    },
+    "tos-liveaction/baseline-stock": {
+      "median_bytes": 258115504,
+      "maximum_bytes": 258639888
+    },
+    "tos-liveaction/candidate-native": {
+      "median_bytes": 315623464,
+      "maximum_bytes": 316000344
+    },
+    "tos-liveaction/candidate-stock": {
+      "median_bytes": 315050048,
+      "maximum_bytes": 315426832
+    }
+  },
+  "fresh_case_process_wall_medians": {
+    "bbb-1080/baseline-native": 9.781189416000018,
+    "bbb-1080/baseline-stock": 9.845089042000012,
+    "bbb-1080/candidate-native": 7.622359208000034,
+    "bbb-1080/candidate-stock": 6.946353541999997,
+    "tos-liveaction/baseline-native": 7.870021249999979,
+    "tos-liveaction/baseline-stock": 7.630022458999974,
+    "tos-liveaction/candidate-native": 5.462488624999992,
+    "tos-liveaction/candidate-stock": 5.54597241700003
+  },
+  "post_run_live_environment": {
+    "python_executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "python_version": "3.9.6",
+    "macos_version": "27.2",
+    "system": "Darwin",
+    "machine": "arm64",
+    "kernel_release": "27.2.0"
+  },
+  "version_transition": {
+    "from": "0.6.0rc1",
+    "to": "0.6.0",
+    "changed_files": [
+      "ffv2/__init__.py",
+      "pyproject.toml"
+    ],
+    "functional_files_identical": true,
+    "measured_acceptance": "<LAB_ROOT>/ffmpeg-v2-phase8/preinstall-acceptance.json",
+    "measured_acceptance_sha256": "5ebeabacc7f6197b8edf5b8a89903171d19c1988ccefe765bbd11909badcc8ea",
+    "before_package_files": {
+      "ffv2/__init__.py": "e95efa0fe38e725e9c61a9716f355c52237fd7c00da17ea66b2a27a3427e689b",
+      "ffv2/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "ffv2/advanced.py": "2977251c7816eb43cbed634843dbe83ba95fecdbacac863368719e8f4c60e4c3",
+      "ffv2/benchmark.py": "a0df843f85b86e8c0d2fdf03e4406019bc3ecceb5556466a141786985d7d6b4c",
+      "ffv2/bindings.py": "0e276b961afc0b8d879e6b42e684140a76836dd5fa355e16e14f4c8b6a56406b",
+      "ffv2/capabilities.py": "f4ffdc091f8a7fb5a48656290dd666d0e12387151fdded09567da6392fcbdd3c",
+      "ffv2/checkpoints.py": "84fb570d7a9a0787b69400d3f9a82ef3a035f7155845970eacb6759afd2ad4e6",
+      "ffv2/cli.py": "7dcdbae38d2a2c5f3260b75a65dd53d1e7a7535117b4ade433e97c1afdddf1cc",
+      "ffv2/concat.py": "2dc848c047200dd27de46da2d07898570250f22d1610c0286c75e0cbbf343a63",
+      "ffv2/config.py": "fac446cc7bc6e6e61d3d519fe79c983a684f377c9335d4cc62d19c1206cb3159",
+      "ffv2/controller.py": "b7d0ddee5cc5c9bd2caaee78fd7f30b1aa2a8e534158b9eadeb7c717b48a85aa",
+      "ffv2/darwin.py": "1faee952430ca70a79855ca107338ca3713522c80bcc97524bb821e80115dc1f",
+      "ffv2/engine.py": "3848035dcd05e69117f6d7e1a49bbf380ebce2f0ba8c6bcd0480d0b5bb37844c",
+      "ffv2/errors.py": "9770e9ed6c466afae98adaae1fc2473454f15ab25c7a206035c4047b14dd3c7c",
+      "ffv2/guardian.py": "b881e75bf3e83c7a02be06d3fbf9daec0a3352d2e478aa2c8fa8cc0772c93e9d",
+      "ffv2/images.py": "e738b57a9087aef32e6126237a5d09f12b0aad162fdd23782df3c38ae6fe50b7",
+      "ffv2/io.py": "e88478db674e84c92cbdb079d41aeb3e520bcb3bf353e29d632d2debac1a9713",
+      "ffv2/mcp.py": "98532dcd8734d7cfd1b3a6ff67e039dde253b808f74e66348ac57da3b3d21eea",
+      "ffv2/media.py": "292f33ca5f9cecc1c91023c762bc0ac2162172b5b0a826af3519104fe5ac8a36",
+      "ffv2/mix.py": "37d4b06d01021496cce3029aa8ddb358ebf8d5ad2df57b899b31c2450533ed2f",
+      "ffv2/planner.py": "44092e144e20bbe3187f868223ec552de9b03410894e1aa73066a45f57385cca",
+      "ffv2/process.py": "d1004bde71a3b00e617e653fb3b78ac5fc9cd81081cd2adb292010ecae4c3241",
+      "ffv2/recovery.py": "2e7450632f310ac83748904ed77573083cf3e7d6bdb89671b2dd08738c855284",
+      "ffv2/releases.py": "91c6368ccea682c9dc3b0baf0a48eaa9b9a9a7b2cc2558d57e59b249f3e9d299",
+      "ffv2/resources.py": "83f211b8f65a9aa74145832beb10a5e69b5fa97640f69ddd338cfead2290f65b",
+      "ffv2/runtime.py": "ee064c2ec107acc192807c828059775e5e9088d4751f228c54749de516911c80",
+      "ffv2/schema.py": "9d171d676f2aa111d384c8fce7e7af11de1d60d602980cadc6ef8cca52c5e829",
+      "ffv2/service.py": "11b135e54dffdde0d82c2930c426875544948533c06d6f5a6091caa877ce159e",
+      "ffv2/store.py": "08e6484172243bec88acc2fd7252a23f446d6787eebd4ddf1505f11474445d6a",
+      "ffv2/subtitles.py": "94ec243c942162c99797f09cae00f17439536fde4341feb712afeddc46316f5a",
+      "ffv2/supervisor.py": "ab49d92c6e400167c99b4f11c32abf9dfa787192950c955b8e3276bf385b0a84",
+      "ffv2/tuning.py": "b8a88e40b6079ae4a435e7340835a7ec150e8df31c0f31961dd428fe624f0e69",
+      "ffv2/upstream.py": "a5b851e3b3925de0b1ce51c8618168fb1f8cd086ed7461d1fd959fc86135a556",
+      "ffv2/video_policy.py": "3343e9663bfbc0114e3668368b40a3262ab17810040dfe7e68f1519d5e89db69",
+      "ffv2/worker.py": "ee81862d972d08ca7a5667b5f87fe6efe10e6c7f8c6f18e14417775fa737f13b",
+      "bin/ffv2": "69fd2e6c911065a640b9fc761770242d33fd9caf336481b1975a594552a808e6",
+      "bin/ffmpeg-v2": "44b8724f64bfa13827081ab6689a0486e0ca220a5b3682f15bbde73eee2940c4",
+      "bin/ffprobe-v2": "49be3f0afe06ca484c5a3d91f37b418fddd259c51a71678cf9d760e844c271cc",
+      "bin/ffplay-v2": "98d0e3dccabf11b748943d29d17f3a09cf2cbbf66291eed39a1e89bccb5bee96",
+      "bin/ffv2-release": "cac600e48c5dc5f869016bf670b16e64698a95a91e886d88412f964368d8516e",
+      "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "pyproject.toml": "728d261edaa315a373961a8a90b617d62e5179fb3310149776bc78849a943dcb",
+      "upstream.lock.json": "dac00722b6c986e93036bae4751a4ef49205dcfda35b4d9aed9a6d0222af3eb6",
+      "third_party/libass/COPYING": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c",
+      "third_party/zimg/COPYING": "7637386b5f81e8a719ca336233149005e5fa28b5e6054ea7b67de49355b0ad40"
+    },
+    "scope": "Only package version literals changed; timing was measured on RC bytes. Functional implementation, argv and native closure are identical."
+  },
+  "coverage": {
+    "calibration_complete_jobs": 56,
+    "confirmation_complete_jobs": 80,
+    "confirmation_measured_jobs": 72,
+    "confirmation_actual_decoded_frames": 129600,
+    "adjacent_diagnostic_jobs": 48,
+    "lifecycle_actual_cases": 10,
+    "installed_cli_defaults": 4
+  },
+  "scope": "Phase 8 HD/live-action workflow policy; unchanged native core and retained binary/FATE/soak gates identified by original paths. Newly matched Stock is a control, not a claim of core superiority. Media memory waiver is invocation-scoped; sampled job/disk/mount/deadline/output guards remain.",
+  "publication": {
+    "record_type": "redacted_historical_summary",
+    "source_sha256": "0a19bdf1b57af450b0a7ec025837aba2277e4292cb280f4b2cebe70de3ad6111",
+    "paths_redacted": true,
+    "raw_receipts_and_media_included": false,
+    "acceptance_usage": "Historical report only; not a local engine or release activation manifest."
+  }
+}

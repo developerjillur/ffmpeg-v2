@@ -1,0 +1,107 @@
+diff --git a/fftools/ffmpeg_dec.c b/fftools/ffmpeg_dec.c
+index 1b37d39..d17150b 100644
+--- a/fftools/ffmpeg_dec.c
++++ b/fftools/ffmpeg_dec.c
+@@ -1609,7 +1609,7 @@ static int dec_open(DecoderPriv *dp, AVDictionary **dec_opts,
+         // called after avcodec_open2() because the user-set value of
+         // extra_hw_frames becomes valid in there, and we need to add
+         // this on top of it.
+-        int extra_frames = DEFAULT_FRAME_THREAD_QUEUE_SIZE;
++        int extra_frames = sch_get_frame_queue_size();
+         if (dp->dec_ctx->extra_hw_frames >= 0)
+             dp->dec_ctx->extra_hw_frames += extra_frames;
+         else
+diff --git a/fftools/ffmpeg_opt.c b/fftools/ffmpeg_opt.c
+index 871a8de..5006cc3 100644
+--- a/fftools/ffmpeg_opt.c
++++ b/fftools/ffmpeg_opt.c
+@@ -1504,6 +1504,15 @@ fail:
+     return ret;
+ }
+ 
++static int opt_frame_queue_size(void *optctx, const char *opt, const char *arg)
++{
++    double capacity;
++    int ret = parse_number(opt, arg, OPT_TYPE_INT, 2, 16, &capacity);
++    if (ret < 0)
++        return ret;
++    return sch_set_frame_queue_size((unsigned)capacity);
++}
++
+ static int opt_progress_format(void *optctx, const char *opt, const char *arg)
+ {
+     if (!strcmp(arg, "kv"))
+@@ -1668,6 +1677,9 @@ const OptionDef options[] = {
+     { "progress_format",        OPT_TYPE_FUNC, OPT_FUNC_ARG | OPT_EXPERT,
+         { .func_arg = opt_progress_format },
+       "set progress format (kv or jsonl)", "format" },
++    { "frame_queue_size",       OPT_TYPE_FUNC, OPT_FUNC_ARG | OPT_EXPERT,
++        { .func_arg = opt_frame_queue_size },
++      "set scheduler frame queue capacity (2..16, default 2)", "frames" },
+     { "stdin",                  OPT_TYPE_BOOL, OPT_EXPERT,
+         { &stdin_interaction },
+       "enable or disable interaction on standard input" },
+diff --git a/fftools/ffmpeg_sched.c b/fftools/ffmpeg_sched.c
+index dddd1d2..f18c1f5 100644
+--- a/fftools/ffmpeg_sched.c
++++ b/fftools/ffmpeg_sched.c
+@@ -44,6 +44,21 @@
+ // FIXME: some other value? make this dynamic?
+ #define SCHEDULE_TOLERANCE (100 * 1000)
+ 
++static unsigned frame_queue_size = DEFAULT_FRAME_THREAD_QUEUE_SIZE;
++
++int sch_set_frame_queue_size(unsigned capacity)
++{
++    if (capacity < 2 || capacity > 16)
++        return AVERROR(EINVAL);
++    frame_queue_size = capacity;
++    return 0;
++}
++
++unsigned sch_get_frame_queue_size(void)
++{
++    return frame_queue_size;
++}
++
+ enum QueueType {
+     QUEUE_PACKETS,
+     QUEUE_FRAMES,
+@@ -376,18 +391,15 @@ static int queue_alloc(ThreadQueue **ptq, unsigned nb_streams, unsigned queue_si
+ 
+     if (queue_size <= 0) {
+         if (type == QUEUE_FRAMES)
+-            queue_size = DEFAULT_FRAME_THREAD_QUEUE_SIZE;
++            queue_size = sch_get_frame_queue_size();
+         else
+             queue_size = DEFAULT_PACKET_THREAD_QUEUE_SIZE;
+     }
+ 
+     if (type == QUEUE_FRAMES) {
+-        // This queue length is used in the decoder code to ensure that
+-        // there are enough entries in fixed-size frame pools to account
+-        // for frames held in queues inside the ffmpeg utility.  If this
+-        // can ever dynamically change then the corresponding decode
+-        // code needs to be updated as well.
+-        av_assert0(queue_size <= DEFAULT_FRAME_THREAD_QUEUE_SIZE);
++        // Decoder fixed-size frame pools use the same configured bound.
++        // Options are finalized before any queue or decoder is started.
++        av_assert0(queue_size <= sch_get_frame_queue_size());
+     }
+ 
+     tq = tq_alloc(nb_streams, queue_size,
+diff --git a/fftools/ffmpeg_sched.h b/fftools/ffmpeg_sched.h
+index 2cf3034..eb5aa1a 100644
+--- a/fftools/ffmpeg_sched.h
++++ b/fftools/ffmpeg_sched.h
+@@ -261,6 +261,10 @@ int sch_add_mux(Scheduler *sch, SchThreadFunc func, int (*init)(void *),
+  */
+ #define DEFAULT_FRAME_THREAD_QUEUE_SIZE 2
+ 
++/** Set queue capacity before starting tasks; decoder pool accounting uses it. */
++int sch_set_frame_queue_size(unsigned capacity);
++unsigned sch_get_frame_queue_size(void);
++
+ /**
+  * Add a muxed stream for a previously added muxer.
+  *

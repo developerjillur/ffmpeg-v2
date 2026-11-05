@@ -1,0 +1,53 @@
+#!/usr/bin/python3 -B
+"""Installed release pointer যাচাই করে নির্দিষ্ট code/engine pair চালায়।"""
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+workspace = Path(__file__).resolve().parents[1]
+
+def read(path):
+    if path.is_symlink() or not path.is_file() or path.stat().st_size > 2*1024**2:
+        raise RuntimeError('Release manifest file invalid')
+    return json.loads(path.read_text())
+
+def checksum(path):
+    result = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(1024**2), b''):
+            result.update(block)
+    return result.hexdigest()
+
+try:
+    pointer = read(workspace/'.runtime/active-release.json')
+    manifest = Path(pointer['manifest'])
+    release = manifest.parent
+    if release.is_symlink() or release.parent != workspace/'.runtime/releases' or checksum(manifest) != pointer['manifest_sha256']:
+        raise RuntimeError('Release pointer identity changed')
+    value = read(manifest)
+    if checksum(Path(__file__).resolve()) != value['package_files']['bin/ffv2-release']:
+        raise RuntimeError('Stable launcher changed; verified launcher install required')
+    if value['release_id'] != pointer['release_id'] or not 10 <= len(value['package_files']) <= 128:
+        raise RuntimeError('Release identity/file count invalid')
+    for relative, expected in value['package_files'].items():
+        parts = Path(relative)
+        path = release/parts
+        if parts.is_absolute() or '..' in parts.parts or path.is_symlink() or not path.is_file() or path.stat().st_size > 2*1024**2 or checksum(path) != expected:
+            raise RuntimeError('Frozen release file changed: ' + relative)
+    if checksum(release/'engine.json') != value['engine_sha256']:
+        raise RuntimeError('Frozen engine manifest changed')
+    os.environ.update(FFV2_PROJECT_ROOT=str(workspace), FFV2_PINNED_ENGINE=str(release/'engine.json'),
+                      FFV2_RELEASE_ID=value['release_id'], PYTHONPATH=str(release))
+    sys.path.insert(0, str(release))
+    program = Path(sys.argv[0]).name
+    if program in ('ffmpeg-v2','ffprobe-v2','ffplay-v2'):
+        from ffv2.engine import native_main
+        raise SystemExit(native_main(program[:-3]))
+    from ffv2.cli import main
+    raise SystemExit(main())
+except (OSError, ValueError, KeyError, TypeError, RuntimeError) as error:
+    print(json.dumps({'error':{'code':'release_launch_failed','message':str(error)[:1000]}},ensure_ascii=False),file=sys.stderr)
+    raise SystemExit(1)

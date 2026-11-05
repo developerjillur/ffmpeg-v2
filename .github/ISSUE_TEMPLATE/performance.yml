@@ -1,0 +1,25 @@
+name: Performance comparison
+description: Share a scoped, quality-matched measurement
+title: "[Performance] "
+body:
+  - type: textarea
+    id: method
+    attributes:
+      label: Baseline and method
+      description: Hardware, exact code/binaries, argv, input range, quality, thread pools and cache/load controls
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Complete results and uncertainty
+      description: Accepted/rejected counts, warmups, failed trials, paired estimates and confidence intervals; include slow results
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and sanitized evidence
+      description: Share only media and receipts you have permission to publish
+    validations:
+      required: true

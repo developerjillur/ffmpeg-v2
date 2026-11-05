@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexa-ffmpeg-v2"
+version = "0.6.1"
+description = "Resource-aware local FFmpeg workflows, CLI and MCP"
+readme = "README.md"
+keywords = ["ffmpeg", "mcp", "video-processing", "cli", "macos", "apple-silicon"]
+requires-python = ">=3.9"
+authors = [{name = "Jillur Rahman", email = "22579419+developerjillur@users.noreply.github.com"}]
+dependencies = []
+license = {text = "GPL-3.0-or-later"}
+
+[project.urls]
+Homepage = "https://developerjillur.github.io/ffmpeg-v2/"
+Repository = "https://github.com/developerjillur/ffmpeg-v2"
+Documentation = "https://developerjillur.github.io/ffmpeg-v2/getting-started/"
+Issues = "https://github.com/developerjillur/ffmpeg-v2/issues"
+
+[project.scripts]
+ffv2 = "ffv2.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ffv2*"]

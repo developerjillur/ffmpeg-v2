@@ -1,0 +1,511 @@
+{
+  "status": "completed",
+  "phase": 10,
+  "maintainer": "Jillur Rahman",
+  "baseline_head": "bf96b96b099afea0d0326c9852d20e2a135572b9",
+  "active_release": "0.6.0-fc5c8de8ba2a58f7",
+  "active_engine": "e276ea1d4188573145210e3583e70d13e2e67a8bc1396aee1ede737b9d84898e",
+  "production_sdk_unchanged": true,
+  "candidate_status": "verified_experimental_not_activated",
+  "stock_gap_closure_proven": false,
+  "performance_gate_passed": false,
+  "workflow_gate_passed": false,
+  "candidate_prefix": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-rowvec-f70c7f8/attempt-001/install",
+  "x264_source": {
+    "schema_version": 1,
+    "maintainer": "Jillur Rahman",
+    "source_repository": "https://code.videolan.org/videolan/x264.git",
+    "base_commit": "b35605ace3ddf7c1a5d67a2eb553f034aef41d55",
+    "patched_commit": "f70c7f8329264c9670d9fdcc1869376c7e001421",
+    "license": "GPL-2.0-or-later",
+    "scope": "Apple arm64 threaded progress query and cached published lower bound; encoding settings and safety recovery retained",
+    "patches": [
+      {
+        "file": "0001-atomic-frame-progress.patch",
+        "sha256": "593d673083b059fd7485593bd6425d72e38d9e77679cc377f380b60400cbfce9"
+      },
+      {
+        "file": "0002-published-row-progress.patch",
+        "sha256": "b7c72feaa4f60dff8992688e4a3822e6c1717867361ee707803e93e61632a6c4"
+      }
+    ],
+    "build_control": "Same pinned unpatched source; generic -O3 baseline. Candidate -mcpu=apple-m4, -fvectorize -fslp-vectorize, no LTO. NDEBUG undefined. Exact recipes and hashes in Phase 10 external build receipts.",
+    "version_metadata": "Shallow/worktree builds use upstream empty X264_VERSION; no upstream revision is impersonated. Source, patch and binary hashes identify the private candidate.",
+    "status": "experimental_not_activated",
+    "patched_tree": "09f3cac3e1d192f70f8b2ca6d13aee552a1aa5b3"
+  },
+  "evidence": {
+    "confirmation": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/report.json",
+      "sha256": "a56e7941717bfa33dc614986507e3da79235dbc00a138a0374490122352596ba"
+    },
+    "quality": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/quality.json",
+      "sha256": "05d3642bc9223845df529ea6dcdaad70b62384e64005939944fef6571b785851"
+    },
+    "analysis": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/analysis.json",
+      "sha256": "f742e940b8066b1127a07e8cef8e789da13fb8dc8c24e3fdc11d8fb1c3fbe480"
+    },
+    "decoded_identity": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/decoded-identity.json",
+      "sha256": "96a8afede72636ca1e1dd3dd9129eaab430f94e0d11bb9228fd19a1fdfe4b3ba"
+    },
+    "negative_progress_tsan": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/progress-tsan-20261104T071844-5ea1e307/report.json",
+      "sha256": "751459d0cb8459250949c806f3e2eaa5618b6c31f93b13de167273504576bebc"
+    },
+    "observers": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/tools-v5/report.json",
+      "sha256": "fabab6caa7d8176921a264f295e36043279f9557fed98095ee3660cd5e9e6c12"
+    },
+    "worker_profile": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/profile-candidate-20261104T071854-6872e827/report.json",
+      "sha256": "c9df3632b292309c8afab988a433111071f5a4f970ce3ffe36ae6207c4fe8e1a"
+    },
+    "process_profile": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/profile-candidate-20261104T071941-b68120fa/report.json",
+      "sha256": "fefd0f93d8ff6e19faec717db25d9ecd41d9277cadaa478308ab77771649fe8a"
+    },
+    "codec_regression": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/codec-regression-20261104T072046-2af7c2d9/report.json",
+      "sha256": "eb93413dca6c66ab81ebbd893a1ecb4d74f73f14fe2414773ffbd0bacdc4db16"
+    },
+    "workflow": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/workflow-20261104T072103-54b9d149/report.json",
+      "sha256": "11f5c7a3b168c2f2b8faf068076032dac9da18aa3c746830ce808b63a8206fbc"
+    },
+    "native_media": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/native-state/verification/native-media-20261104T072934-5387c9c6/report.json",
+      "sha256": "1f22b2ff775600f49ba08bcb42eea467c91aed6d3c1cab89be19e5a1e7d55962"
+    },
+    "unit_tests": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/unit-20261104T072941-628a3c31/report.json",
+      "sha256": "efaf8a1d434c747faddf74891c71153edb1ef8b337eb9ecd192372e51df91e56"
+    },
+    "controls": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/controls-20261104T071805-bd41724f/report.json",
+      "sha256": "90719ec605fa6219ca82445bda7c271ed42f56d3dfbd280c24c34b13593222b7"
+    }
+  },
+  "frozen_measurement_sources": {
+    "benchmark_phase10.confirm-frozen.py": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/benchmark_phase10.confirm-frozen.py",
+      "sha256": "548c94b1149ba2191585a68b31b30c889ccd2ae20ffcab3f8bd45dc295c6359d"
+    },
+    "replay_phase10.confirm-frozen.py": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/replay_phase10.confirm-frozen.py",
+      "sha256": "455100d8e51f78736222279c2e8e63070596ea6924a829027979b8165597e1c2"
+    }
+  },
+  "mutex_work": {
+    "hd60/load0": {
+      "base": {
+        "profile": "hd60",
+        "load": 0,
+        "label": "base",
+        "captured_x264_mutex_calls": 23073251,
+        "all_library_site_overflow_calls": 122,
+        "x264_call_count_bounds": [
+          23073251,
+          23073373
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-base-b35605a/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "candidate": {
+        "profile": "hd60",
+        "load": 0,
+        "label": "candidate",
+        "captured_x264_mutex_calls": 359847,
+        "all_library_site_overflow_calls": 121,
+        "x264_call_count_bounds": [
+          359847,
+          359968
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-rowvec-f70c7f8/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "reduction_percent_bounds": [
+        98.43989041682943,
+        98.44042307988519
+      ]
+    },
+    "hd60/load2": {
+      "base": {
+        "profile": "hd60",
+        "load": 2,
+        "label": "base",
+        "captured_x264_mutex_calls": 23073133,
+        "all_library_site_overflow_calls": 123,
+        "x264_call_count_bounds": [
+          23073133,
+          23073256
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-base-b35605a/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "candidate": {
+        "profile": "hd60",
+        "load": 2,
+        "label": "candidate",
+        "captured_x264_mutex_calls": 359841,
+        "all_library_site_overflow_calls": 123,
+        "x264_call_count_bounds": [
+          359841,
+          359964
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-rowvec-f70c7f8/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "reduction_percent_bounds": [
+        98.43989977433927,
+        98.44044117570576
+      ]
+    },
+    "raw30/load0": {
+      "base": {
+        "profile": "raw30",
+        "load": 0,
+        "label": "base",
+        "captured_x264_mutex_calls": 11435343,
+        "all_library_site_overflow_calls": 113,
+        "x264_call_count_bounds": [
+          11435343,
+          11435456
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-base-b35605a/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "candidate": {
+        "profile": "raw30",
+        "load": 0,
+        "label": "candidate",
+        "captured_x264_mutex_calls": 180523,
+        "all_library_site_overflow_calls": 101,
+        "x264_call_count_bounds": [
+          180523,
+          180624
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-rowvec-f70c7f8/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "reduction_percent_bounds": [
+        98.42047588778054,
+        98.42137471387237
+      ]
+    },
+    "raw30/load2": {
+      "base": {
+        "profile": "raw30",
+        "load": 2,
+        "label": "base",
+        "captured_x264_mutex_calls": 11435317,
+        "all_library_site_overflow_calls": 149,
+        "x264_call_count_bounds": [
+          11435317,
+          11435466
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-base-b35605a/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "candidate": {
+        "profile": "raw30",
+        "load": 2,
+        "label": "candidate",
+        "captured_x264_mutex_calls": 180507,
+        "all_library_site_overflow_calls": 215,
+        "x264_call_count_bounds": [
+          180507,
+          180722
+        ],
+        "encoder_library": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase10-rowvec-f70c7f8/attempt-001/install/lib/libx264.165.dylib"
+      },
+      "reduction_percent_bounds": [
+        98.419615302313,
+        98.4215160099291
+      ]
+    }
+  },
+  "queue_audit": [
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/codec-regression-20261104T072046-2af7c2d9/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 38
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/decoded-identity/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 4
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 180
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/confirm-candidate-20261104T065052-21da9545/quality/guarded/state/jobs.sqlite3",
+      "counts": {},
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/native-state/verification/native-media-20261104T072934-5387c9c6/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/profile-20261104T053247-99e56eec/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 16
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/profile-20261104T054147-4f629002/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 16
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/profile-candidate-20261104T071854-6872e827/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/profile-candidate-20261104T071941-b68120fa/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 12
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/progress-tsan-20261104T060023-02e5ecad/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/progress-tsan-20261104T060240-739c10b4/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/progress-tsan-20261104T064722-85c4b654/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/progress-tsan-20261104T071844-5ea1e307/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 2
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T055600-531ef102/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T055600-531ef102/quality/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T061506-8e3b5570/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 2,
+        "failed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T062946-5df4005e/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T063905-c831595d/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T063905-c831595d/quality/guarded/state/jobs.sqlite3",
+      "counts": {},
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T064736-0658bd4d/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 16
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/source-fetch/state/jobs.sqlite3",
+      "counts": {
+        "completed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/tools/build/state/jobs.sqlite3",
+      "counts": {
+        "completed": 2,
+        "failed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/tools-v2/build/state/jobs.sqlite3",
+      "counts": {
+        "completed": 2
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/tools-v3/build/state/jobs.sqlite3",
+      "counts": {
+        "completed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/tools-v4/build/state/jobs.sqlite3",
+      "counts": {
+        "completed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/tools-v5/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/workflow-20261104T072103-54b9d149/candidate-state/jobs.sqlite3",
+      "counts": {
+        "completed": 15
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/workflow-20261104T072103-54b9d149/original-state/jobs.sqlite3",
+      "counts": {
+        "completed": 15
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/workflow-20261104T072103-54b9d149/stock-state/jobs.sqlite3",
+      "counts": {
+        "completed": 15
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-base/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3,
+        "failed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-check/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-m4/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-m4safe/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-opt/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-row/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase10/x264-build-proof-rowvec/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    }
+  ],
+  "unit_counts": [
+    142,
+    142
+  ],
+  "limitations": [
+    "Whole-block wall-clock intervals cross equality; no stable Stock superiority or gap-closure claim.",
+    "Only added CPU demand is controlled; unrelated host activity and raw-input file-cache residency vary.",
+    "Worker mutex hook uses trylock and has bounded callsite storage; timings are excluded and overflow bounds retained.",
+    "Non-deterministic codec mode passed strict decode/assertions; exact quality equivalence is not claimed for that mode."
+  ],
+  "source_patch_replay": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase10/patch-replay-audit.json",
+    "sha256": "478bd4250dc0478f798cdf4446767381e4764fc52865829569ef9ae4f0e77412",
+    "patched_tree": "09f3cac3e1d192f70f8b2ca6d13aee552a1aa5b3"
+  },
+  "rejected_m4_lto": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase10/smoke-candidate-20261104T061506-8e3b5570/report.json",
+    "sha256": "b8bad94f06a7d082fc5bad32eb278648a0d45acf874987aae2d124efe7875f6d",
+    "status": "failed",
+    "reason": "HD encode exited with SIGSEGV; not promoted"
+  },
+  "publication": {
+    "record_type": "redacted_historical_summary",
+    "source_sha256": "3155eb54db083e39072da90cdd8cd90493523a17e4040f11ddbb6219499a6d0a",
+    "paths_redacted": true,
+    "raw_receipts_and_media_included": false,
+    "acceptance_usage": "Historical report only; not a local engine or release activation manifest."
+  }
+}

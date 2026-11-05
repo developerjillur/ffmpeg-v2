@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "phase": 11,
+  "candidate": "experimental x264 row-progress + M4 vectorization + disjoint-training PGO, no LTO",
+  "overall_promotion_accepted": false,
+  "original_default_retained": true,
+  "public_version": "0.6.1 source/portability release; no PGO promotion",
+  "machine": {
+    "cpu": "Apple M4 Max",
+    "cores": "10 performance + 4 efficiency",
+    "memory_gib": 36,
+    "os": "macOS 27.2"
+  },
+  "method": {
+    "hd": "Big Buck Bunny 1920x1080/30fps, 60–120s, 1800 video and 2813 audio frames",
+    "raw": "Same source 60–90s, raw YUV420p, 900 frames, 2799360000 input bytes",
+    "encoding": "libx264 veryfast CRF20, encoder/decoder/filter 8/2/2; complete workflow validation 8; HD audio AAC160k",
+    "load0": "No added owned CPU helper; background host activity still observed and gated",
+    "load2": "Two 50%-duty owned CPU helpers; other host activity observed and gated",
+    "estimator": "Geometric mean of within-block mean-time ratios; 20000 whole-block bootstrap draws; no pooling of load states",
+    "conditions": "Admitted warm cache, same source/quality, sequential nice>=10, bounded memory/disk/deadline guards; affinity/frequency/thermal state not fixed",
+    "system_memory_waiver": "Task-scoped explicit waiver was used; own footprint, disk, mount, timeout and output safeguards remained active"
+  },
+  "quality": [
+    {
+      "source": "hd60",
+      "vmaf_mean": 94.781527,
+      "psnr_y_db": 47.011742,
+      "ssim_mean": 0.998632,
+      "metric_delta": 0,
+      "strict_decoded_video_audio_identity": true
+    },
+    {
+      "source": "raw30",
+      "vmaf_mean": 94.920178,
+      "psnr_y_db": 46.621946,
+      "ssim_mean": 0.998291,
+      "metric_delta": 0,
+      "strict_decoded_video_identity": true
+    }
+  ],
+  "counts": {
+    "direct": {
+      "completed_including_warmups": 688,
+      "warmups_excluded": 12,
+      "attempted_blocks": 180
+    },
+    "workflow": {
+      "completed_including_warmups": 144,
+      "warmups_excluded": 6,
+      "attempted_blocks": 23
+    }
+  },
+  "comparisons": [
+    {
+      "pipeline": "direct",
+      "workload": "hd60/load0",
+      "valid_blocks": 1,
+      "required_blocks": 9,
+      "reference": "original",
+      "candidate_median_seconds": null,
+      "reference_median_seconds": null,
+      "paired_time_change_percent": null,
+      "paired_ratio_95": null,
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "hd60/load0",
+      "valid_blocks": 1,
+      "required_blocks": 9,
+      "reference": "stock",
+      "candidate_median_seconds": null,
+      "reference_median_seconds": null,
+      "paired_time_change_percent": null,
+      "paired_ratio_95": null,
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "hd60/load2",
+      "valid_blocks": 1,
+      "required_blocks": 9,
+      "reference": "original",
+      "candidate_median_seconds": null,
+      "reference_median_seconds": null,
+      "paired_time_change_percent": null,
+      "paired_ratio_95": null,
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "hd60/load2",
+      "valid_blocks": 1,
+      "required_blocks": 9,
+      "reference": "stock",
+      "candidate_median_seconds": null,
+      "reference_median_seconds": null,
+      "paired_time_change_percent": null,
+      "paired_ratio_95": null,
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "raw30/load0",
+      "valid_blocks": 3,
+      "required_blocks": 9,
+      "reference": "original",
+      "candidate_median_seconds": 2.3782307915,
+      "reference_median_seconds": 2.410651021,
+      "paired_time_change_percent": -1.6543746419695138,
+      "paired_ratio_95": [
+        0.980260268248923,
+        0.9860618385075484
+      ],
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "raw30/load0",
+      "valid_blocks": 3,
+      "required_blocks": 9,
+      "reference": "stock",
+      "candidate_median_seconds": 2.3782307915,
+      "reference_median_seconds": 2.412139479,
+      "paired_time_change_percent": -1.8007039376433442,
+      "paired_ratio_95": [
+        0.9780117269982692,
+        0.9844105465004948
+      ],
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "raw30/load2",
+      "valid_blocks": 7,
+      "required_blocks": 9,
+      "reference": "original",
+      "candidate_median_seconds": 2.3284553125,
+      "reference_median_seconds": 2.3742532499999998,
+      "paired_time_change_percent": -2.0332245047615216,
+      "paired_ratio_95": [
+        0.9777297752006305,
+        0.9819315803893485
+      ],
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "direct",
+      "workload": "raw30/load2",
+      "valid_blocks": 7,
+      "required_blocks": 9,
+      "reference": "stock",
+      "candidate_median_seconds": 2.3284553125,
+      "reference_median_seconds": 2.3754919375,
+      "paired_time_change_percent": -1.9936420400746502,
+      "paired_ratio_95": [
+        0.9773274433943983,
+        0.9829429682802706
+      ],
+      "sample_gate_passed": false,
+      "release_eligible_group": false
+    },
+    {
+      "pipeline": "workflow",
+      "workload": "hd60/load0",
+      "valid_blocks": 9,
+      "required_blocks": 9,
+      "reference": "original",
+      "candidate_median_seconds": 5.6018122915,
+      "reference_median_seconds": 5.695444104,
+      "paired_time_change_percent": -1.7638089986451555,
+      "paired_ratio_95": [
+        0.9790572961516323,
+        0.9854675806205192
+      ],
+      "sample_gate_passed": true,
+      "release_eligible_group": true
+    },
+    {
+      "pipeline": "workflow",
+      "workload": "hd60/load0",
+      "valid_blocks": 9,
+      "required_blocks": 9,
+      "reference": "stock",
+      "candidate_median_seconds": 5.6018122915,
+      "reference_median_seconds": 5.7016272919999995,
+      "paired_time_change_percent": -1.7430011131116308,
+      "paired_ratio_95": [
+        0.9798956315859867,
+        0.9853017442659457
+      ],
+      "sample_gate_passed": true,
+      "release_eligible_group": true
+    },
+    {
+      "pipeline": "workflow",
+      "workload": "hd60/load2",
+      "valid_blocks": 9,
+      "required_blocks": 9,
+      "reference": "original",
+      "candidate_median_seconds": 5.6306794795,
+      "reference_median_seconds": 5.725092708,
+      "paired_time_change_percent": -1.531957971848863,
+      "paired_ratio_95": [
+        0.9822196805320823,
+        0.9872477683456868
+      ],
+      "sample_gate_passed": true,
+      "release_eligible_group": true
+    },
+    {
+      "pipeline": "workflow",
+      "workload": "hd60/load2",
+      "valid_blocks": 9,
+      "required_blocks": 9,
+      "reference": "stock",
+      "candidate_median_seconds": 5.6306794795,
+      "reference_median_seconds": 5.73759,
+      "paired_time_change_percent": -1.790937291058703,
+      "paired_ratio_95": [
+        0.979719379476193,
+        0.984871016618587
+      ],
+      "sample_gate_passed": true,
+      "release_eligible_group": true
+    }
+  ],
+  "limitations": [
+    "Single machine/source/ranges; not a general FFmpeg speedup.",
+    "Direct sample gate failed; no reset or pooling of trials.",
+    "CPU instruction reductions are descriptive and include invalid-environment blocks; not wall-clock proof.",
+    "14-byte private container difference is version metadata, not compression improvement.",
+    "Full new-prefix promotion lifecycle was not performed; candidate remains experimental.",
+    "Raw corpus/profiles/complete process receipts are retained privately, not bundled."
+  ]
+}

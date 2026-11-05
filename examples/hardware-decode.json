@@ -1,0 +1,11 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/supported-420-source.mp4",
+  "output": "<LAB_ROOT>/ffmpeg-v2/hardware-export.mp4",
+  "decode": "videotoolbox",
+  "encoder": "videotoolbox",
+  "max_width": 1920,
+  "max_height": 1080,
+  "video_bitrate": 4000000,
+  "rate_control": "bitrate"
+}

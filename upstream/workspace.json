@@ -1,0 +1,6 @@
+{
+  "workspace_root": "<LAB_ROOT>/ffmpeg-v2-core",
+  "source_checkout": "<LAB_ROOT>/ffmpeg-v2-core/ffmpeg",
+  "candidate_root": "<LAB_ROOT>/ffmpeg-v2-core/candidates",
+  "notes": "Heavy source/build data uses a space-free external workspace. Creation and job execution require mounted volume and live resource admission."
+}

@@ -1,0 +1,452 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "maintainer": "Jillur Rahman",
+  "baseline_head": "a6cae26acd8b505bffc192d4da86c96ed7b18c54",
+  "completed_at_utc": "2026-11-04T23:28:42.288135+00:00",
+  "report_timezone": "Asia/Dhaka",
+  "bounded_evaluation_complete": true,
+  "all_remaining_gaps_fixed": false,
+  "baseline": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/baseline.json",
+    "sha256": "e5703788c1e0870734921ad0bc867542131dd2391973d259ecba1a075afad72f"
+  },
+  "supplements": [
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/report.json",
+      "sha256": "4844ba547ec9136cc69b0f347ad0c3b5f565d3d0c8a0a21ee7f43bfdfeac60bb"
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/rollback-recovery.json",
+      "sha256": "8b36238cd04c52d7276e2316b7689785a836cc33d96ebd18cada3f332bac207a"
+    }
+  ],
+  "verified_rollback": {
+    "release_id": "0.5.0-018d61f631128c48",
+    "path": "<PROJECT>/.runtime/releases/0.5.0-018d61f631128c48/release.json",
+    "sha256": "81f3eed6ac88c59015fefcc8af569126d9cd1c0e334f23fc065859953dcd718d"
+  },
+  "active_release": "0.6.0-e07af57a8214502f",
+  "active_engine": "d474d5f96ae6b7cdf41ecbffbe9c8c6564d954ff64e78cbd715d0e327de6bcc1",
+  "production_package_unchanged": true,
+  "candidate_status": "quality_verified_experimental_not_activated",
+  "candidate_prefix": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase11-pgo-ba4133406443/attempt-001/install",
+  "performance_gate_passed": false,
+  "workflow_gate_passed": true,
+  "stock_gap_closure_proven": false,
+  "evidence": {
+    "confirmation": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T204629-17a2a5cb/report.json",
+      "sha256": "6fd42ba271053823dc7a0ef0129da097a5e0360d981da11234ff3851d01ad879"
+    },
+    "analysis": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T204629-17a2a5cb/analysis.json",
+      "sha256": "e131ce3567967b1ecba9d0d39ae56f8a11115d0777d84341d5637e983c10012d"
+    },
+    "workflow": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-confirm-20261104T225043-bea69179/report.json",
+      "sha256": "662d5b331f6603fdd69d33e9fd26ccd79f3004c7fded6fce84c526da6630b19a"
+    },
+    "workflow_analysis": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-confirm-20261104T225043-bea69179/analysis.json",
+      "sha256": "3a8e29721f904dee251b6289af4c624cdf4b8e6fd9d474a6427ef23bf6c7dead"
+    },
+    "quality": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T153916-09fd330d/quality.json",
+      "sha256": "3e012a4c036cbd411cca124672957565d73880ab29227c521337ed04dad2c476"
+    },
+    "decoded": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T153916-09fd330d/decoded-identity.json",
+      "sha256": "bbe113f4d961c9e31f2c47d2cefb04dcef20aa8e42bd08475639e2f97ece153b"
+    },
+    "candidate": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/pgo-candidate.json",
+      "sha256": "9828eb6385fbc9e844a62dfd7d73447df025e61e032107cef61c1143f15d5406"
+    },
+    "pgo": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/report.json",
+      "sha256": "34d2ef13b4f61d1c8e351c56603e6b50483e04ac11c435793daa073f7a23c871"
+    },
+    "native": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/pgo-native-state/verification/native-media-20261104T154144-92f1382e/report.json",
+      "sha256": "200b15ef4184b09e27f59cb13ca28c27bddfb580e49b17ebe749e17eaf2e23e0"
+    },
+    "codec": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/codec-regression-20261104T110044-9a5a9a1d/report.json",
+      "sha256": "3f6abf4080afa4d0ccf841b9785cde8c36e61b1a40aa99e97679434915358a0b"
+    },
+    "unit": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/unit-20261104T231920-d357769b/report.json",
+      "sha256": "e2094d9006985492843b551f2c8ea59c0c74583fac6be74052381c2c23e47e4c"
+    }
+  },
+  "complete_workflow_scope_speedup_proven": true,
+  "cpu_work": {
+    "hd60/load0": {
+      "median_instructions": {
+        "original": 382816740561,
+        "candidate": 365750647093,
+        "stock": 385945412473
+      },
+      "n_completed": {
+        "original": 43,
+        "candidate": 45,
+        "stock": 41
+      },
+      "candidate_change_percent": {
+        "original": -4.458032175654192,
+        "stock": -5.232544480992574
+      },
+      "scope": "All completed non-warmup cases, including environment-rejected blocks; CPU-work description only, not elapsed acceptance."
+    },
+    "hd60/load2": {
+      "median_instructions": {
+        "original": 382840781503,
+        "candidate": 365707897357,
+        "stock": 385966106779.0
+      },
+      "n_completed": {
+        "original": 53,
+        "candidate": 51,
+        "stock": 46
+      },
+      "candidate_change_percent": {
+        "original": -4.47519830012304,
+        "stock": -5.248701651826549
+      },
+      "scope": "All completed non-warmup cases, including environment-rejected blocks; CPU-work description only, not elapsed acceptance."
+    },
+    "raw30/load0": {
+      "median_instructions": {
+        "original": 181410858062.5,
+        "candidate": 172684441426.5,
+        "stock": 181347825959.0
+      },
+      "n_completed": {
+        "original": 60,
+        "candidate": 64,
+        "stock": 64
+      },
+      "candidate_change_percent": {
+        "original": -4.810305584351271,
+        "stock": -4.77721995655942
+      },
+      "scope": "All completed non-warmup cases, including environment-rejected blocks; CPU-work description only, not elapsed acceptance."
+    },
+    "raw30/load2": {
+      "median_instructions": {
+        "original": 181481982283,
+        "candidate": 172688270550,
+        "stock": 181414218755
+      },
+      "n_completed": {
+        "original": 67,
+        "candidate": 71,
+        "stock": 71
+      },
+      "candidate_change_percent": {
+        "original": -4.845501257137053,
+        "stock": -4.809958262855019
+      },
+      "scope": "All completed non-warmup cases, including environment-rejected blocks; CPU-work description only, not elapsed acceptance."
+    }
+  },
+  "rejected_block_reasons": {
+    "direct": {
+      "background_cores_block_span": 43,
+      "incomplete_palindrome": 114,
+      "invalid_case_environment": 124,
+      "delivered_cpu_relative_block_span": 8,
+      "p_instruction_fraction_block_span": 3
+    },
+    "workflow": {
+      "background_cores_block_span": 5
+    }
+  },
+  "queue_audit": [
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/calibrate-20261104T095153-f2cd929c/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 12
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/calibrate-20261104T100308-3f5ef50e/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 12
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/calibrate-20261104T101001-7ccd70fa/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 12
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/calibrate-20261104T103330-fea48035/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 12
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/calibrate-20261104T113630-49523949/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6,
+        "failed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/codec-regression-20261104T110044-9a5a9a1d/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 38
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T104551-63214998/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 22
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T111232-f24b2b00/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 71
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T115343-62d6cf97/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 163
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T120320-6d22df71/guarded/state/jobs.sqlite3",
+      "counts": {
+        "failed": 1
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T125924-deb4aa11/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 12
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/confirm-20261104T204629-17a2a5cb/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 688
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/native-state/verification/native-media-20261104T153507-c943f981/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/mount-recovery-20261104T153507/pgo-native-state/verification/native-media-20261104T154144-92f1382e/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/native-state/verification/native-media-20261104T110102-1dd8f75d/state/jobs.sqlite3",
+      "counts": {
+        "completed": 8
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 10
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T102203-238138f3/guarded/state/jobs.sqlite3",
+      "counts": {},
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T102519-84341f04/decoded-identity/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 4
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T102519-84341f04/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T102519-84341f04/quality/guarded/state/jobs.sqlite3",
+      "counts": {},
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T153916-09fd330d/decoded-identity/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 4
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T153916-09fd330d/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 6
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/quality-candidate-20261104T153916-09fd330d/quality/guarded/state/jobs.sqlite3",
+      "counts": {},
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/tools-v1/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 4
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/tools-v2/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 3
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/tools-v3/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 4
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/tools-v4/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 5
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/tools-v5/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 5
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/tools-v6/guarded/state/jobs.sqlite3",
+      "counts": {
+        "completed": 5
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-calibrate-20261104T110237-d210fb0d/candidate-state/jobs.sqlite3",
+      "counts": {
+        "completed": 2
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-calibrate-20261104T110237-d210fb0d/original-state/jobs.sqlite3",
+      "counts": {
+        "completed": 2
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-calibrate-20261104T110237-d210fb0d/stock-state/jobs.sqlite3",
+      "counts": {
+        "completed": 2
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-confirm-20261104T225043-bea69179/candidate-state/jobs.sqlite3",
+      "counts": {
+        "completed": 48
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-confirm-20261104T225043-bea69179/original-state/jobs.sqlite3",
+      "counts": {
+        "completed": 48
+      },
+      "active": 0
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/workflow-confirm-20261104T225043-bea69179/stock-state/jobs.sqlite3",
+      "counts": {
+        "completed": 48
+      },
+      "active": 0
+    }
+  ],
+  "unit_counts": [
+    176,
+    176
+  ],
+  "resources_final": {
+    "pressure": "normal",
+    "headroom_bytes": 15202025472,
+    "swap_bytes": 1626996736,
+    "boot_free_bytes": 150878416896,
+    "boot_used_bytes": 343506378752,
+    "output_free_bytes": 534438838272,
+    "backend": "darwin_native"
+  },
+  "measurement_sources": {
+    "scripts/admission_phase11.py": "6bdc3e94772cedcab92a17d4694bb93c187b2fc0b22518017cc4f143e274f320",
+    "scripts/analyze_phase11.py": "152293e1c466152f863f1cb44164fe69b55559abf12dd33c6ed552fe83eb2f0f",
+    "scripts/benchmark_phase11.py": "86ef80f745cc298c96d173784e68e290e8352aaaf264e9b95eb4afb875d71ac6",
+    "scripts/build_control_phase11.py": "156fab2128f5500ea1ec90ab37889ed1df886e72b2394f90d90e6ac0ff633134",
+    "scripts/build_pgo_phase11.py": "73fb5ba757d1c23645cd3fe75e5a8be06191a5f34aa7dc96c7c509a7a154beee",
+    "scripts/cache_phase11.py": "45d5a09d53954e7a04f6d4bd609cc7ac002e0f51994bb1819341e09b8f4e2195",
+    "scripts/calibrate_cache_phase11.py": "ea958368264483edbabf2da7f642e8dd71599b1a7d965f4a363250b81a0b19a1",
+    "scripts/checks_phase11.py": "d442d5cd2346fc3d11a4e816b1952c7f9e40e1beeeadb46fc015547378a07608",
+    "scripts/conditions_phase11.py": "7a37e78fc3f8382160c8d15fd7077ded117caaf0f54c8e882505ef21efcec2dc",
+    "scripts/finalize_phase11.py": "7d43067cfa600b90a95532c4ee1166f3c6a85def38a429a4254f70a7efd74b9a",
+    "scripts/measure_phase11.c": "8fda0d78d309b9be0bd8445666d0aad116e2f955ae8a4f3d674383b3950e8d37",
+    "scripts/performance_phase11.py": "7b76d9326ec2ed0d79722260cffc8a32ec3bf91184a709c5bf3b4635ab02ab5a",
+    "scripts/phase11_common.py": "2b8609e55c4d76fd25fa0e59a187a46921fc2832d51d351da998df21d0c5e93b",
+    "scripts/quality_candidate_phase11.py": "826fa1350f0e3ac52e3ee398212574f9efda98c65f9f08e793f5608663cd4860",
+    "scripts/watch_phase11.py": "48ff35dbb879610141fcc052218fb53205611014df9f1c8eda1a64d8f322bb5b",
+    "scripts/workflow_phase11.py": "bc1d4456517f0e7ce403d7277469efe4c185eb65c47df93be8c97b8bcf7e8f1c"
+  },
+  "limitations": [
+    "Conditioned wall-clock gates have not all passed; no default promotion or universal speed claim.",
+    "Input and image warmup/locking cost excluded from timed child lifetime; warm-cache result only.",
+    "Host processes, thermal state and scheduling are not frozen; invalid blocks retained and excluded only by predeclared resource conditions.",
+    "PGO training is disjoint from confirmation but bounded; broad content generalization unproven."
+  ],
+  "publication": {
+    "record_type": "redacted_historical_summary",
+    "source_sha256": "21829d16962101761f3b29e99fad3c635b34681f2b9a064a027f493e85963b15",
+    "paths_redacted": true,
+    "raw_receipts_and_media_included": false,
+    "acceptance_usage": "Historical report only; not a local engine or release activation manifest."
+  }
+}

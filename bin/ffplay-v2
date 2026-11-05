@@ -1,0 +1,7 @@
+#!/usr/bin/python3 -B
+import sys
+from pathlib import Path
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from ffv2.engine import native_main
+raise SystemExit(native_main("ffplay"))

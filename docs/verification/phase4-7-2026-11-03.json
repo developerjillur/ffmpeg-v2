@@ -1,0 +1,1157 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "maintainer": "Jillur Rahman",
+  "created_at": 1793727332.118117,
+  "release_id": "0.5.0-16f948bf021bd8b7",
+  "version": "0.5.0",
+  "package_files": {
+    "ffv2/__init__.py": "5c0c118c13441aff55cc2778c0b8c43b2f3cc6f57b8a0674c222e1f472c6114f",
+    "ffv2/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ffv2/advanced.py": "2977251c7816eb43cbed634843dbe83ba95fecdbacac863368719e8f4c60e4c3",
+    "ffv2/benchmark.py": "a0df843f85b86e8c0d2fdf03e4406019bc3ecceb5556466a141786985d7d6b4c",
+    "ffv2/bindings.py": "0e276b961afc0b8d879e6b42e684140a76836dd5fa355e16e14f4c8b6a56406b",
+    "ffv2/capabilities.py": "f4ffdc091f8a7fb5a48656290dd666d0e12387151fdded09567da6392fcbdd3c",
+    "ffv2/checkpoints.py": "84fb570d7a9a0787b69400d3f9a82ef3a035f7155845970eacb6759afd2ad4e6",
+    "ffv2/cli.py": "7dcdbae38d2a2c5f3260b75a65dd53d1e7a7535117b4ade433e97c1afdddf1cc",
+    "ffv2/concat.py": "2dc848c047200dd27de46da2d07898570250f22d1610c0286c75e0cbbf343a63",
+    "ffv2/config.py": "fac446cc7bc6e6e61d3d519fe79c983a684f377c9335d4cc62d19c1206cb3159",
+    "ffv2/controller.py": "b7d0ddee5cc5c9bd2caaee78fd7f30b1aa2a8e534158b9eadeb7c717b48a85aa",
+    "ffv2/darwin.py": "1faee952430ca70a79855ca107338ca3713522c80bcc97524bb821e80115dc1f",
+    "ffv2/engine.py": "3848035dcd05e69117f6d7e1a49bbf380ebce2f0ba8c6bcd0480d0b5bb37844c",
+    "ffv2/errors.py": "9770e9ed6c466afae98adaae1fc2473454f15ab25c7a206035c4047b14dd3c7c",
+    "ffv2/guardian.py": "b881e75bf3e83c7a02be06d3fbf9daec0a3352d2e478aa2c8fa8cc0772c93e9d",
+    "ffv2/images.py": "e738b57a9087aef32e6126237a5d09f12b0aad162fdd23782df3c38ae6fe50b7",
+    "ffv2/io.py": "e88478db674e84c92cbdb079d41aeb3e520bcb3bf353e29d632d2debac1a9713",
+    "ffv2/mcp.py": "98532dcd8734d7cfd1b3a6ff67e039dde253b808f74e66348ac57da3b3d21eea",
+    "ffv2/media.py": "292f33ca5f9cecc1c91023c762bc0ac2162172b5b0a826af3519104fe5ac8a36",
+    "ffv2/mix.py": "37d4b06d01021496cce3029aa8ddb358ebf8d5ad2df57b899b31c2450533ed2f",
+    "ffv2/planner.py": "44e6572fe3fe57798ed3743ff0c256860c8bf951fdd7a7f113885aae0a6f92f0",
+    "ffv2/process.py": "d1004bde71a3b00e617e653fb3b78ac5fc9cd81081cd2adb292010ecae4c3241",
+    "ffv2/recovery.py": "2e7450632f310ac83748904ed77573083cf3e7d6bdb89671b2dd08738c855284",
+    "ffv2/releases.py": "91c6368ccea682c9dc3b0baf0a48eaa9b9a9a7b2cc2558d57e59b249f3e9d299",
+    "ffv2/resources.py": "83f211b8f65a9aa74145832beb10a5e69b5fa97640f69ddd338cfead2290f65b",
+    "ffv2/runtime.py": "ee064c2ec107acc192807c828059775e5e9088d4751f228c54749de516911c80",
+    "ffv2/schema.py": "9d171d676f2aa111d384c8fce7e7af11de1d60d602980cadc6ef8cca52c5e829",
+    "ffv2/service.py": "11b135e54dffdde0d82c2930c426875544948533c06d6f5a6091caa877ce159e",
+    "ffv2/store.py": "08e6484172243bec88acc2fd7252a23f446d6787eebd4ddf1505f11474445d6a",
+    "ffv2/subtitles.py": "94ec243c942162c99797f09cae00f17439536fde4341feb712afeddc46316f5a",
+    "ffv2/supervisor.py": "ab49d92c6e400167c99b4f11c32abf9dfa787192950c955b8e3276bf385b0a84",
+    "ffv2/tuning.py": "d11112f9814525c18db4e67009b8dd313b0a0457f9dd06e7d199a9f19d539e86",
+    "ffv2/upstream.py": "a5b851e3b3925de0b1ce51c8618168fb1f8cd086ed7461d1fd959fc86135a556",
+    "ffv2/video_policy.py": "3343e9663bfbc0114e3668368b40a3262ab17810040dfe7e68f1519d5e89db69",
+    "ffv2/worker.py": "ee81862d972d08ca7a5667b5f87fe6efe10e6c7f8c6f18e14417775fa737f13b",
+    "bin/ffv2": "69fd2e6c911065a640b9fc761770242d33fd9caf336481b1975a594552a808e6",
+    "bin/ffmpeg-v2": "44b8724f64bfa13827081ab6689a0486e0ca220a5b3682f15bbde73eee2940c4",
+    "bin/ffprobe-v2": "49be3f0afe06ca484c5a3d91f37b418fddd259c51a71678cf9d760e844c271cc",
+    "bin/ffplay-v2": "98d0e3dccabf11b748943d29d17f3a09cf2cbbf66291eed39a1e89bccb5bee96",
+    "bin/ffv2-release": "cac600e48c5dc5f869016bf670b16e64698a95a91e886d88412f964368d8516e",
+    "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "pyproject.toml": "282f65fbe519861b1c538097f4a1b37a21d514f41d4b95e552d31b6cc738abe0",
+    "upstream.lock.json": "dac00722b6c986e93036bae4751a4ef49205dcfda35b4d9aed9a6d0222af3eb6",
+    "third_party/libass/COPYING": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c",
+    "third_party/zimg/COPYING": "7637386b5f81e8a719ca336233149005e5fa28b5e6054ea7b67de49355b0ad40"
+  },
+  "engine_selection_id": "e276ea1d4188573145210e3583e70d13e2e67a8bc1396aee1ede737b9d84898e",
+  "native_files": {
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/bin/ffplay": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128182167,
+        "size": 173592,
+        "mtime_ns": 1793698885866006823
+      },
+      "sha256": "09ac34b3188423ea8421882f520421757932fc9ad9f03381df9054844b55bf05",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/bin/ffplay"
+      ]
+    },
+    "/opt/homebrew/Cellar/sdl2-compat/2.32.72/lib/libSDL2-2.0.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3385940,
+        "size": 523792,
+        "mtime_ns": 1790706414424762726
+      },
+      "sha256": "e20203a837218fa7a621d98b88a5bf58cd08d9b8b37791164cc7cb1fe98b3d0b",
+      "load_paths": [
+        "/opt/homebrew/opt/sdl2-compat/lib/libSDL2-2.0.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libx11/1.8.13/lib/libX11.6.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3393658,
+        "size": 1019328,
+        "mtime_ns": 1778988208929664254
+      },
+      "sha256": "fd3ebc26dab336dfec84fd9bab099bb4f9ba20a9bcfdbb90345c84301667521e",
+      "load_paths": [
+        "/opt/homebrew/opt/libx11/lib/libX11.6.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libxcb/1.17.0/lib/libxcb.1.1.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3329125,
+        "size": 193744,
+        "mtime_ns": 1778988207108428717
+      },
+      "sha256": "7487a5a89c12cf7a0c6359668bb6c6dcd4e2085f6d29f20065067fa946341a2c",
+      "load_paths": [
+        "/opt/homebrew/Cellar/libxcb/1.17.0/lib/libxcb.1.dylib",
+        "/opt/homebrew/opt/libxcb/lib/libxcb.1.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libxdmcp/1.1.5/lib/libXdmcp.6.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3309829,
+        "size": 54032,
+        "mtime_ns": 1778988204595841765
+      },
+      "sha256": "f41876c3747b4f6fa2b82ec3e3e647c358ccfce1c24091fbcecb77f4340a0210",
+      "load_paths": [
+        "/opt/homebrew/opt/libxdmcp/lib/libXdmcp.6.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libxau/1.0.12/lib/libXau.6.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3284408,
+        "size": 53120,
+        "mtime_ns": 1778988203664752722
+      },
+      "sha256": "01fe4b5fa9662b17f8e4e8eca8138610a292a2a1f790a3d82bf71276818728e4",
+      "load_paths": [
+        "/opt/homebrew/opt/libxau/lib/libXau.6.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/x265/4.3/lib/libx265.217.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3386034,
+        "size": 7637808,
+        "mtime_ns": 1790706243102110624
+      },
+      "sha256": "2e25cd9a70616daf5c3aec2979bad071d577e2150c0493ddc5fd369c174d0b0f",
+      "load_paths": [
+        "/opt/homebrew/opt/x265/lib/libx265.217.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/x264/r3222/lib/libx264.165.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3385619,
+        "size": 1274288,
+        "mtime_ns": 1779179641000787139
+      },
+      "sha256": "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+      "load_paths": [
+        "/opt/homebrew/opt/x264/lib/libx264.165.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/svt-av1/4.2.0/lib/libSvtAv1Enc.4.2.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3350233,
+        "size": 3057440,
+        "mtime_ns": 1790706414982880712
+      },
+      "sha256": "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+      "load_paths": [
+        "/opt/homebrew/opt/svt-av1/lib/libSvtAv1Enc.4.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/opus/1.6.1/lib/libopus.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3309851,
+        "size": 373744,
+        "mtime_ns": 1779179637935999990
+      },
+      "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+      "load_paths": [
+        "/opt/homebrew/opt/opus/lib/libopus.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/lame/4.0/lib/libmp3lame.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3281237,
+        "size": 215872,
+        "mtime_ns": 1790706403321526051
+      },
+      "sha256": "5150d16a2b09a8f6f3475dcc837fdf5435d4f97e817ca12306fec8da5614647c",
+      "load_paths": [
+        "/opt/homebrew/opt/lame/lib/libmp3lame.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/mpg123/1.33.7/lib/libmpg123.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3322302,
+        "size": 271856,
+        "mtime_ns": 1790706402770693064
+      },
+      "sha256": "25751ddb9880cd94b3aedd668b24305edfdcd88454d5a06077f72d93fab82b20",
+      "load_paths": [
+        "/opt/homebrew/opt/mpg123/lib/libmpg123.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/dav1d/1.5.4/lib/libdav1d.7.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3382213,
+        "size": 830176,
+        "mtime_ns": 1790706402156355262
+      },
+      "sha256": "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+      "load_paths": [
+        "/opt/homebrew/opt/dav1d/lib/libdav1d.7.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/xz/5.8.4/lib/liblzma.5.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3350982,
+        "size": 167520,
+        "mtime_ns": 1790706243687541366
+      },
+      "sha256": "41cdf225f3e10fb54f952c8eca11c8a847d095470540dc42736ae7bd761beaa4",
+      "load_paths": [
+        "/opt/homebrew/opt/xz/lib/liblzma.5.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libvpx/1.17.0/lib/libvpx.12.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3352216,
+        "size": 1747904,
+        "mtime_ns": 1790706403862474918
+      },
+      "sha256": "b434dc31541ec72a484c209b412579dd1be79f31ed7a5667724a5f0eec20450a",
+      "load_paths": [
+        "/opt/homebrew/opt/libvpx/lib/libvpx.12.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/openssl@3/3.6.4_1/lib/libcrypto.3.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3371664,
+        "size": 4872736,
+        "mtime_ns": 1790706411442126393
+      },
+      "sha256": "a7e687f76c5b69423480050f6bfa91dc2c2f616866476cca485ebc2b68ed0b15",
+      "load_paths": [
+        "/opt/homebrew/Cellar/openssl@3/3.6.4_1/lib/libcrypto.3.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/openssl@3/3.6.4_1/lib/libssl.3.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3371663,
+        "size": 888928,
+        "mtime_ns": 1790706411441684484
+      },
+      "sha256": "e2d5671fabd287b1a8f062adfb53857a6fe8d1fa839ebb903183e1417e6cf692",
+      "load_paths": [
+        "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/harfbuzz/14.6.0/lib/libharfbuzz.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3323929,
+        "size": 1286208,
+        "mtime_ns": 1791742831121608377
+      },
+      "sha256": "f20dd0500aab4b9ef2e87488a7c07df455d05dac94bddc2c81268a0d05648f01",
+      "load_paths": [
+        "/opt/homebrew/opt/harfbuzz/lib/libharfbuzz.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/graphite2/1.3.15/lib/libgraphite2.3.3.1.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3349211,
+        "size": 125264,
+        "mtime_ns": 1791742828647624493
+      },
+      "sha256": "fc59eeb61994433d7dcd349848db14951be1fac332349872ad03f86361473153",
+      "load_paths": [
+        "/opt/homebrew/opt/graphite2/lib/libgraphite2.3.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/glib/2.90.1/lib/libglib-2.0.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3328626,
+        "size": 1362736,
+        "mtime_ns": 1791742827202144027
+      },
+      "sha256": "e26ce5eb044e7420d616faf29cd2b4956b2a692cd0540aef92c35311b4fe0959",
+      "load_paths": [
+        "/opt/homebrew/opt/glib/lib/libglib-2.0.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/pcre2/10.49/lib/libpcre2-8.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3385226,
+        "size": 574096,
+        "mtime_ns": 1791742826491173625
+      },
+      "sha256": "c3adcd954967b7e92812831fe12c614a9ca2d12221e897a87ee379df2ac004fd",
+      "load_paths": [
+        "/opt/homebrew/opt/pcre2/lib/libpcre2-8.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/gettext/1.0/lib/libintl.8.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3379241,
+        "size": 228800,
+        "mtime_ns": 1778988193717588425
+      },
+      "sha256": "0c6d618e75fea85cc3d631e164a71766fba9341d19ce1f723300c52e63037c51",
+      "load_paths": [
+        "/opt/homebrew/opt/gettext/lib/libintl.8.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/freetype/2.14.3/lib/libfreetype.6.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3309978,
+        "size": 638240,
+        "mtime_ns": 1778988190319810748
+      },
+      "sha256": "e4b41d886673fd1c282764a3113224d83b09bd705d12db7c36366fb04b7592dc",
+      "load_paths": [
+        "/opt/homebrew/opt/freetype/lib/libfreetype.6.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libpng/1.6.59/lib/libpng16.16.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3309526,
+        "size": 191344,
+        "mtime_ns": 1791742829345454097
+      },
+      "sha256": "ec95a41f112fac5e0b077f129bccc67acf9b5ad1a01f56cc0ecebae2a8727ff2",
+      "load_paths": [
+        "/opt/homebrew/opt/libpng/lib/libpng16.16.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/fribidi/1.0.16/lib/libfribidi.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3350173,
+        "size": 171248,
+        "mtime_ns": 1779255956620874763
+      },
+      "sha256": "64734c6cb149e5603292e280536ca04abd35c593b310a196fcbac5948669210e",
+      "load_paths": [
+        "/opt/homebrew/opt/fribidi/lib/libfribidi.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libvmaf/3.2.1/lib/libvmaf.3.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3355922,
+        "size": 901856,
+        "mtime_ns": 1790706240585967183
+      },
+      "sha256": "f9ca4510cb08cca61ecd571fc417f2b4440c25555fbeefdb4b5477a35891de1c",
+      "load_paths": [
+        "/opt/homebrew/opt/libvmaf/lib/libvmaf.3.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libxcb/1.17.0/lib/libxcb-xfixes.0.0.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3329151,
+        "size": 80624,
+        "mtime_ns": 1778988206684650421
+      },
+      "sha256": "6a2052a410a1761d6304a22c8bdc4f017b9c2e57f7aefd17533cd8af1ebd30be",
+      "load_paths": [
+        "/opt/homebrew/opt/libxcb/lib/libxcb-xfixes.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libxcb/1.17.0/lib/libxcb-shape.0.0.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3329180,
+        "size": 71040,
+        "mtime_ns": 1778988206458047748
+      },
+      "sha256": "2f59441b1975a200e2bb00203789f9b586a88b0e6acda409ea941ff6f10974b3",
+      "load_paths": [
+        "/opt/homebrew/opt/libxcb/lib/libxcb-shape.0.dylib"
+      ]
+    },
+    "/opt/homebrew/Cellar/libxcb/1.17.0/lib/libxcb-shm.0.0.0.dylib": {
+      "identity": {
+        "device": 16777232,
+        "inode": 3329200,
+        "size": 70144,
+        "mtime_ns": 1778988206504821897
+      },
+      "sha256": "56755d658a1373a26af156e0b0c4b6f88cf72bb0b84b3d89007f602b6135c25c",
+      "load_paths": [
+        "/opt/homebrew/opt/libxcb/lib/libxcb-shm.0.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavutil.61.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128181933,
+        "size": 742664,
+        "mtime_ns": 1793698885073063867
+      },
+      "sha256": "05832b1e7303e0fcacc709930ceb100790c21853765fe1004ce385a240b24045",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavutil.61.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libswscale.10.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128181919,
+        "size": 1217592,
+        "mtime_ns": 1793698885036453426
+      },
+      "sha256": "d710e73a00622d42f6f0a36f308d0b10956a12291b37a438f87a18fbb60158a4",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libswscale.10.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libswresample.7.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128181907,
+        "size": 103528,
+        "mtime_ns": 1793698885013488119
+      },
+      "sha256": "1f1c5573ffa6498c092ac68406d905b03becc97e833410c63809f0d18b0aa4e0",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libswresample.7.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavcodec.63.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128181901,
+        "size": 13415400,
+        "mtime_ns": 1793698884980960221
+      },
+      "sha256": "c2122c7e3de93fa8357542048afdc2222dfbf6cea950fbadf31a82679f792d69",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavcodec.63.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavformat.63.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128181880,
+        "size": 2670360,
+        "mtime_ns": 1793698884925391850
+      },
+      "sha256": "8eb8848d4e2904c450237d1efb8552e567ca51ddbdee7d76975baae3ded38076",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavformat.63.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavfilter.12.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128182140,
+        "size": 4680392,
+        "mtime_ns": 1793698885425952316
+      },
+      "sha256": "6c7209c2b17e765f4ead7458cdd874f2c55408f386d7f3ce7b2f2933eaab28cb",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavfilter.12.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavdevice.63.1.102.dylib": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128182146,
+        "size": 103448,
+        "mtime_ns": 1793698885579197212
+      },
+      "sha256": "cd9eb4383e27516893e8bebd70ae24bd8599a4a8ce0711418418c9fe0b252d02",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/lib/libavdevice.63.dylib"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/bin/ffprobe": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128182168,
+        "size": 220296,
+        "mtime_ns": 1793698885866519949
+      },
+      "sha256": "5dd4551a5684e0a9e5fc90cc5d775e50e1152a8a3ac9f03edf43b21507eeae3f",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/bin/ffprobe"
+      ]
+    },
+    "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/bin/ffmpeg": {
+      "identity": {
+        "device": 16777246,
+        "inode": 128182166,
+        "size": 426376,
+        "mtime_ns": 1793698885865205948
+      },
+      "sha256": "b976d75bd6c32696c4e6429509f33095212e5e400183695ad804c878c5b9d7e3",
+      "load_paths": [
+        "<LAB_ROOT>/ffmpeg-v2-core/candidates/m4-336aff836991d1b04d8a/attempt-001/install/bin/ffmpeg"
+      ]
+    }
+  },
+  "evidence": {
+    "unit_tests": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/unit-20261103T173058-25432940/report.json",
+      "sha256": "ef394d2cc54deb648895870d56dada5d03cea822e5ec505c1636943d578de62f"
+    },
+    "native_media": {
+      "path": "<PROJECT>/.runtime/verification/native-media-20261103T164329-59ba0beb/report.json",
+      "sha256": "1047cc2294674680189d8eb2f293493abf4f0028add05528814012fbec10b8c7"
+    },
+    "extended_media": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/candidate-20261103T164329-1231999f/extended-acceptance.json",
+      "sha256": "b5c136b472907e5e988a2b5fa8fc79e111af24c7873ce9d35e4f05d728a7e5c8"
+    },
+    "performance": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/analysis.json",
+      "sha256": "e1a5244e1e231e73711d4cdcbb7cfa2bcd43812411bb3d67a69df5e6a8c90e2f"
+    },
+    "phase5": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase5/acceptance-20261103T170237-a40ad38f/report.json",
+      "sha256": "067ca36a88784dcf42565fc35c8014011fa4a48b350aacd511e713d48a50d54b"
+    },
+    "checkpoint": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase6/quick-20261103T170416-3dc3074c/report.json",
+      "sha256": "5ab4f7864c84a5f8d9dc31c83b75527307a8e3667236bea05f18e1c0b096e67a"
+    },
+    "soak": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase6/soak-20261103T095245-df291d41/report.json",
+      "sha256": "e0c3c0f0beae471a6e1519152283a2e65f0e8c91794982b10873603defc9a457"
+    },
+    "formats": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/formats-20261103T103514-4f5190b6/report.json",
+      "sha256": "0623c03450c40bd60d7864e1626db3ab76614dd134fa67fc3a8a8e7a121cff8a"
+    },
+    "external_fate": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-external-fate/run-20261103T103724-3e23f378/report.json",
+      "sha256": "6ebfa644de4ea623516475e1fb81c8b67875a7baf766268a2061d4fd2f9c6dd7"
+    },
+    "consumer": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/studio-20261103T105449-e28b36cc/report.json",
+      "sha256": "5102c0a82026bce05ff78544f405909fe6867884e55d5a827dfbb6620352ae10"
+    },
+    "lifecycle": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/lifecycle-20261103T173037-cf4763d8/report.json",
+      "sha256": "eb5110bb60914eacaaf4b2dadce26aab32414caff067589eedd766afd43605e8"
+    },
+    "mcp": {
+      "path": "<PROJECT>/.runtime/verification/mcp-pipeline-20261103T173221-9db290f1/report.json",
+      "sha256": "3ed884c1c4eecaad4cb852c212cfaaeca9118a72fa17c7f1c05b36753a42ecf3"
+    },
+    "configuration": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/config-20261103T173221-e5c824dd.json",
+      "sha256": "8e1b5250d8a4980f6937fc214a12b21f7b063d99684b9f39baaa75537540f12d"
+    },
+    "batch": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase6/batch-20261103T104855-d6511e3a/report.json",
+      "sha256": "d3c666bc42ea3c3fbb40733787df23897a5d5520c45bdc089624315b69ef394b"
+    },
+    "soak_audit": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase6/soak-20261103T095245-df291d41/endpoint-audit.json",
+      "sha256": "7480d2248e1ef02b267cc64928bf6ac88bef9a930465e7cdb709703ea8749cc8"
+    },
+    "formats_audit": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/formats-20261103T103514-4f5190b6/source-format-audit.json",
+      "sha256": "304649c38b5f5c5a8851f12e16cdf0bd650008fa3acec8718ccd2430eca08de9"
+    },
+    "hdr": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase5/hdr-corpus/excerpt-20261103T104728-b88f1bfc/report.json",
+      "sha256": "8522754a8c3c9d0067ee7a41b341bcaef70fabd9001ec7e276ff695968b2fe4b"
+    },
+    "installed_default": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase4/default-cli-20261103T173250-5f4a7b43/report.json",
+      "sha256": "429830362ebc16f6d6f91d056c4a7b3a4b0dc02362460a60493822ce96aef8d0"
+    },
+    "installed_consumer": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase7/studio-20261103T173417-2f7525e3/report.json",
+      "sha256": "fa178ad06a68a787d1938890988a5314691f2523dca78a6874b623709c2a15af"
+    },
+    "connected": {
+      "path": "<PROJECT>/.runtime/verification/connected-mcp-20261103T172752-54caad80/independent-audit.json",
+      "sha256": "d84c55366a290466e6b03200cf99fc6d2cae8a74cb9a19a1b7b52966fb21c18c"
+    },
+    "timing": {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase4/acceptance-20261103T170546-0cf42211/report.json",
+      "sha256": "06fc3057daaa5e9f3c8c263801e6b6866b2ebbabbbd61cdc90f3a68621c032da",
+      "actual_outputs_rehashed": 72
+    }
+  },
+  "acceptance": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase7/lifecycle-20261103T173037-cf4763d8/final-version-acceptance.json",
+    "sha256": "03707e4ceb82ec441a684af635be72b8b1b273ff853be3bccdc0cb4568935676"
+  },
+  "test_counts": {
+    "native_media": 14,
+    "extended_media": 21,
+    "phase5": 17,
+    "checkpoint": 8,
+    "soak": 1,
+    "formats": 15,
+    "external_fate": 15,
+    "consumer": 3,
+    "lifecycle": 9,
+    "mcp": 1,
+    "batch": 1,
+    "formats_audit": 15,
+    "hdr": 1,
+    "installed_consumer": 3,
+    "connected": 1
+  },
+  "unit_runs": [
+    {
+      "version": "Python 3.9.6",
+      "tests": 126,
+      "exit_code": 0,
+      "log": "<LAB_ROOT>/ffmpeg-v2-phase7/unit-20261103T173058-25432940/python-0.log",
+      "sha256": "f405e386615761789eb9a58258634dc8be69d15697fc240e246230e8e73ab03c"
+    },
+    {
+      "version": "Python 3.14.7",
+      "tests": 126,
+      "exit_code": 0,
+      "log": "<LAB_ROOT>/ffmpeg-v2-phase7/unit-20261103T173058-25432940/python-1.log",
+      "sha256": "435083031a6161be7f4811ea0a315ef811e51d2f7d3f0626798cc76ab2ee2b30"
+    }
+  ],
+  "comparisons": {
+    "bbb-1080/candidate-native": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-native",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": -0.012818999999993252,
+        "psnr_y": -0.0018749999999982947,
+        "ssim": 0.0
+      },
+      "size_ratio": 0.9999140197707252,
+      "time_ratio": 0.8224742985910849,
+      "time_reduction_percent": 17.75257014089151,
+      "paired_bootstrap_ratio_95_percent": [
+        0.6634544988755547,
+        0.918825223186285
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-1080/candidate-stock": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-stock",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": -0.012818999999993252,
+        "psnr_y": -0.0018749999999982947,
+        "ssim": 0.0
+      },
+      "size_ratio": 0.9999140197707252,
+      "time_ratio": 0.8136163026884387,
+      "time_reduction_percent": 18.638369731156136,
+      "paired_bootstrap_ratio_95_percent": [
+        0.7212106986548489,
+        0.830123911236345
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-1080/native_vs_stock": {
+      "baseline": "candidate-stock",
+      "candidate": "candidate-native",
+      "comparison_kind": "engine",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.0,
+        "psnr_y": 0.0,
+        "ssim": 0.0
+      },
+      "size_ratio": 1.0,
+      "time_ratio": 1.0108871907720833,
+      "time_reduction_percent": -1.0887190772083333,
+      "paired_bootstrap_ratio_95_percent": [
+        0.919917716297031,
+        1.106853098373992
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": false,
+        "paired_bootstrap_faster": false
+      },
+      "promotion_allowed": false
+    },
+    "bbb-2160/candidate-native": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-native",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": -0.005928999999994744,
+        "psnr_y": 0.0009850000000000136,
+        "ssim": 0.0
+      },
+      "size_ratio": 0.9998489855304272,
+      "time_ratio": 0.8308955937430428,
+      "time_reduction_percent": 16.91044062569572,
+      "paired_bootstrap_ratio_95_percent": [
+        0.7740976094367953,
+        0.8703328501763951
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-2160/candidate-stock": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-stock",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": -0.005928999999994744,
+        "psnr_y": 0.0009850000000000136,
+        "ssim": 0.0
+      },
+      "size_ratio": 0.9998489855304272,
+      "time_ratio": 0.8390297196003603,
+      "time_reduction_percent": 16.097028039963966,
+      "paired_bootstrap_ratio_95_percent": [
+        0.7870543509574763,
+        0.8660384428257564
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-2160/native_vs_stock": {
+      "baseline": "candidate-stock",
+      "candidate": "candidate-native",
+      "comparison_kind": "engine",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.0,
+        "psnr_y": 0.0,
+        "ssim": 0.0
+      },
+      "size_ratio": 1.0,
+      "time_ratio": 0.9903053185515385,
+      "time_reduction_percent": 0.9694681448461528,
+      "paired_bootstrap_ratio_95_percent": [
+        0.9145302981760495,
+        1.1021060097608182
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": false
+      },
+      "promotion_allowed": false
+    },
+    "bbb-2160-to1080/candidate-native": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-native",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.004357999999996309,
+        "psnr_y": 5.099999999913507e-05,
+        "ssim": -2.0000000000575113e-06
+      },
+      "size_ratio": 1.0000527433205364,
+      "time_ratio": 0.8547460895499747,
+      "time_reduction_percent": 14.525391045002534,
+      "paired_bootstrap_ratio_95_percent": [
+        0.7398186783389904,
+        0.9478428723744109
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-2160-to1080/candidate-stock": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-stock",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.004357999999996309,
+        "psnr_y": 5.099999999913507e-05,
+        "ssim": -2.0000000000575113e-06
+      },
+      "size_ratio": 1.0000527433205364,
+      "time_ratio": 0.8732816973610529,
+      "time_reduction_percent": 12.671830263894712,
+      "paired_bootstrap_ratio_95_percent": [
+        0.7974730207182564,
+        0.9303126669794874
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "bbb-2160-to1080/native_vs_stock": {
+      "baseline": "candidate-stock",
+      "candidate": "candidate-native",
+      "comparison_kind": "engine",
+      "n_pairs": 5,
+      "quality_frames": 1800,
+      "quality_deltas": {
+        "vmaf": 0.0,
+        "psnr_y": 0.0,
+        "ssim": 0.0
+      },
+      "size_ratio": 1.0,
+      "time_ratio": 0.9787747666450693,
+      "time_reduction_percent": 2.122523335493065,
+      "paired_bootstrap_ratio_95_percent": [
+        0.8793846799066781,
+        1.1524200451899402
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": false
+      },
+      "promotion_allowed": false
+    },
+    "tos-liveaction/candidate-native": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-native",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1440,
+      "quality_deltas": {
+        "vmaf": 0.0034639999999939164,
+        "psnr_y": 0.00037300000000328737,
+        "ssim": 0.0
+      },
+      "size_ratio": 0.9999866658806554,
+      "time_ratio": 0.7568714473961218,
+      "time_reduction_percent": 24.31285526038782,
+      "paired_bootstrap_ratio_95_percent": [
+        0.668823944498096,
+        0.8652065339488968
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "tos-liveaction/candidate-stock": {
+      "baseline": "baseline-native",
+      "candidate": "candidate-stock",
+      "comparison_kind": "workflow",
+      "n_pairs": 5,
+      "quality_frames": 1440,
+      "quality_deltas": {
+        "vmaf": 0.0034639999999939164,
+        "psnr_y": 0.00037300000000328737,
+        "ssim": 0.0
+      },
+      "size_ratio": 0.9999866658806554,
+      "time_ratio": 0.712166298492852,
+      "time_reduction_percent": 28.783370150714806,
+      "paired_bootstrap_ratio_95_percent": [
+        0.6363538976225968,
+        0.800515341537507
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": true,
+        "paired_bootstrap_faster": true
+      },
+      "promotion_allowed": true
+    },
+    "tos-liveaction/native_vs_stock": {
+      "baseline": "candidate-stock",
+      "candidate": "candidate-native",
+      "comparison_kind": "engine",
+      "n_pairs": 5,
+      "quality_frames": 1440,
+      "quality_deltas": {
+        "vmaf": 0.0,
+        "psnr_y": 0.0,
+        "ssim": 0.0
+      },
+      "size_ratio": 1.0,
+      "time_ratio": 1.0627734687781194,
+      "time_reduction_percent": -6.27734687781194,
+      "paired_bootstrap_ratio_95_percent": [
+        0.9663513062609808,
+        1.1172558253782527
+      ],
+      "gates": {
+        "vmaf": true,
+        "psnr_y": true,
+        "ssim": true,
+        "size": true,
+        "median_faster": false,
+        "paired_bootstrap_faster": false
+      },
+      "promotion_allowed": false
+    }
+  },
+  "summary": {
+    "bbb-1080/baseline-native": {
+      "n": 5,
+      "total_seconds": 11.447387999999998,
+      "process_wall_seconds": 11.52648441700012,
+      "encode_seconds": 9.144951,
+      "decode_seconds": 2.058498,
+      "bytes": 20306994
+    },
+    "bbb-1080/candidate-native": {
+      "n": 5,
+      "total_seconds": 9.415182416,
+      "process_wall_seconds": 9.480704666000008,
+      "encode_seconds": 7.668342,
+      "decode_seconds": 1.425888,
+      "bytes": 20305248
+    },
+    "bbb-1080/candidate-stock": {
+      "n": 5,
+      "total_seconds": 9.3137815,
+      "process_wall_seconds": 9.398304291000045,
+      "encode_seconds": 7.604674,
+      "decode_seconds": 1.46293,
+      "bytes": 20305248
+    },
+    "bbb-2160/baseline-native": {
+      "n": 5,
+      "total_seconds": 42.943474459,
+      "process_wall_seconds": 43.011829250000005,
+      "encode_seconds": 34.949445,
+      "decode_seconds": 7.519958,
+      "bytes": 61007399
+    },
+    "bbb-2160/candidate-native": {
+      "n": 5,
+      "total_seconds": 35.681543708,
+      "process_wall_seconds": 35.75370087500005,
+      "encode_seconds": 30.423106,
+      "decode_seconds": 4.978657,
+      "bytes": 60998186
+    },
+    "bbb-2160/candidate-stock": {
+      "n": 5,
+      "total_seconds": 36.030851334000005,
+      "process_wall_seconds": 36.09383541700004,
+      "encode_seconds": 30.943589,
+      "decode_seconds": 4.750896,
+      "bytes": 60998186
+    },
+    "bbb-2160-to1080/baseline-native": {
+      "n": 5,
+      "total_seconds": 13.654702375,
+      "process_wall_seconds": 13.731837959000131,
+      "encode_seconds": 11.172451,
+      "decode_seconds": 2.252611,
+      "bytes": 21860588
+    },
+    "bbb-2160-to1080/candidate-native": {
+      "n": 5,
+      "total_seconds": 11.671303459,
+      "process_wall_seconds": 11.753221708999945,
+      "encode_seconds": 9.798321,
+      "decode_seconds": 1.536222,
+      "bytes": 21861741
+    },
+    "bbb-2160-to1080/candidate-stock": {
+      "n": 5,
+      "total_seconds": 11.924401667,
+      "process_wall_seconds": 11.99011766700005,
+      "encode_seconds": 9.943687,
+      "decode_seconds": 1.584266,
+      "bytes": 21861741
+    },
+    "tos-liveaction/baseline-native": {
+      "n": 5,
+      "total_seconds": 10.440576834000002,
+      "process_wall_seconds": 10.52747116699993,
+      "encode_seconds": 7.823682,
+      "decode_seconds": 1.907426,
+      "bytes": 21373740
+    },
+    "tos-liveaction/candidate-native": {
+      "n": 5,
+      "total_seconds": 7.9021745,
+      "process_wall_seconds": 7.990020749999985,
+      "encode_seconds": 6.204928,
+      "decode_seconds": 1.409526,
+      "bytes": 21373455
+    },
+    "tos-liveaction/candidate-stock": {
+      "n": 5,
+      "total_seconds": 7.435426958,
+      "process_wall_seconds": 7.508181707999938,
+      "encode_seconds": 5.817686,
+      "decode_seconds": 1.380132,
+      "bytes": 21373455
+    }
+  },
+  "sampled_job_peak_median_bytes": {
+    "bbb-1080/baseline-native": 293111392,
+    "bbb-2160/candidate-native": 1145031440,
+    "bbb-2160-to1080/baseline-native": 422708928,
+    "bbb-2160/candidate-stock": 1144015488,
+    "bbb-2160-to1080/candidate-native": 475515016,
+    "tos-liveaction/baseline-native": 216450560,
+    "bbb-2160/baseline-native": 985499784,
+    "bbb-1080/candidate-stock": 343902200,
+    "bbb-1080/candidate-native": 344098784,
+    "tos-liveaction/candidate-stock": 257394632,
+    "tos-liveaction/candidate-native": 257771488,
+    "bbb-2160-to1080/candidate-stock": 473008216
+  },
+  "version_transition": {
+    "from": "0.5.0rc1",
+    "to": "0.5.0",
+    "changed_files": [
+      "ffv2/__init__.py",
+      "pyproject.toml"
+    ],
+    "functional_files_identical": true,
+    "measured_acceptance": "<LAB_ROOT>/ffmpeg-v2-phase7/release-0.5.0rc1-preinstall.json",
+    "measured_acceptance_sha256": "843850d1b3b1a1dcd475ced484d34d065d304cff7f91f00cb256a553395e0787",
+    "before_package_files": {
+      "ffv2/__init__.py": "2998d1479ab4e7e215fdb58019ddbb9426e484b79775280ef67a4a50e6c1af5b",
+      "ffv2/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "ffv2/advanced.py": "2977251c7816eb43cbed634843dbe83ba95fecdbacac863368719e8f4c60e4c3",
+      "ffv2/benchmark.py": "a0df843f85b86e8c0d2fdf03e4406019bc3ecceb5556466a141786985d7d6b4c",
+      "ffv2/bindings.py": "0e276b961afc0b8d879e6b42e684140a76836dd5fa355e16e14f4c8b6a56406b",
+      "ffv2/capabilities.py": "f4ffdc091f8a7fb5a48656290dd666d0e12387151fdded09567da6392fcbdd3c",
+      "ffv2/checkpoints.py": "84fb570d7a9a0787b69400d3f9a82ef3a035f7155845970eacb6759afd2ad4e6",
+      "ffv2/cli.py": "7dcdbae38d2a2c5f3260b75a65dd53d1e7a7535117b4ade433e97c1afdddf1cc",
+      "ffv2/concat.py": "2dc848c047200dd27de46da2d07898570250f22d1610c0286c75e0cbbf343a63",
+      "ffv2/config.py": "fac446cc7bc6e6e61d3d519fe79c983a684f377c9335d4cc62d19c1206cb3159",
+      "ffv2/controller.py": "b7d0ddee5cc5c9bd2caaee78fd7f30b1aa2a8e534158b9eadeb7c717b48a85aa",
+      "ffv2/darwin.py": "1faee952430ca70a79855ca107338ca3713522c80bcc97524bb821e80115dc1f",
+      "ffv2/engine.py": "3848035dcd05e69117f6d7e1a49bbf380ebce2f0ba8c6bcd0480d0b5bb37844c",
+      "ffv2/errors.py": "9770e9ed6c466afae98adaae1fc2473454f15ab25c7a206035c4047b14dd3c7c",
+      "ffv2/guardian.py": "b881e75bf3e83c7a02be06d3fbf9daec0a3352d2e478aa2c8fa8cc0772c93e9d",
+      "ffv2/images.py": "e738b57a9087aef32e6126237a5d09f12b0aad162fdd23782df3c38ae6fe50b7",
+      "ffv2/io.py": "e88478db674e84c92cbdb079d41aeb3e520bcb3bf353e29d632d2debac1a9713",
+      "ffv2/mcp.py": "98532dcd8734d7cfd1b3a6ff67e039dde253b808f74e66348ac57da3b3d21eea",
+      "ffv2/media.py": "292f33ca5f9cecc1c91023c762bc0ac2162172b5b0a826af3519104fe5ac8a36",
+      "ffv2/mix.py": "37d4b06d01021496cce3029aa8ddb358ebf8d5ad2df57b899b31c2450533ed2f",
+      "ffv2/planner.py": "44e6572fe3fe57798ed3743ff0c256860c8bf951fdd7a7f113885aae0a6f92f0",
+      "ffv2/process.py": "d1004bde71a3b00e617e653fb3b78ac5fc9cd81081cd2adb292010ecae4c3241",
+      "ffv2/recovery.py": "2e7450632f310ac83748904ed77573083cf3e7d6bdb89671b2dd08738c855284",
+      "ffv2/releases.py": "91c6368ccea682c9dc3b0baf0a48eaa9b9a9a7b2cc2558d57e59b249f3e9d299",
+      "ffv2/resources.py": "83f211b8f65a9aa74145832beb10a5e69b5fa97640f69ddd338cfead2290f65b",
+      "ffv2/runtime.py": "ee064c2ec107acc192807c828059775e5e9088d4751f228c54749de516911c80",
+      "ffv2/schema.py": "9d171d676f2aa111d384c8fce7e7af11de1d60d602980cadc6ef8cca52c5e829",
+      "ffv2/service.py": "11b135e54dffdde0d82c2930c426875544948533c06d6f5a6091caa877ce159e",
+      "ffv2/store.py": "08e6484172243bec88acc2fd7252a23f446d6787eebd4ddf1505f11474445d6a",
+      "ffv2/subtitles.py": "94ec243c942162c99797f09cae00f17439536fde4341feb712afeddc46316f5a",
+      "ffv2/supervisor.py": "ab49d92c6e400167c99b4f11c32abf9dfa787192950c955b8e3276bf385b0a84",
+      "ffv2/tuning.py": "d11112f9814525c18db4e67009b8dd313b0a0457f9dd06e7d199a9f19d539e86",
+      "ffv2/upstream.py": "a5b851e3b3925de0b1ce51c8618168fb1f8cd086ed7461d1fd959fc86135a556",
+      "ffv2/video_policy.py": "3343e9663bfbc0114e3668368b40a3262ab17810040dfe7e68f1519d5e89db69",
+      "ffv2/worker.py": "ee81862d972d08ca7a5667b5f87fe6efe10e6c7f8c6f18e14417775fa737f13b",
+      "bin/ffv2": "69fd2e6c911065a640b9fc761770242d33fd9caf336481b1975a594552a808e6",
+      "bin/ffmpeg-v2": "44b8724f64bfa13827081ab6689a0486e0ca220a5b3682f15bbde73eee2940c4",
+      "bin/ffprobe-v2": "49be3f0afe06ca484c5a3d91f37b418fddd259c51a71678cf9d760e844c271cc",
+      "bin/ffplay-v2": "98d0e3dccabf11b748943d29d17f3a09cf2cbbf66291eed39a1e89bccb5bee96",
+      "bin/ffv2-release": "cac600e48c5dc5f869016bf670b16e64698a95a91e886d88412f964368d8516e",
+      "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "pyproject.toml": "c5e60502703110a55752ec159f341682f67388c6d405bba555af76d1e0776a9a",
+      "upstream.lock.json": "dac00722b6c986e93036bae4751a4ef49205dcfda35b4d9aed9a6d0222af3eb6",
+      "third_party/libass/COPYING": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c",
+      "third_party/zimg/COPYING": "7637386b5f81e8a719ca336233149005e5fa28b5e6054ea7b67de49355b0ad40"
+    },
+    "scope": "Only package version literals changed; timing was measured on RC bytes. Functional implementation, argv and native closure are identical."
+  },
+  "scope": "Four bounded local phases; timing measured on functionally identical RC; final version independently regressed. Git/tag completion is audited after report publication.",
+  "publication": {
+    "record_type": "redacted_historical_summary",
+    "source_sha256": "25cf81873241bf66a1d0c3b5c45567295af3c634c794ceea204c94974a8d3baf",
+    "paths_redacted": true,
+    "raw_receipts_and_media_included": false,
+    "acceptance_usage": "Historical report only; not a local engine or release activation manifest."
+  }
+}

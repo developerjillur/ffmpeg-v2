@@ -1,0 +1,11 @@
+{
+  "operation": "concat",
+  "input": "/absolute/path/first.mp4",
+  "additional_inputs": ["/absolute/path/second.mp4"],
+  "concat_mode": "normalize",
+  "encoder": "software",
+  "fps": 30,
+  "max_width": 1920,
+  "max_height": 1080,
+  "output": "<LAB_ROOT>/ffmpeg-v2/joined.mp4"
+}

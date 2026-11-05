@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "maintainer": "Jillur Rahman",
+  "status": "experimental_not_activated",
+  "source_commit": "f70c7f8329264c9670d9fdcc1869376c7e001421",
+  "source_tree": "09f3cac3e1d192f70f8b2ca6d13aee552a1aa5b3",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.4.1.1)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "lto": false,
+  "safety_assertions_disabled": false,
+  "profile_instrumented_final": false,
+  "build_recipe": "scripts/build_pgo_phase11.py",
+  "build_recipe_sha256": "73fb5ba757d1c23645cd3fe75e5a8be06191a5f34aa7dc96c7c509a7a154beee",
+  "build_report": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/report.json",
+  "build_report_sha256": "34d2ef13b4f61d1c8e351c56603e6b50483e04ac11c435793daa073f7a23c871",
+  "training": [
+    {
+      "label": "bbb-20-25",
+      "input": "<LAB_ROOT>/ffmpeg-v2-phase4/corpus/bbb-1080.mp4",
+      "source_sha256": "ae51005850b0ff757fe60c3dd7a12d754d3cd2397d87d939b55235e457f97658",
+      "start": 20,
+      "duration": 5,
+      "frames": 150,
+      "output_sha256": "1f8526224cfbdc880ce5451cc07d53a3eab783b227cfa2b1310b3b21b7ec2681"
+    },
+    {
+      "label": "tos-30-35",
+      "input": "<LAB_ROOT>/ffmpeg-v2-phase4/corpus/tos-1080-blender.webm",
+      "source_sha256": "328253280a05e6b14a92f1f43d818d9b7d38ab5d3f6d5d98606198fd3daef2ff",
+      "start": 30,
+      "duration": 5,
+      "frames": 120,
+      "output_sha256": "8855ae85ae4dafbae68f8b008338c1a21e63b709901dd739d83de9ee7d85efeb"
+    },
+    {
+      "label": "ten-bit",
+      "source": "generated testsrc2 640x360/30",
+      "frames": 60,
+      "output_sha256": "83af90e6f752b42b07450fab14fbcbd53a0388bcf0ee059e53082da65e1419aa"
+    }
+  ],
+  "profile_summary": "Instrumentation level: Front-end\nTotal functions: 1202\nMaximum function count: 61077215\nMaximum internal block count: 62208000\nTotal number of blocks: 15721\nTotal count: 2282909684",
+  "profile": {
+    "path": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/codec.profdata",
+    "sha256": "b17945af2d052afd8786284a4e8190be876798c207d947cc09ee9665d2dfb81c"
+  },
+  "raw_profiles": [
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/raw-profiles/bbb-20-25-9960566587707451171_0-72793.profraw",
+      "sha256": "198c76afbc09e14cfbcd45a96a54753c9ef64095e21e4a4cbfc5038d741568f7",
+      "bytes": 309416
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/raw-profiles/ten-bit-9960566587707451171_0-74482.profraw",
+      "sha256": "37e16c2feefe2e7c2394d3a90c10e8844ba3ad293fc68859e24c4014fe68d901",
+      "bytes": 309416
+    },
+    {
+      "path": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/raw-profiles/tos-30-35-9960566587707451171_0-73936.profraw",
+      "sha256": "1700ef8b038a7310bace1db5222c1021f436d3c19dcfefbaaf735b75141ac7fe",
+      "bytes": 309416
+    }
+  ],
+  "candidate_manifest": "<LAB_ROOT>/ffmpeg-v2-phase11/pgo/candidate.json",
+  "candidate_manifest_sha256": "cf9f8ac8f0a22702ce4291477eb01dc771be3708f77470ed6e3cb77015a0dc0c",
+  "candidate_prefix": "<LAB_ROOT>/ffmpeg-v2-core/candidates/phase11-pgo-ba4133406443/attempt-001/install",
+  "runtime_library_sha256": "582ca74a2ea68e772b55f32bf2a5e91a5fd8ec6325d7cea32bb96982fe3f33a1",
+  "limits": [
+    "Training ranges disjoint from confirmation. Profile-guided source code generation is workload dependent.",
+    "Final promotion requires independent conditioned same-quality wall-clock evidence and the native/release lifecycle."
+  ]
+}

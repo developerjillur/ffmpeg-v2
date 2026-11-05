@@ -1,0 +1,99 @@
+From 6ffcc2c456e747189b9e1e4ac0f8d6b654f326c3 Mon Sep 17 00:00:00 2001
+From: Jillur Rahman <22579419+developerjillur@users.noreply.github.com>
+Date: Wed, 4 Nov 2026 11:48:01 +0600
+Subject: [PATCH] =?UTF-8?q?Frame-progress=20query-=E0=A6=A4=E0=A7=87=20acq?=
+ =?UTF-8?q?uire=20read=20=E0=A6=A6=E0=A6=BF=E0=A7=9F=E0=A7=87=20=E0=A6=85?=
+ =?UTF-8?q?=E0=A6=AA=E0=A7=8D=E0=A6=B0=E0=A7=9F=E0=A7=8B=E0=A6=9C=E0=A6=A8?=
+ =?UTF-8?q?=E0=A7=80=E0=A7=9F=20lock=20=E0=A6=8F=E0=A7=9C=E0=A6=BE?=
+ =?UTF-8?q?=E0=A6=A8?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ common/frame.c    | 11 ++++++++---
+ common/frame.h    | 17 +++++++++++++++++
+ encoder/encoder.c |  2 +-
+ 3 files changed, 26 insertions(+), 4 deletions(-)
+
+diff --git a/common/frame.c b/common/frame.c
+index 7f19e1b..52c32b6 100644
+--- a/common/frame.c
++++ b/common/frame.c
+@@ -134,7 +134,7 @@ static x264_frame_t *frame_new( x264_t *h, int b_fdec )
+     frame->i_pts = -1;
+     frame->i_frame = -1;
+     frame->i_frame_num = -1;
+-    frame->i_lines_completed = -1;
++    x264_frame_progress_store( frame, -1 );
+     frame->b_fdec = b_fdec;
+     frame->i_pic_struct = PIC_STRUCT_AUTO;
+     frame->i_field_cnt = -1;
+@@ -683,7 +683,7 @@ void x264_expand_border_mbpair( x264_t *h, int mb_x, int mb_y )
+ void x264_frame_cond_broadcast( x264_frame_t *frame, int i_lines_completed )
+ {
+     x264_pthread_mutex_lock( &frame->mutex );
+-    frame->i_lines_completed = i_lines_completed;
++    x264_frame_progress_store( frame, i_lines_completed );
+     x264_pthread_cond_broadcast( &frame->cv );
+     x264_pthread_mutex_unlock( &frame->mutex );
+ }
+@@ -691,8 +691,13 @@ void x264_frame_cond_broadcast( x264_frame_t *frame, int i_lines_completed )
+ int x264_frame_cond_wait( x264_frame_t *frame, int i_lines_completed )
+ {
+     int completed;
++#if X264_ATOMIC_FRAME_PROGRESS
++    /* Negative thresholds query progress; retain the per-macroblock MV check. */
++    if( i_lines_completed < 0 )
++        return x264_frame_progress_load( frame );
++#endif
+     x264_pthread_mutex_lock( &frame->mutex );
+-    while( (completed = frame->i_lines_completed) < i_lines_completed && i_lines_completed >= 0 )
++    while( (completed = x264_frame_progress_load( frame )) < i_lines_completed && i_lines_completed >= 0 )
+         x264_pthread_cond_wait( &frame->cv, &frame->mutex );
+     x264_pthread_mutex_unlock( &frame->mutex );
+     return completed;
+diff --git a/common/frame.h b/common/frame.h
+index c66bcc5..0e63497 100644
+--- a/common/frame.h
++++ b/common/frame.h
+@@ -218,6 +218,23 @@ typedef struct
+                               int bframe );
+ } x264_deblock_function_t;
+ 
++/* Row pixels must be published before readers observe their completed line. */
++#if HAVE_THREAD && defined(__APPLE__) && defined(__aarch64__)
++#define X264_ATOMIC_FRAME_PROGRESS 1
++static ALWAYS_INLINE int x264_frame_progress_load( x264_frame_t *frame )
++{
++    return __atomic_load_n( &frame->i_lines_completed, __ATOMIC_ACQUIRE );
++}
++static ALWAYS_INLINE void x264_frame_progress_store( x264_frame_t *frame, int completed )
++{
++    __atomic_store_n( &frame->i_lines_completed, completed, __ATOMIC_RELEASE );
++}
++#else
++#define X264_ATOMIC_FRAME_PROGRESS 0
++#define x264_frame_progress_load(frame) ((frame)->i_lines_completed)
++#define x264_frame_progress_store(frame, completed) ((frame)->i_lines_completed = (completed))
++#endif
++
+ #define x264_frame_delete x264_template(frame_delete)
+ void          x264_frame_delete( x264_frame_t *frame );
+ 
+diff --git a/encoder/encoder.c b/encoder/encoder.c
+index 20e620a..8bc30c6 100644
+--- a/encoder/encoder.c
++++ b/encoder/encoder.c
+@@ -3480,7 +3480,7 @@ int     x264_encoder_encode( x264_t *h,
+     // ok to call this before encoding any frames, since the initial values of fdec have b_kept_as_ref=0
+     if( reference_update( h ) )
+         return -1;
+-    h->fdec->i_lines_completed = -1;
++    x264_frame_progress_store( h->fdec, -1 );
+ 
+     if( !IS_X264_TYPE_I( h->fenc->i_type ) )
+     {
+-- 
+2.54.0 (Apple Git-157)
+

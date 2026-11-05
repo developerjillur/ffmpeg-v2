@@ -1,0 +1,10 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/known-pq-or-hlg-source.mkv",
+  "output": "<LAB_ROOT>/ffmpeg-v2/sdr.mp4",
+  "encoder": "software",
+  "hdr_policy": "tone_map",
+  "source_peak_nits": 1000,
+  "max_width": 1920,
+  "max_height": 1080
+}

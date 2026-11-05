@@ -1,0 +1,7 @@
+{
+  "operation": "transcode",
+  "input": "/absolute/path/interlaced-source.mp4",
+  "output": "<LAB_ROOT>/ffmpeg-v2/progressive.mp4",
+  "deinterlace": "bwdif",
+  "encoder": "software"
+}
