@@ -16,6 +16,7 @@ const routes=new Map([
  ['docs/BENCHMARKS.md','benchmarks/method/'],['docs/REPORTS.md','reports/guide/'],
  ['docs/ARCHITECTURE.md','architecture/'],['docs/LIMITATIONS.md','limitations/'],
  ['docs/NATIVE-BUILDS.md','native-builds/'],['CONTRIBUTING.md','contributing/'],
+ ['docs/PUBLICATION.md','publication/'],['docs/DISCOVERY.md','discovery/'],['docs/ROADMAP.md','roadmap/'],
  ['SECURITY.md','security/'],['CHANGELOG.md','changelog/'],['SUPPORT.md','support/'],
  ['CODE_OF_CONDUCT.md','community/'],['THIRD-PARTY-NOTICES.md','licenses/'],
  ['README.bn.md','reports/historical-overview/'],['docs/site/RESEARCH.md','publication/research/'],
@@ -50,7 +51,7 @@ const url=route=>base+route;
 const canonical=route=>origin+url(route);
 function navLink(label,route,current,cls=''){return `<a href="${url(route)}"${route===current?' aria-current="page"':''}${cls?` class="${cls}"`:''}>${label}</a>`;}
 function header(route){return `<a class="skip" href="#main">Skip to content</a><header class="topbar"><div class="wrap"><nav class="nav" aria-label="Main"><a class="brand" href="${base}"><img src="${url('assets/mark.svg')}" width="38" height="38" alt=""><span>FFmpeg-v2</span></a><div class="navlinks">${navLink('Docs','getting-started/',route)}${navLink('Benchmarks','benchmarks/',route)}${navLink('Reports','reports/',route)}<a class="repo" href="${repo}">GitHub <span aria-hidden="true">↗</span></a></div></nav></div></header>`;}
-function footer(){return `<footer class="footer"><div class="wrap footer-row"><div><strong>FFmpeg-v2 · Jillur Rahman</strong><p>Independent local workflow toolkit. FFmpeg is the underlying engine. Source release 0.6.1 · GPL-3.0-or-later.</p></div><nav aria-label="Footer">${navLink('License','licenses/','_')}${navLink('Security','security/','_')}${navLink('Contribute','contributing/','_')}<a href="${url('sitemap.xml')}">Sitemap</a></nav></div></footer><div class="sr-only" id="announce" role="status" aria-live="polite"></div>`;}
+function footer(){return `<footer class="footer"><div class="wrap footer-row"><div><strong>FFmpeg-v2 · Jillur Rahman</strong><p>Independent local workflow toolkit. FFmpeg is the underlying engine. Source release 0.6.1 · GPL-3.0-or-later.</p></div><nav aria-label="Footer">${navLink('License','licenses/','_')}${navLink('Security','security/','_')}${navLink('Contribute','contributing/','_')}${navLink('Publication','publication/','_')}<a href="${url('sitemap.xml')}">Sitemap</a></nav></div></footer><div class="sr-only" id="announce" role="status" aria-live="polite"></div>`;}
 function sidebar(route){const links=[['Start here','getting-started/'],['CLI reference','cli/'],['MCP server','mcp/'],['Python integration','python/'],['Configuration','configuration/'],['Native builds','native-builds/'],['Architecture','architecture/'],['Benchmarks','benchmarks/'],['All reports','reports/'],['Limitations','limitations/'],['Contributing','contributing/']];return `<aside class="sidebar" aria-label="Documentation"><div class="eyebrow">Documentation</div>${links.map(([l,r])=>navLink(l,r,route)).join('')}</aside>`;}
 const pages=[];
 function write(route,title,body,{layout='article',file,lang='en',description,noindex=false}={}){

@@ -43,3 +43,6 @@ from the README.
 Source-only releases contain a complete Git source archive and checksums. Large
 local engine artifacts are intentionally absent. Rebuilding or distributing a
 native engine requires its own dependency/license review and acceptance evidence.
+
+Read [the roadmap](ROADMAP.md), [discovery and sharing](DISCOVERY.md), and the
+[publication research](site/RESEARCH.md) / [site brief](site/BRIEF.md).

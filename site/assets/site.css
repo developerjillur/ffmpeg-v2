@@ -6,3 +6,4 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
 .table-wrap:focus-visible{outline:3px solid #2468ac;outline-offset:4px}
+@media(max-width:480px){.stats-pair{grid-template-columns:1fr;gap:22px}.stats-pair>div+div{padding-top:18px;border-top:1px solid var(--rule)}}
