@@ -7,9 +7,11 @@ https://developerjillur.github.io/ffmpeg-v2/. Main language: English, with origi
 Bengali technical reports retained and linked. Audience and evidence boundaries
 are defined in [RESEARCH.md](RESEARCH.md).
 
-Reader journey: understand the workflow layer → inspect the plan/verify/publish
-contract → install from source → connect CLI or MCP → evaluate scoped benchmarks
-and historical reports → reuse code or contribute.
+Reader journey: see measured workflow improvements → understand what FFmpeg-v2
+adds to Stock FFmpeg → choose an application/CLI/MCP use case → install → inspect
+exact comparisons and methods. Internal phase chronology is secondary technical
+archive content. The homepage and README lead with benefits and released-profile
+results, with their baseline immediately visible.
 
 Pages: overview; getting started; CLI reference; MCP; Python integration; benchmark
 explorer; report archive; configuration; architecture; contributing; complete

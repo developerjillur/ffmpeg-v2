@@ -1,4 +1,8 @@
-# FFmpeg-v2 benchmarks and quality
+# Experimental optimization measurements
+
+For the released product's **22.61% / 28.48% less elapsed time** comparison against
+the prior Stock workflow preset, start with [released workflow results](WORKFLOW-RESULTS.md).
+The research candidate below is a separate experiment and is not the basis of those claims.
 
 Public 0.6.1 is a source/portability release. The following are historical Phase 11 measurements of an experimental PGO engine, not a rerun of the new public packaging. The candidate was **not promoted**.
 

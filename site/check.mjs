@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 const root=path.resolve('site-build');
 const pages=JSON.parse(fs.readFileSync(path.join(root,'pages.json')));
 const base=new URL(pages[0].url).pathname;
@@ -31,6 +32,21 @@ const dataset=JSON.parse(fs.readFileSync('docs/benchmarks/phase11-summary.json')
 assert.equal(dataset.overall_promotion_accepted,false);
 assert.equal(dataset.comparisons.filter(r=>r.pipeline==='workflow'&&r.release_eligible_group).length,4);
 assert(dataset.comparisons.filter(r=>r.pipeline==='direct').every(r=>!r.release_eligible_group));
+const released=JSON.parse(fs.readFileSync('docs/benchmarks/released-workflow-summary.json'));
+const releasedEvidence=fs.readFileSync(released.provenance.public_index);
+assert.equal(createHash('sha256').update(releasedEvidence).digest('hex'),released.provenance.public_index_sha256,'Released results bind the retained source evidence');
+for(const row of released.rows){
+  assert.equal(row.trials_per_configuration,9);
+  assert(row.quality_gates_passed);
+  assert(Math.abs((1-row.v2_native_profile_seconds/row.stock_prior_preset_seconds)*100-row.elapsed_reduction_percent_vs_prior_stock)<1e-9,'Elapsed percentage must match its stated baseline');
+  assert(row.paired_ratio_95_vs_prior_stock[1]<1,'Released comparison confidence gate');
+  assert(!row.matched_encoder_speed_advantage_proven,'Same-tuning uncertainty retained');
+}
+const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const main=home.match(/<main id="main">([\s\S]*?)<\/main>/)[1];
+assert(main.includes('22.61%')&&main.includes('28.48%'),'Product results first');
+assert(main.includes('prior Stock workflow preset'),'Headline must name its baseline');
+assert(!/Phase\s+\d/.test(main),'Internal phase chronology is not homepage positioning');
 assert(fs.statSync(path.join(root,'assets/social.png')).size>1000,'Social preview PNG');
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 for(const page of pages)assert(sitemap.includes(`<loc>${page.url}</loc>`),'Sitemap missing page');

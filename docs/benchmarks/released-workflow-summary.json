@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "title": "Released workflow profile: FFmpeg-v2 versus Stock FFmpeg",
+  "recorded_date": "2026-11-04",
+  "status": "released_native_profile_measurement",
+  "public_source_version": "0.6.1",
+  "public_packaging_benchmark_rerun": false,
+  "baseline_label": "Prior Stock workflow preset, not an out-of-the-box or same-tuning Stock default",
+  "stock_version": "Homebrew FFmpeg 9.0.2",
+  "native_version": "n9.0.2-3-gb6e0de6-ffmpeg-v2-m4",
+  "hardware": {
+    "cpu": "Apple M4 Max",
+    "cores": "10P + 4E",
+    "memory_gib": 36,
+    "os": "macOS 27.2 / arm64"
+  },
+  "thread_pools_order": [
+    "encoder",
+    "decoder",
+    "filter",
+    "validation"
+  ],
+  "stock_prior_preset": [
+    4,
+    2,
+    2,
+    4
+  ],
+  "v2_native_profile": [
+    8,
+    2,
+    2,
+    8
+  ],
+  "matched_stock_control": [
+    8,
+    2,
+    2,
+    8
+  ],
+  "encoding": "libx264 veryfast / CRF20; AAC160k; same source/range and complete output validation",
+  "estimator": "Ratio of workflow total-time medians; 20000 paired trial-block bootstrap draws; nine measured trials after excluded warmup per configuration",
+  "timing_scope": "Planning, queue, encode, metadata, full strict decode, SHA-256 and atomic publish; fresh interpreter startup excluded",
+  "profile_scope": "Eligible M4 Max >=60s progressive square-pixel unrotated 8-bit native-geometry software quality transcodes; explicit fps<=30; optional native engine",
+  "quality_gates": {
+    "vmaf_delta_min": -0.1,
+    "psnr_y_delta_min_db": -0.05,
+    "ssim_delta_min": -1e-05,
+    "max_size_ratio": 1.02
+  },
+  "rows": [
+    {
+      "id": "bbb-1080",
+      "label": "1080p animation",
+      "publisher_source": "Big Buck Bunny",
+      "geometry": "1920×1080 / 30fps",
+      "source_seconds": 60,
+      "range": "60–120s",
+      "trials_per_configuration": 9,
+      "stock_prior_preset_seconds": 9.734418625,
+      "v2_native_profile_seconds": 7.533914667,
+      "elapsed_reduction_percent_vs_prior_stock": 22.605396816905433,
+      "time_ratio_vs_prior_stock": 0.7739460318309457,
+      "paired_ratio_95_vs_prior_stock": [
+        0.5770624075323105,
+        0.879355946658932
+      ],
+      "elapsed_reduction_percent_vs_prior_v2": 22.30606241960248,
+      "quality_frames": 1800,
+      "quality_gates_passed": true,
+      "vmaf_before": 94.761184,
+      "vmaf_after": 94.781527,
+      "psnr_y_delta_db": 0.004889999999996064,
+      "ssim_delta": 9.999999999177334e-07,
+      "output_size_change_percent": 0.16157399308789344,
+      "matched_stock_seconds": 6.878099041,
+      "matched_time_change_percent": 9.534838362906918,
+      "matched_ratio": 1.0953483836290692,
+      "matched_ratio_95": [
+        0.9792178678152587,
+        1.3154379901196411
+      ],
+      "matched_encoder_speed_advantage_proven": false
+    },
+    {
+      "id": "tos-liveaction",
+      "label": "Live action / VFX",
+      "publisher_source": "Tears of Steel",
+      "geometry": "1920×800 / 24fps",
+      "source_seconds": 60,
+      "range": "60–120s",
+      "trials_per_configuration": 9,
+      "stock_prior_preset_seconds": 7.527828625,
+      "v2_native_profile_seconds": 5.384027667,
+      "elapsed_reduction_percent_vs_prior_stock": 28.478344351257068,
+      "time_ratio_vs_prior_stock": 0.7152165564874293,
+      "paired_ratio_95_vs_prior_stock": [
+        0.6708152162631345,
+        0.765479664165695
+      ],
+      "elapsed_reduction_percent_vs_prior_v2": 30.770384882664825,
+      "quality_frames": 1440,
+      "quality_gates_passed": true,
+      "vmaf_before": 93.375096,
+      "vmaf_after": 93.379144,
+      "psnr_y_delta_db": 0.00031599999999798456,
+      "ssim_delta": 1.999999999946489e-06,
+      "output_size_change_percent": 0.024305850411177055,
+      "matched_stock_seconds": 5.429734583,
+      "matched_time_change_percent": -0.8417891390696042,
+      "matched_ratio": 0.991582108609304,
+      "matched_ratio_95": [
+        0.6259067809491381,
+        1.070254718228889
+      ],
+      "matched_encoder_speed_advantage_proven": false
+    }
+  ],
+  "interpretation": [
+    "Less elapsed time is the reported statistic, not throughput percentage.",
+    "The strongest Stock comparison changes thread-pool tuning; Stock accepts the same thread controls.",
+    "Same-tuning controls do not prove a general native-encoder speed advantage.",
+    "Quality gates passed without reducing the configured quality/bitrate target; output sizes rose slightly.",
+    "One machine and two source ranges; not a universal FFmpeg performance claim.",
+    "Experimental PGO results are separate and are not promoted or added to these percentages."
+  ],
+  "provenance": {
+    "public_index": "docs/verification/phase8-2026-11-04.json",
+    "public_index_sha256": "311a316465a4a68fa636014600bd5226bf7251522cbde78d63f03853fb7acea8",
+    "original_results": "docs/PHASE8-RESULTS.md",
+    "original_native_default_retained": true
+  }
+}

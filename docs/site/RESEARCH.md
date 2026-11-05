@@ -77,3 +77,33 @@ Run desktop/mobile/reduced-motion, keyboard, copy, table and browser-console che
 against the built artifact. Verify anonymous repository access, public release,
 hosted workflow success and deployed HTTPS pages. Keep private publication audit
 receipts outside the public checkout.
+
+## Public positioning update — 2026-11-05
+
+The maintainer requests a product-first presentation: lead with measured improvement,
+the comparison with Stock FFmpeg, and why developers should use FFmpeg-v2. Internal
+phase chronology belongs in the technical archive. Keep the existing visual identity
+and static documentation stack; this is a content and information-hierarchy update.
+
+The strongest released-profile comparisons are in the retained verification index:
+22.6053968169% less HD workflow time and 28.4783443513% less live-action workflow
+time versus the **prior Stock workflow preset**. Both use nine measured pairs and
+pass quality/size and confidence gates. They compare a 4/2/2/4 Stock workflow with
+an 8/2/2/8 native M4 Max profile. They are not comparisons with an automatically
+tuned current Stock default or proof of a generally faster native encoder.
+Same-tuning Stock controls must remain visible in Results: HD median 9.53% slower,
+live-action median 0.84% faster, both intervals including equality. The experimental
+PGO results stay in a clearly labeled research preview, separate from released
+profile benefits. Do not rerun benchmarks or rewrite frozen historical evidence.
+
+First-party capability checks refreshed against [FFmpeg CLI documentation](https://ffmpeg.org/ffmpeg.html)
+and [FFmpeg formats documentation](https://ffmpeg.org/ffmpeg-formats.html). Stock
+already provides thread controls, progress output, overwrite refusal and hash
+formats. The product comparison must credit these building blocks and describe
+the queue, supervision, integrated verification receipts and MCP interface that
+FFmpeg-v2 adds. No invented workflow-setup percentage or compression gain.
+
+Public journey: measured benefit and immediate baseline → what the toolkit adds
+→ practical media/application/MCP use cases → installation → exact Results and
+technical methods. Update the README, website, metadata and release description
+consistently. Preserve original release assets and their source-bound audit.
